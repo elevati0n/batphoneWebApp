@@ -11,6 +11,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20151010054911) do
+
+  create_table "comments", force: :cascade do |t|
+    t.string   "data"
+    t.string   "time"
+    t.string   "date"
+    t.string   "owner"
+    t.string   "recording"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string   "member"
+    t.string   "recording"
+    t.string   "comment"
+    t.string   "batphone"
+    t.string   "profile"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "recordings", force: :cascade do |t|
+    t.string   "originator"
+    t.string   "time"
+    t.string   "date"
+    t.string   "URI"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "address"
+    t.string   "profile"
+    t.string   "friends"
+    t.string   "groups"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end

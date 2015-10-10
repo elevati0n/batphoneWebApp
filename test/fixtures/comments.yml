@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data: MyString
+  time: MyString
+  date: MyString
+  owner: MyString
+  recording: MyString
+
+two:
+  data: MyString
+  time: MyString
+  date: MyString
+  owner: MyString
+  recording: MyString
