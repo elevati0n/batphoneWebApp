@@ -5,11 +5,14 @@
   <h2>
     <p>
       This is the home page for our capstone project
-      <b>The Bat Phone</b>
+      <b>The Bat Phone</b> <br>
+      <%= image_tag("Batphone_logo_large.png", alt: "Bat-Phone Logo") %>
     </p>
   </h2>
     </p>
 
-<%= link_to "Sign up now!", 'signup', class: "btn btn-lg btn-primary" %>
+<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+
+
 
 </div>

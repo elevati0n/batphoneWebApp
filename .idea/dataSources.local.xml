@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails batphoneApp: development" uuid="4f33ff2c-1ae2-4480-8443-65b94a35fa28">
+      <first-sync>true</first-sync>
+    </data-source>
+    <data-source name="Rails batphoneApp: test" uuid="bc02e2e9-867e-4df8-a6ec-2e448c2f61a9" />
+  </component>
+</project>
