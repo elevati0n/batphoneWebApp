@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
          uniqueness: { case_sensitive: false }
    has_secure_password
    validates :password, presence: true, length: { minimum:6 },  allow_nil: true
+   has_many :microposts, dependent: :destroy
 
   # Returns the hash digest of the given string.
   def User.digest(string)
@@ -36,6 +37,13 @@ class User < ActiveRecord::Base
   # Forgets a user.
   def forget
     update_attribute(:remember_digest, nil)
+  end
+
+  #Removes a User from the database
+  def destroy
+    User.find(params[:id]).destroy
+    flash[:success] = "User deleted"
+    redirect_to users_url
   end
 
 end
