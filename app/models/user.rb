@@ -39,6 +39,11 @@ class User < ActiveRecord::Base
     update_attribute(:remember_digest, nil)
   end
 
+  #defines the feed that will be seen on the homescreen
+  def feed
+    Micropost.where("user_id = ?", id)
+  end
+
   #Removes a User from the database
   def destroy
     User.find(params[:id]).destroy
