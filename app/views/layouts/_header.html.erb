@@ -4,6 +4,8 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Add Network", addnetwork_path %></li>
+
         <li><a href="http://batphone.co/wiki">Wiki</a></li>
         <li><%= link_to "Help", help_path %></li>
         <% if logged_in? %>

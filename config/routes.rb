@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'networks/new'
+
   get 'sessions/new'
 
   get 'users/new'
@@ -18,7 +20,12 @@ Rails.application.routes.draw do
  
   post   'login'   => 'sessions#create'
  
-  delete 'logout'  => 'sessions#destroy'  
+  delete 'logout'  => 'sessions#destroy'
+
+  get 'addnetwork' => 'networks#new'
+
+
+  resources :networks
 
 
 
