@@ -23,6 +23,13 @@ class NetworksController < ApplicationController
     @networks = Network.paginate(page: params[:page])
   end
 
+  def destroy
+    @network = Network.find(params[:id])
+    @network.destroy
+    flash[:success] = "network deleted"
+    redirect_to request.referrer || root_url
+  end
+
 
   private
 
