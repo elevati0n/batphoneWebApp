@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151024194404) do
+ActiveRecord::Schema.define(version: 20151024221000) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "data"
@@ -22,6 +22,22 @@ ActiveRecord::Schema.define(version: 20151024194404) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "devices", force: :cascade do |t|
+    t.string   "name"
+    t.string   "IP_address"
+    t.string   "MAC"
+    t.string   "AP_SSID"
+    t.string   "Gateway_mode"
+    t.text     "description"
+    t.text     "location"
+    t.text     "notes"
+    t.integer  "network_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "devices", ["network_id"], name: "index_devices_on_network_id"
 
   create_table "groups", force: :cascade do |t|
     t.string   "member"

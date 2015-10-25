@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'users/new'
 
   root 'static_pages#home'
+
   get 'help' => 'static_pages#help'
 
   get 'home' => 'static_pages#home'
@@ -24,14 +25,22 @@ Rails.application.routes.draw do
 
   get 'addnetwork' => 'networks#new'
 
+  resources :devices 
 
-  resources :networks
+  resources :networks do
+    resources :devices
+  end
+
+
+
+
+
 
 
 
   resources :users
   
-  resources :microposts,          only: [:create, :destroy]
+  resources :microposts #,          only: [:create, :destroy]
 
 
   resources :users do
@@ -41,6 +50,7 @@ Rails.application.routes.draw do
   end
 
   resources :relationships,       only: [:create, :destroy]
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

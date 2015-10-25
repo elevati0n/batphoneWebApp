@@ -5,6 +5,7 @@ class NetworksController < ApplicationController
 
   def show
    @network = Network.find(params[:id])
+   @devices = @network.devices.all
   end
 
   def create

@@ -13,3 +13,14 @@
     </section>
   </aside>
 </div>
+
+
+<div class="col-md-8">
+  <% if @network.devices.any? %>
+      <h3>Devices (<%= @network.devices.count %>)</h3>
+      <ol class="microposts">
+        <%= render @devices %>
+      </ol>
+      <%= will_paginate @devices %>
+  <% end %>
+</div>
