@@ -3,17 +3,15 @@
 lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.
 sectionAnchor%7Cmediawiki.ui.button%7Cskins.bootstrapmediawiki&amp;only=styles&amp;skin=bootstrapmediawiki&amp;*" />
 
-
-<div class="pagetitle page-header">
-  <h2> Device Name :  <%= device.name %>   |   Network :
-    <%= device.network.id %> <%= device.network.name %> <small></small></h2>
-</div>
+<span>
+  <h3> Device Name :  <%= device.name %>   |   Network :
+    <%= device.network.id %> <%= device.network.name %> <small></small></h3>
 
 <span class="timestamp">
     Posted <%= time_ago_in_words(device.created_at) %> ago.
   </span>
 
-<div class="body">
+<div>
   <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table class="wikitable">
     <tr>
       <th style="font-weight: bold;"> IP Address
@@ -46,3 +44,6 @@ sectionAnchor%7Cmediawiki.ui.button%7Cskins.bootstrapmediawiki&amp;only=styles&a
       <td>
       </td></tr> </table></div></div>
 <br>
+  </span>
+
+</div>

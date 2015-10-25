@@ -34,6 +34,8 @@ Rails.application.routes.draw do
 
 
 
+#  get 'registerdevice', to: 'devices#new', as: 'network'
+
 
 
 

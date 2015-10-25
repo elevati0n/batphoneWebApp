@@ -17,10 +17,10 @@
 
 <div class="col-md-8">
   <% if @network.devices.any? %>
-      <h3>Devices (<%= @network.devices.count %>)</h3>
-      <ol class="microposts">
-        <%= render @devices %>
-      </ol>
+      <h2> Number of Devices : <%= @network.devices.count %></h2>
+
+      <%= render @devices %>
+
       <%#= will_paginate @devices %>
   <% end %>
 </div>
