@@ -14,7 +14,7 @@ class NetworksController < ApplicationController
        flash[:success] = "Network added!"
        redirect_to @network
      else
-       flash[:success] = "Network failed to add!"
+       flash[:danger] = "Network failed to add!"
       render 'new'
     end
   end
@@ -26,7 +26,7 @@ class NetworksController < ApplicationController
   def destroy
     @network = Network.find(params[:id])
     @network.destroy
-    flash[:success] = "network deleted"
+    flash[:danger] = "network deleted"
     redirect_to request.referrer || root_url
   end
 

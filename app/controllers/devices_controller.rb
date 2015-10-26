@@ -14,7 +14,7 @@ class DevicesController < ApplicationController
       flash[:success] = "Device Added!"
       redirect_to devices_path
     else
-      flash[:success] = "FAILURE FAILURE"
+      flash[:danger] = "FAILURE FAILURE"
       render 'new'
     end
 
