@@ -29,7 +29,7 @@ module Rails
     #
     # class CommentScrubber < Html::PermitScrubber
     #   def allowed_node?(node)
-    #     !%w(form script comment blockquote).include?(node.name)
+    #     !%w(form script comments blockquote).include?(node.name)
     #   end
     #
     #   def skip_node?(node)

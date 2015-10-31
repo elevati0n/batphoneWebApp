@@ -26,7 +26,7 @@ class RDoc::Constant < RDoc::CodeObject
   attr_accessor :visibility
 
   ##
-  # Creates a new constant with +name+, +value+ and +comment+
+  # Creates a new constant with +name+, +value+ and +comments+
 
   def initialize(name, value, comment)
     super()
@@ -59,7 +59,7 @@ class RDoc::Constant < RDoc::CodeObject
   end
 
   ##
-  # A constant is documented if it has a comment, or is an alias
+  # A constant is documented if it has a comments, or is an alias
   # for a documented class or module.
 
   def documented?
@@ -157,7 +157,7 @@ class RDoc::Constant < RDoc::CodeObject
     q.group 2, "[#{self.class.name} #{full_name}", "]" do
       unless comment.empty? then
         q.breakable
-        q.text "comment:"
+        q.text "comments:"
         q.breakable
         q.pp @comment
       end

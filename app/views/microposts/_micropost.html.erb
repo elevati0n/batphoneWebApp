@@ -8,6 +8,19 @@
     <% if current_user?(micropost.user) %>
       <%= link_to "delete", micropost, method: :delete,
                                        data: { confirm: "You sure?" } %>
+
+
+        <% @current_post = micropost.id%>
+
+        <% @comments = micropost.comments %>
+
+        <%= render @comments %>
+
+
+        <%= render 'shared/comment_form' %>
+
+
+
     <% end %>
   </span>
 </li>

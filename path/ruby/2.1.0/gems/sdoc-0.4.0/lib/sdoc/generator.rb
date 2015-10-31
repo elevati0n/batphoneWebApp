@@ -52,7 +52,7 @@ class RDoc::AnyMethod
               when RDoc::RubyToken::TkOp       then 'ruby-operator'
               when RDoc::RubyToken::TkId       then 'ruby-identifier'
               when RDoc::RubyToken::TkNode     then 'ruby-node'
-              when RDoc::RubyToken::TkCOMMENT  then 'ruby-comment'
+              when RDoc::RubyToken::TkCOMMENT  then 'ruby-comments'
               when RDoc::RubyToken::TkREGEXP   then 'ruby-regexp'
               when RDoc::RubyToken::TkSTRING   then 'ruby-string'
               when RDoc::RubyToken::TkVal      then 'ruby-value'
@@ -79,7 +79,7 @@ class RDoc::AnyMethod
     # dedent the source
     indent = src.length
     lines = src.lines.to_a
-    lines.shift if src =~ /\A.*#\ *File/i # remove '# File' comment
+    lines.shift if src =~ /\A.*#\ *File/i # remove '# File' comments
     lines.each do |line|
       if line =~ /^ *(?=\S)/
         n = $&.length

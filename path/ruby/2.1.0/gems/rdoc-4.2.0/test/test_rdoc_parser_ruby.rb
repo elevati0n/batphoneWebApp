@@ -291,12 +291,12 @@ class C; end
 
     tk = @parser.get_tk
 
-    alas = @parser.parse_alias klass, RDoc::Parser::Ruby::NORMAL, tk, 'comment'
+    alas = @parser.parse_alias klass, RDoc::Parser::Ruby::NORMAL, tk, 'comments'
 
     assert_equal 'bar',      alas.old_name
     assert_equal 'next=',    alas.new_name
     assert_equal klass,      alas.parent
-    assert_equal 'comment',  alas.comment
+    assert_equal 'comments',  alas.comment
     assert_equal @top_level, alas.file
     assert_equal 0,          alas.offset
     assert_equal 1,          alas.line
@@ -310,12 +310,12 @@ class C; end
 
     tk = @parser.get_tk
 
-    alas = @parser.parse_alias klass, RDoc::Parser::Ruby::SINGLE, tk, 'comment'
+    alas = @parser.parse_alias klass, RDoc::Parser::Ruby::SINGLE, tk, 'comments'
 
     assert_equal 'bar',      alas.old_name
     assert_equal 'next=',    alas.new_name
     assert_equal klass,      alas.parent
-    assert_equal 'comment',  alas.comment
+    assert_equal 'comments',  alas.comment
     assert_equal @top_level, alas.file
     assert                   alas.singleton
   end
@@ -329,7 +329,7 @@ class C; end
 
     tk = @parser.get_tk
 
-    @parser.parse_alias klass, RDoc::Parser::Ruby::NORMAL, tk, 'comment'
+    @parser.parse_alias klass, RDoc::Parser::Ruby::NORMAL, tk, 'comments'
 
     assert_empty klass.aliases
     assert_empty klass.unmatched_alias_lists
@@ -343,7 +343,7 @@ class C; end
 
     tk = @parser.get_tk
 
-    alas = @parser.parse_alias klass, RDoc::Parser::Ruby::NORMAL, tk, 'comment'
+    alas = @parser.parse_alias klass, RDoc::Parser::Ruby::NORMAL, tk, 'comments'
 
     assert_nil alas
   end
@@ -1322,7 +1322,7 @@ A::B::C = 1
 
     tk = @parser.get_tk
 
-    parsed = @parser.parse_constant @top_level, tk, 'comment'
+    parsed = @parser.parse_constant @top_level, tk, 'comments'
 
     assert parsed
 
@@ -1331,7 +1331,7 @@ A::B::C = 1
     c = b.constants.first
 
     assert_equal 'A::B::C', c.full_name
-    assert_equal 'comment', c.comment
+    assert_equal 'comments', c.comment
   end
 
   def test_parse_extend_or_include_extend
@@ -1822,7 +1822,7 @@ end
     klass = RDoc::NormalClass.new 'Foo'
     klass.parent = @top_level
 
-    util_parser "def foo arg1, arg2 # some useful comment\nend"
+    util_parser "def foo arg1, arg2 # some useful comments\nend"
 
     tk = @parser.get_tk
 
@@ -1836,7 +1836,7 @@ end
     klass = RDoc::NormalClass.new 'Foo'
     klass.parent = @top_level
 
-    util_parser "def foo arg1, arg2, # some useful comment\narg3\nend"
+    util_parser "def foo arg1, arg2, # some useful comments\narg3\nend"
 
     tk = @parser.get_tk
 
@@ -2556,7 +2556,7 @@ end
 
   def test_parse_top_level_statements_stopdoc
     @top_level.stop_doc
-    content = "# this is the top-level comment"
+    content = "# this is the top-level comments"
 
     util_parser content
 
@@ -2777,13 +2777,13 @@ end\r
   def test_scan_block_comment
     content = <<-CONTENT
 =begin rdoc
-Foo comment
+Foo comments
 =end
 
 class Foo
 
 =begin
-m comment
+m comments
 =end
 
   def m() end
@@ -2796,11 +2796,11 @@ end
 
     foo = @top_level.classes.first
 
-    assert_equal 'Foo comment', foo.comment.text
+    assert_equal 'Foo comments', foo.comment.text
 
     m = foo.method_list.first
 
-    assert_equal 'm comment', m.comment.text
+    assert_equal 'm comments', m.comment.text
   end
 
   def test_scan_block_comment_nested # Issue #41
@@ -2984,11 +2984,11 @@ end
 
   def test_scan_duplicate_module
     content = <<-CONTENT
-# comment a
+# comments a
 module Foo
 end
 
-# comment b
+# comments b
 module Foo
 end
     CONTENT
@@ -3000,7 +3000,7 @@ end
     foo = @top_level.modules.first
 
     expected = [
-      RDoc::Comment.new('comment b', @top_level)
+      RDoc::Comment.new('comments b', @top_level)
     ]
 
     assert_equal expected, foo.comment_location.map { |c, l| c }

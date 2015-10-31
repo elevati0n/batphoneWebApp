@@ -60,7 +60,7 @@ module Scanners
             next
             
           elsif match = scan(%r! // [^\n]* | \{ [^}]* \}? | \(\* (?: .*? \*\) | .* ) !mx)
-            encoder.text_token match, :comment
+            encoder.text_token match, :comments
             next
             
           elsif match = scan(/ <[>=]? | >=? | :=? | [-+=*\/;,@\^|\(\)\[\]] | \.\. /x)

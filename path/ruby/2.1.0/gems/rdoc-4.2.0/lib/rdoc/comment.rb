@@ -1,8 +1,8 @@
 ##
-# A comment holds the text comment for a RDoc::CodeObject and provides a
+# A comments holds the text comments for a RDoc::CodeObject and provides a
 # unified way of cleaning it up and parsing it into an RDoc::Markup::Document.
 #
-# Each comment may have a different markup format set by #format=.  By default
+# Each comments may have a different markup format set by #format=.  By default
 # 'rdoc' is used.  The :markup: directive tells RDoc which format to use.
 #
 # See RDoc::Markup@Other+directives for instructions on adding an alternate
@@ -13,12 +13,12 @@ class RDoc::Comment
   include RDoc::Text
 
   ##
-  # The format of this comment.  Defaults to RDoc::Markup
+  # The format of this comments.  Defaults to RDoc::Markup
 
   attr_reader :format
 
   ##
-  # The RDoc::TopLevel this comment was found in
+  # The RDoc::TopLevel this comments was found in
 
   attr_accessor :location
 
@@ -28,18 +28,18 @@ class RDoc::Comment
   alias file location # :nodoc:
 
   ##
-  # The text for this comment
+  # The text for this comments
 
   attr_reader :text
 
   ##
   # Overrides the content returned by #parse.  Use when there is no #text
-  # source for this comment
+  # source for this comments
 
   attr_writer   :document
 
   ##
-  # Creates a new comment with +text+ that is found in the RDoc::TopLevel
+  # Creates a new comments with +text+ that is found in the RDoc::TopLevel
   # +location+.
 
   def initialize text = nil, location = nil
@@ -65,7 +65,7 @@ class RDoc::Comment
   end
 
   ##
-  # Look for a 'call-seq' in the comment to override the normal parameter
+  # Look for a 'call-seq' in the comments to override the normal parameter
   # handling.  The :call-seq: is indented from the baseline.  All lines of the
   # same indentation level and prefix are consumed.
   #
@@ -82,7 +82,7 @@ class RDoc::Comment
 
   def extract_call_seq method
     # we must handle situations like the above followed by an unindented first
-    # comment.  The difficulty is to make sure not to match lines starting
+    # comments.  The difficulty is to make sure not to match lines starting
     # with ARGF at the same indent, but that are after the first description
     # paragraph.
     if @text =~ /^\s*:?call-seq:(.*?(?:\S).*?)^\s*$/m then
@@ -123,7 +123,7 @@ class RDoc::Comment
   end
 
   ##
-  # A comment is empty if its text String is empty.
+  # A comments is empty if its text String is empty.
 
   def empty?
     @text.empty?
@@ -137,7 +137,7 @@ class RDoc::Comment
   end
 
   ##
-  # Sets the format of this comment and resets any parsed document
+  # Sets the format of this comments and resets any parsed document
 
   def format= format
     @format = format
@@ -172,7 +172,7 @@ class RDoc::Comment
   end
 
   ##
-  # Parses the comment into an RDoc::Markup::Document.  The parsed document is
+  # Parses the comments into an RDoc::Markup::Document.  The parsed document is
   # cached until the text is changed.
 
   def parse
@@ -184,10 +184,10 @@ class RDoc::Comment
   end
 
   ##
-  # Removes private sections from this comment.  Private sections are flush to
-  # the comment marker and start with <tt>--</tt> and end with <tt>++</tt>.
+  # Removes private sections from this comments.  Private sections are flush to
+  # the comments marker and start with <tt>--</tt> and end with <tt>++</tt>.
   # For C-style comments, a private marker may not start at the opening of the
-  # comment.
+  # comments.
   #
   #   /*
   #    *--
@@ -206,12 +206,12 @@ class RDoc::Comment
   end
 
   ##
-  # Replaces this comment's text with +text+ and resets the parsed document.
+  # Replaces this comments's text with +text+ and resets the parsed document.
   #
-  # An error is raised if the comment contains a document but no text.
+  # An error is raised if the comments contains a document but no text.
 
   def text= text
-    raise RDoc::Error, 'replacing document-only comment is not allowed' if
+    raise RDoc::Error, 'replacing document-only comments is not allowed' if
       @text.nil? and @document
 
     @document = nil
@@ -219,7 +219,7 @@ class RDoc::Comment
   end
 
   ##
-  # Returns true if this comment is in TomDoc format.
+  # Returns true if this comments is in TomDoc format.
 
   def tomdoc?
     @format == 'tomdoc'

@@ -67,7 +67,7 @@ module Scanners
             next
           
           elsif match = scan(%r! // [^\n\\]* (?: \\. [^\n\\]* )* | /\* (?: .*? \*/ | .* ) !mx)
-            encoder.text_token match, :comment
+            encoder.text_token match, :comments
             next
           
           elsif package_name_expected && match = scan(/ #{IDENT} (?: \. #{IDENT} )* /ox)

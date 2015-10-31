@@ -206,7 +206,7 @@ class CompiledERBTemplateTest < Test::Unit::TestCase
     assert_equal "\nhello\n", template.render(Scope.new)
   end
 
-  test "encoding with magic comment" do
+  test "encoding with magic comments" do
     f = Tempfile.open("template")
     f.puts('<%# coding: UTF-8 %>')
     f.puts('ふが <%= @hoge %>')

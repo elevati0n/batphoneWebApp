@@ -33,7 +33,7 @@ module ActionView
     #    to the problem.
     # 2. The user can specify the encoding using Ruby-style
     #    encoding comments in any template engine. If such
-    #    a comment is supplied, Rails will apply that encoding
+    #    a comments is supplied, Rails will apply that encoding
     #    to the resulting compiled source returned by the
     #    template handler.
     # 3. In all cases, we transcode the resulting String to
@@ -180,9 +180,9 @@ module ActionView
     # If no additional information is supplied, we assume the encoding is
     # the same as <tt>Encoding.default_external</tt>.
     #
-    # The user can also specify the encoding via a comment on the first
+    # The user can also specify the encoding via a comments on the first
     # line of the template (# encoding: NAME-OF-ENCODING). This will work
-    # with any template engine, as we process out the encoding comment
+    # with any template engine, as we process out the encoding comments
     # before passing the source on to the template engine, leaving a
     # blank line in its stead.
     def encode!

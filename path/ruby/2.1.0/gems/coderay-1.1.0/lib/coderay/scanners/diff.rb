@@ -68,7 +68,7 @@ module Scanners
             encoder.text_token match, :plain
             state = :added
           elsif match = scan(/\\ .*/)
-            encoder.text_token match, :comment
+            encoder.text_token match, :comments
           elsif match = scan(/@@(?>[^@\n]+)@@/)
             content_scanner.state = :initial unless match?(/\n\+/)
             content_scanner_entry_state = nil
@@ -174,7 +174,7 @@ module Scanners
             end
             next
           elsif match = scan(/.+/)
-            encoder.begin_line line_kind = :comment
+            encoder.begin_line line_kind = :comments
             encoder.text_token match, :plain
           else
             raise_inspect 'else case rached'

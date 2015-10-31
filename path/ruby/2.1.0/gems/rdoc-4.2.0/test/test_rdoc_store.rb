@@ -25,7 +25,7 @@ class TestRDocStore < XrefTestCase
     @cmeth.singleton = true
     @cmeth.record_location @top_level
 
-    @meth_comment = RDoc::Comment.new 'method comment'
+    @meth_comment = RDoc::Comment.new 'method comments'
     @meth_comment.location = @top_level
 
     @meth = RDoc::AnyMethod.new nil, 'method'
@@ -40,7 +40,7 @@ class TestRDocStore < XrefTestCase
 
     @meth_bang.add_alias @meth_bang_alias, @klass
 
-    @attr_comment = RDoc::Comment.new 'attribute comment'
+    @attr_comment = RDoc::Comment.new 'attribute comments'
     @attr_comment.location = @top_level
 
     @attr = RDoc::Attr.new nil, 'attr', 'RW', ''
@@ -544,10 +544,10 @@ class TestRDocStore < XrefTestCase
                "\"\vmethod\x06:\x06EF\"\x11Klass#method0:\vpublic" +
                "o:\eRDoc::Markup::Document\x06:\v@parts[\x06" +
                "o:\x1CRDoc::Markup::Paragraph\x06;\t[\x06I" +
-               "\"\x16this is a comment\x06;\x06FI" +
+               "\"\x16this is a comments\x06;\x06FI" +
                "\"\rcall_seq\x06;\x06FI\"\x0Fsome_block\x06;\x06F" +
                "[\x06[\aI\"\faliased\x06;\x06Fo;\b\x06;\t[\x06" +
-               "o;\n\x06;\t[\x06I\"\x12alias comment\x06;\x06FI" +
+               "o;\n\x06;\t[\x06I\"\x12alias comments\x06;\x06FI" +
                "\"\nparam\x06;\x06F"
     end
 
@@ -850,14 +850,14 @@ class TestRDocStore < XrefTestCase
     @s.save_class @klass
 
     klass = RDoc::NormalClass.new 'Object'
-    klass.add_comment 'new comment', @top_level
+    klass.add_comment 'new comments', @top_level
 
     s = RDoc::RI::Store.new @tmpdir
     s.save_class klass
 
     s = RDoc::RI::Store.new @tmpdir
 
-    inner = @RM::Document.new @RM::Paragraph.new 'new comment'
+    inner = @RM::Document.new @RM::Paragraph.new 'new comments'
     inner.file = @top_level
 
     document = @RM::Document.new inner
@@ -871,7 +871,7 @@ class TestRDocStore < XrefTestCase
     tl = store.add_file 'file.rb'
 
     klass = tl.add_class RDoc::NormalClass, 'C'
-    klass.add_comment 'comment', tl
+    klass.add_comment 'comments', tl
 
     const = klass.add_constant RDoc::Constant.new('CONST', nil, nil)
     const.record_location tl

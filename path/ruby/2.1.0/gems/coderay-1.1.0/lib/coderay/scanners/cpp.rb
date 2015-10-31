@@ -73,11 +73,11 @@ module Scanners
             encoder.text_token match, :space
 
           elsif match = scan(%r! // [^\n\\]* (?: \\. [^\n\\]* )* | /\* (?: .*? \*/ | .* ) !mx)
-            encoder.text_token match, :comment
+            encoder.text_token match, :comments
 
           elsif match = scan(/ \# \s* if \s* 0 /x)
             match << scan_until(/ ^\# (?:elif|else|endif) .*? $ | \z /xm) unless eos?
-            encoder.text_token match, :comment
+            encoder.text_token match, :comments
 
           elsif match = scan(/ [-+*=<>?:;,!&^|()\[\]{}~%]+ | \/=? | \.(?!\d) /x)
             label_expected = match =~ /[;\{\}]/

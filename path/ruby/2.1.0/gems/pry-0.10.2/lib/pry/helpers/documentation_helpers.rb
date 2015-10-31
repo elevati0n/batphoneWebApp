@@ -49,7 +49,7 @@ class Pry
         code.sub(/\A\s*\/\*.*?\*\/\s*/m, '')
       end
 
-      # Given a string that makes up a comment in a source-code file parse out the content
+      # Given a string that makes up a comments in a source-code file parse out the content
       # that the user is intended to read. (i.e. without leading indentation, #-characters
       # or shebangs)
       #
@@ -59,7 +59,7 @@ class Pry
         comment = comment.dup
         # Remove #!/usr/bin/ruby
         comment.gsub!(/\A\#!.*$/, '')
-        # Remove leading empty comment lines
+        # Remove leading empty comments lines
         comment.gsub!(/\A\#+?$/, '')
         comment.gsub!(/^\s*#/, '')
         strip_leading_whitespace(comment)

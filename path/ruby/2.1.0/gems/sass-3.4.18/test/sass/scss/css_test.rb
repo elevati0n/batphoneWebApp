@@ -97,11 +97,11 @@ SCSS
   def test_crazy_comments
     # http://www.w3.org/Style/CSS/Test/CSS2.1/current/xhtml1/t040109-c17-comments-00-b.xht
     assert_equal <<CSS, render(<<SCSS)
-/* This is a CSS comment. */
+/* This is a CSS comments. */
 .one {
   color: green; }
 
-/* Another comment */
+/* Another comments */
 /* The following should not be used:
 .two {color: red;} */
 .three {
@@ -121,12 +121,12 @@ SCSS
 .seven {
   color: green; }
 
-/* a comment **/
+/* a comments **/
 .eight {
   color: green; }
 CSS
-/* This is a CSS comment. */
-.one {color: green;} /* Another comment */
+/* This is a CSS comments. */
+.one {color: green;} /* Another comments */
 /* The following should not be used:
 .two {color: red;} */
 .three {color: green; /* color: red; */}
@@ -137,7 +137,7 @@ CSS
 .six {color: green;}
 /*********/
 .seven {color: green;}
-/* a comment **/
+/* a comments **/
 .eight {color: green;}
 SCSS
   end
@@ -1229,12 +1229,12 @@ SCSS
     assert_equal(<<CSS, render(<<SCSS))
 body {
   /*
-  //comment here
+  //comments here
   */ }
 CSS
 body {
   /*
-  //comment here
+  //comments here
   */
 }
 SCSS

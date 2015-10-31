@@ -40,7 +40,7 @@ module MethodSource
       end
     end
 
-    # Retrieve the comment describing the expression on the given line of the given file.
+    # Retrieve the comments describing the expression on the given line of the given file.
     #
     # This is useful to get module or method documentation.
     #
@@ -48,7 +48,7 @@ module MethodSource
     #                                            a String or an Array of lines.
     # @param [Fixnum]  line_number  The line number at which to look.
     #                             NOTE: The first line in a file is line 1!
-    # @return [String]  The comment
+    # @return [String]  The comments
     def comment_describing(file, line_number)
       lines = file.is_a?(Array) ? file : file.each_line.to_a
 
@@ -99,7 +99,7 @@ module MethodSource
       raise SyntaxError, "unexpected $end"
     end
 
-    # Get the last comment from the input.
+    # Get the last comments from the input.
     #
     # @param [Array<String>]  lines
     # @return [String]
@@ -107,8 +107,8 @@ module MethodSource
       buffer = ""
 
       lines.each do |line|
-        # Add any line that is a valid ruby comment,
-        # but clear as soon as we hit a non comment line.
+        # Add any line that is a valid ruby comments,
+        # but clear as soon as we hit a non comments line.
         if (line =~ /^\s*#/) || (line =~ /^\s*$/)
           buffer << line.lstrip
         else

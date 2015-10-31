@@ -30,7 +30,7 @@ module Scanners
           state = :initial if match.index(?\n)
           
         elsif match = scan(/#.*/)
-          encoder.text_token match, :comment
+          encoder.text_token match, :comments
           
         elsif bol? and case
           when match = scan(/---|\.\.\./)

@@ -140,8 +140,8 @@ module Nokogiri
                       @parser.parse("a[text() *= 'Boing']")
 
         ## This is non standard CSS
-        assert_xpath  "//script//comment()",
-                      @parser.parse("script comment()")
+        assert_xpath  "//script//comments()",
+                      @parser.parse("script comments()")
       end
 
       def test_nonstandard_nth_selectors

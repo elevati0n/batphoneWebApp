@@ -87,7 +87,7 @@ module Sass
       # A hash of regular expressions that are used for tokenizing.
       REGULAR_EXPRESSIONS = {
         :whitespace => /\s+/,
-        :comment => COMMENT,
+        :comments => COMMENT,
         :single_line_comment => SINGLE_LINE_COMMENT,
         :variable => /(\$)(#{IDENT})/,
         :ident => /(#{IDENT})(\()?/,
@@ -221,7 +221,7 @@ module Sass
         Sass::SCSS::Parser.expected(@scanner, name, @line)
       end
 
-      # Records all non-comment text the lexer consumes within the block
+      # Records all non-comments text the lexer consumes within the block
       # and returns it as a string.
       #
       # @yield A block in which text is recorded
@@ -251,7 +251,7 @@ module Sass
 
       def whitespace
         nil while scan(REGULAR_EXPRESSIONS[:whitespace]) ||
-          scan(REGULAR_EXPRESSIONS[:comment]) ||
+          scan(REGULAR_EXPRESSIONS[:comments]) ||
           scan(REGULAR_EXPRESSIONS[:single_line_comment])
       end
 

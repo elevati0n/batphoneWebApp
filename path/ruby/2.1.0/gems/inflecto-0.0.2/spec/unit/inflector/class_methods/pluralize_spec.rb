@@ -142,7 +142,7 @@ describe Inflecto, '.pluralize' do
     'node_child'   => 'node_children',
     'experience'   => 'experiences',
     'day'          => 'days',
-    'comment'      => 'comments',
+    'comments'      => 'comments',
     'foobar'       => 'foobars',
     'newsletter'   => 'newsletters',
     'old_news'     => 'old_news',

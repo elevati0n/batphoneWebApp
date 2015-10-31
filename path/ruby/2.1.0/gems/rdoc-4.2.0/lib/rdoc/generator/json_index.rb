@@ -45,7 +45,7 @@ require 'zlib'
 # +info+ fields.  The +searchIndex+ field contains the item's short name, the
 # +longSearchIndex+ field contains the full_name (when appropriate) and the
 # +info+ field contains the item's name, full_name, path, parameters and a
-# snippet of the item's comment.
+# snippet of the item's comments.
 #
 # == LICENSE
 #

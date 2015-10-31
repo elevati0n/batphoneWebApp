@@ -21,7 +21,7 @@ module Scanners
     )
     
     COMMANDS = %w(
-      add alter comment create delete drop grant insert into select update set
+      add alter comments create delete drop grant insert into select update set
       show prompt begin commit rollback replace truncate
     )
     
@@ -72,10 +72,10 @@ module Scanners
             encoder.text_token match, :space
           
           elsif match = scan(/(?:--\s?|#).*/)
-            encoder.text_token match, :comment
+            encoder.text_token match, :comments
             
           elsif match = scan(%r( /\* (!)? (?: .*? \*/ | .* ) )mx)
-            encoder.text_token match, self[1] ? :directive : :comment
+            encoder.text_token match, self[1] ? :directive : :comments
             
           elsif match = scan(/ [*\/=<>:;,!&^|()\[\]{}~%] | [-+\.](?!\d) /x)
             name_expected = true if match == '.' && check(/[A-Za-z_]/)

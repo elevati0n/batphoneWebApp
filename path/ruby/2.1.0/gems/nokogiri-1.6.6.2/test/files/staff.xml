@@ -11,7 +11,7 @@
    <!NOTATION notation1 PUBLIC "notation1File">
    <!NOTATION notation2 SYSTEM "notation2File">
 ]>
-<!-- This is comment number 1.-->
+<!-- This is comments number 1.-->
 <staff>
  <employee>
   <employeeId>EMP0001</employeeId>

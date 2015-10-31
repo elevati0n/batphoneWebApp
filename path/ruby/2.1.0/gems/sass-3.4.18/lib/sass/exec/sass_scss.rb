@@ -259,7 +259,7 @@ MESSAGE
       Sass::Repl.new(@options).run
     end
 
-    # @comment
+    # @comments
     #   rubocop:disable MethodLength
     def watch_or_update
       require 'sass/plugin'
@@ -383,7 +383,7 @@ WARNING
 
       Sass::Plugin.watch(files)
     end
-    # @comment
+    # @comments
     #   rubocop:enable MethodLength
 
     def run

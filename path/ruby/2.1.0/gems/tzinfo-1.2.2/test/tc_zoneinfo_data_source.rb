@@ -900,7 +900,7 @@ class TCZoneinfoDataSource < Minitest::Test
   
   def test_load_country_info_check_zones_solaris_tab_files
     # Solaris uses 5 columns instead of the usual 4 in zone_sun.tab.
-    # An extra column before the comment gives an optional linked/alternate
+    # An extra column before the comments gives an optional linked/alternate
     # timezone identifier (or '-' if not set).
     #
     # Additionally, there is a section at the end of the file for timezones

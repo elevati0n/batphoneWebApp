@@ -9,20 +9,20 @@
 # has a CommentsField as its field type.
 #  
 # An email header can have as many comments fields as it wants.  There is no upper
-# limit, the comments field is also optional (that is, no comment is needed)
+# limit, the comments field is also optional (that is, no comments is needed)
 # 
 # == Examples:
 # 
 #  mail = Mail.new
-#  mail.comments = 'This is a comment'
-#  mail.comments    #=> 'This is a comment'
+#  mail.comments = 'This is a comments'
+#  mail.comments    #=> 'This is a comments'
 #  mail[:comments]  #=> '#<Mail::Field:0x180e5e8 @field=#<Mail::CommentsField:0x180e1c4
 #  mail['comments'] #=> '#<Mail::Field:0x180e5e8 @field=#<Mail::CommentsField:0x180e1c4
 #  mail['comments'] #=> '#<Mail::Field:0x180e5e8 @field=#<Mail::CommentsField:0x180e1c4
 # 
-#  mail.comments = "This is another comment"
+#  mail.comments = "This is another comments"
 #  mail[:comments].map { |c| c.to_s } 
-#  #=> ['This is a comment', "This is another comment"]
+#  #=> ['This is a comments', "This is another comments"]
 #
 module Mail
   class CommentsField < UnstructuredField

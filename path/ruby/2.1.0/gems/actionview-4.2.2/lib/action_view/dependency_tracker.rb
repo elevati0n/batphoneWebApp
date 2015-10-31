@@ -60,8 +60,8 @@ module ActionView
       /x
 
       # Matches:
-      #   partial: "comments/comment", collection: @all_comments => "comments/comment"
-      #   (object: @single_comment, partial: "comments/comment") => "comments/comment"
+      #   partial: "comments/comments", collection: @all_comments => "comments/comments"
+      #   (object: @single_comment, partial: "comments/comments") => "comments/comments"
       #
       #   "comments/comments"
       #   'comments/comments'

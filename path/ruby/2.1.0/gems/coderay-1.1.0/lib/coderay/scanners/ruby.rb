@@ -75,7 +75,7 @@ module Scanners
             end
             
           elsif match = scan(bol? ? / \#(!)?.* | #{patterns::RUBYDOC_OR_DATA} /ox : /\#.*/)
-            encoder.text_token match, self[1] ? :doctype : :comment
+            encoder.text_token match, self[1] ? :doctype : :comments
             
           elsif match = scan(/\\\n/)
             if heredocs

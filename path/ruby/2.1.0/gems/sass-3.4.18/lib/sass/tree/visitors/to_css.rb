@@ -170,7 +170,7 @@ class Sass::Tree::Visitors::ToCss < Sass::Tree::Visitors::Base
     for_node(node) {output(content)}
   end
 
-  # @comment
+  # @comments
   #   rubocop:disable MethodLength
   def visit_directive(node)
     was_in_directive = @in_directive
@@ -243,7 +243,7 @@ class Sass::Tree::Visitors::ToCss < Sass::Tree::Visitors::Base
   ensure
     @in_directive = was_in_directive
   end
-  # @comment
+  # @comments
   #   rubocop:enable MethodLength
 
   def visit_media(node)
@@ -274,7 +274,7 @@ class Sass::Tree::Visitors::ToCss < Sass::Tree::Visitors::Base
     end
   end
 
-  # @comment
+  # @comments
   #   rubocop:disable MethodLength
   def visit_rule(node)
     with_tabs(@tabs + node.tabs) do
@@ -371,7 +371,7 @@ class Sass::Tree::Visitors::ToCss < Sass::Tree::Visitors::Base
       output("}" + trailer)
     end
   end
-  # @comment
+  # @comments
   #   rubocop:enable MethodLength
 
   def visit_keyframerule(node)

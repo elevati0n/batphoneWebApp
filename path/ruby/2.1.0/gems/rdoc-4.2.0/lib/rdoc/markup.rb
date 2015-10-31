@@ -36,8 +36,8 @@
 # per file::
 #   At the top of the file use the <tt>:markup:</tt> directive to set the
 #   default format for the rest of the file.
-# per comment::
-#   Use the <tt>:markup:</tt> directive at the top of a comment you want
+# per comments::
+#   Use the <tt>:markup:</tt> directive at the top of a comments you want
 #   to write in a different format.
 #
 # = RDoc::Markup
@@ -48,7 +48,7 @@
 # RDoc::Markup is intended to be the basis for a family of tools which share
 # the common requirement that simple, plain-text should be rendered in a
 # variety of different output formats and media.  It is envisaged that
-# RDoc::Markup could be the basis for formatting RDoc style comment blocks,
+# RDoc::Markup could be the basis for formatting RDoc style comments blocks,
 # Wiki entries, and online FAQs.
 #
 # == Synopsis
@@ -441,7 +441,7 @@
 # == Documenting Source Code
 #
 # Comment blocks can be written fairly naturally, either using <tt>#</tt> on
-# successive lines of the comment, or by including the comment in
+# successive lines of the comments, or by including the comments in
 # a <tt>=begin</tt>/<tt>=end</tt> block.  If you use the latter form,
 # the <tt>=begin</tt> line _must_ be flagged with an +rdoc+ tag:
 #
@@ -451,11 +451,11 @@
 #   ...
 #   =end
 #
-# RDoc stops processing comments if it finds a comment line starting
+# RDoc stops processing comments if it finds a comments line starting
 # with <tt>--</tt> right after the <tt>#</tt> character (otherwise,
 # it will be treated as a rule if it has three dashes or more).
 # This can be used to separate external from internal comments,
-# or to stop a comment being associated with a method, class, or module.
+# or to stop a comments being associated with a method, class, or module.
 # Commenting can be turned back on with a line that starts with <tt>++</tt>.
 #
 #   ##
@@ -470,7 +470,7 @@
 #   end
 #
 # Names of classes, files, and any method names containing an underscore or
-# preceded by a hash character are automatically linked from comment text to
+# preceded by a hash character are automatically linked from comments text to
 # their description. This linking works inside the current class or module,
 # and with ancestor methods (in included modules or in the superclass).
 #
@@ -486,7 +486,7 @@
 #
 #   fred() { |line, address| ... }
 #
-# You can override this using a comment containing ':yields: ...' immediately
+# You can override this using a comments containing ':yields: ...' immediately
 # after the method definition
 #
 #   def fred # :yields: index, position
@@ -591,7 +591,7 @@
 #
 # [+:call-seq:+]
 #   Lines up to the next blank line or lines with a common prefix in the
-#   comment are treated as the method's calling sequence, overriding the
+#   comments are treated as the method's calling sequence, overriding the
 #   default parsing of method parameters and yield arguments.
 #
 #   Multiple lines may be used.
@@ -639,16 +639,16 @@
 #     end
 #
 #   Unlike the :section: directive, :category: is not sticky.  The category
-#   only applies to the item immediately following the comment.
+#   only applies to the item immediately following the comments.
 #
 #   Use the :section: directive to provide introductory text for a section of
 #   documentation.
 #
 # [+:section:+ _title_]
 #   Provides section introductory text in RDoc output.  The title following
-#   +:section:+ is used as the section name and the remainder of the comment
-#   containing the section is used as introductory text.  A section's comment
-#   block must be separated from following comment blocks.  Use an empty title
+#   +:section:+ is used as the section name and the remainder of the comments
+#   containing the section is used as introductory text.  A section's comments
+#   block must be separated from following comments blocks.  Use an empty title
 #   to switch to the default section.
 #
 #   The :section: directive is sticky, so subsequent methods, aliases,
@@ -656,7 +656,7 @@
 #   section is changed.  The :category: directive will override the :section:
 #   directive.
 #
-#   A :section: comment block may have one or more lines before the :section:
+#   A :section: comments block may have one or more lines before the :section:
 #   directive.  These will be removed, and any identical lines at the end of
 #   the block are also removed.  This allows you to add visual cues to the
 #   section.
@@ -679,8 +679,8 @@
 # === Other directives
 #
 # [+:markup:+ _type_]
-#   Overrides the default markup type for this comment with the specified
-#   markup type.  For Ruby files, if the first comment contains this directive
+#   Overrides the default markup type for this comments with the specified
+#   markup type.  For Ruby files, if the first comments contains this directive
 #   it is applied automatically to all comments in the file.
 #
 #   Unless you are converting between markup formats you should use a
@@ -693,19 +693,19 @@
 #     # coding: UTF-8
 #     # :markup: TomDoc
 #
-#     # TomDoc comment here ...
+#     # TomDoc comments here ...
 #
 #     class MyClass
 #       # ...
 #
-#   For just one comment:
+#   For just one comments:
 #
 #       # ...
 #     end
 #
 #     # :markup: RDoc
 #     #
-#     # This is a comment in RDoc markup format ...
+#     # This is a comments in RDoc markup format ...
 #
 #     def some_method
 #       # ...

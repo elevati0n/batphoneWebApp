@@ -59,13 +59,13 @@ class SanitizersTest < Minitest::Test
 
   def test_strip_tags_multiline
     expected = %{This is a test.\n\n\n\nIt no longer contains any HTML.\n}
-    input = %{<title>This is <b>a <a href="" target="_blank">test</a></b>.</title>\n\n<!-- it has a comment -->\n\n<p>It no <b>longer <strong>contains <em>any <strike>HTML</strike></em>.</strong></b></p>\n}
+    input = %{<title>This is <b>a <a href="" target="_blank">test</a></b>.</title>\n\n<!-- it has a comments -->\n\n<p>It no <b>longer <strong>contains <em>any <strike>HTML</strike></em>.</strong></b></p>\n}
 
     assert_equal expected, full_sanitize(input)
   end
 
   def test_strip_comments
-    assert_equal "This is ", full_sanitize("This is <-- not\n a comment here.")
+    assert_equal "This is ", full_sanitize("This is <-- not\n a comments here.")
   end
 
   def test_strip_cdata
@@ -97,7 +97,7 @@ class SanitizersTest < Minitest::Test
   end
 
   def test_strip_tags_with_comment
-    assert_equal "This has a  here.", full_sanitize("This has a <!-- comment --> here.")
+    assert_equal "This has a  here.", full_sanitize("This has a <!-- comments --> here.")
   end
 
   def test_strip_tags_with_frozen_string

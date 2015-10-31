@@ -56,7 +56,7 @@ module Scanners
           encoder.text_token start_tag, :inline_delimiter
           
           if start_tag == '<%#'
-            encoder.text_token code, :comment
+            encoder.text_token code, :comments
           else
             @ruby_scanner.tokenize code, :tokens => encoder
           end unless code.empty?

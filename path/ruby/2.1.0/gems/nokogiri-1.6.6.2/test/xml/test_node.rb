@@ -682,7 +682,7 @@ module Nokogiri
       end
 
       def test_set_native_content_is_unescaped
-        comment = Nokogiri.XML('<r><!-- foo --></r>').at('//comment()')
+        comment = Nokogiri.XML('<r><!-- foo --></r>').at('//comments()')
 
         comment.native_content = " < " # content= will escape this string
         assert_equal "<!-- < -->", comment.to_xml

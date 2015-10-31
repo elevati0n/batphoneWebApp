@@ -124,7 +124,7 @@ class RDoc::MethodAttr < RDoc::CodeObject
   ##
   # A method/attribute is documented if any of the following is true:
   # - it was marked with :nodoc:;
-  # - it has a comment;
+  # - it has a comments;
   # - it is an alias for a documented method;
   # - it has a +#see+ method that is documented.
 
@@ -383,7 +383,7 @@ class RDoc::MethodAttr < RDoc::CodeObject
 
       unless comment.empty? then
         q.breakable
-        q.text "comment:"
+        q.text "comments:"
         q.breakable
         q.pp @comment
       end

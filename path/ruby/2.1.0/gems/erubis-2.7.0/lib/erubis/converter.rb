@@ -332,7 +332,7 @@ module Erubis
       when nil      ;  add_stmt(codebuf, code)
       when 'header' ;  @header = code
       when 'footer' ;  @footer = code
-      when 'comment';  add_stmt(codebuf, "\n" * code.count("\n"))
+      when 'comments';  add_stmt(codebuf, "\n" * code.count("\n"))
       when 'value'  ;  add_expr_literal(codebuf, code)
       else          ;  add_stmt(codebuf, code)
       end

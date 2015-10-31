@@ -44,7 +44,7 @@ module Fog
                 'Id' => zone[:id],
                 'Name' => zone[:name],
                 'CallerReference' => zone[:reference],
-                'Comment' => zone[:comment]
+                'Comment' => zone[:comments]
               },
               'NameServers' => Fog::AWS::Mock.nameservers
             }

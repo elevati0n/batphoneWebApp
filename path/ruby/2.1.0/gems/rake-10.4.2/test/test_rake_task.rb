@@ -308,7 +308,7 @@ class TestRakeTask < Rake::TestCase
     assert_match(/pre-requisites:\s*--t[23]/, out)
   end
 
-  # NOTE: Rail-ties uses comment=.
+  # NOTE: Rail-ties uses comments=.
   def test_comment_setting
     t = task(:t, :name, :rev)
     t.comment = "A Comment"
@@ -346,18 +346,18 @@ class TestRakeTask < Rake::TestCase
 
   def test_extended_comments
     desc %{
-      This is a comment.
+      This is a comments.
 
-      And this is the extended comment.
+      And this is the extended comments.
       name -- Name of task to execute.
       rev  -- Software revision to use.
     }
     t = task(:t, :name, :rev)
     assert_equal "[name,rev]", t.arg_description
-    assert_equal "This is a comment", t.comment
+    assert_equal "This is a comments", t.comment
     assert_match(/^\s*name -- Name/, t.full_comment)
     assert_match(/^\s*rev  -- Software/, t.full_comment)
-    assert_match(/\A\s*This is a comment\.$/, t.full_comment)
+    assert_match(/\A\s*This is a comments\.$/, t.full_comment)
   end
 
   def test_multiple_comments

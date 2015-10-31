@@ -361,12 +361,12 @@ class TestJSON < Test::Unit::TestCase
   def test_comments
     json = <<EOT
 {
-  "key1":"value1", // eol comment
+  "key1":"value1", // eol comments
   "key2":"value2"  /* multi line
-                    *  comment */,
+                    *  comments */,
   "key3":"value3"  /* multi line
-                    // nested eol comment
-                    *  comment */
+                    // nested eol comments
+                    *  comments */
 }
 EOT
     assert_equal(
@@ -375,17 +375,17 @@ EOT
     json = <<EOT
 {
   "key1":"value1"  /* multi line
-                    // nested eol comment
-                    /* illegal nested multi line comment */
-                    *  comment */
+                    // nested eol comments
+                    /* illegal nested multi line comments */
+                    *  comments */
 }
 EOT
     assert_raises(ParserError) { parse(json) }
     json = <<EOT
 {
   "key1":"value1"  /* multi line
-                   // nested eol comment
-                   closed multi comment */
+                   // nested eol comments
+                   closed multi comments */
                    and again, throw an Error */
 }
 EOT

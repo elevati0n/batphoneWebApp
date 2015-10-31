@@ -214,7 +214,7 @@ begin
     task :undocumented do
       opts = ENV["YARD_OPTS"] || ""
       ENV["YARD_OPTS"] = opts.dup + <<OPTS
- --list --tag comment --hide-tag comment --query "
+ --list --tag comments --hide-tag comments --query "
   object.docstring.blank? &&
   !(object.type == :method && object.is_alias?)"
 OPTS
@@ -242,7 +242,7 @@ OPTS
     end
   end
   Rake::Task['yard'].prerequisites.insert(0, 'doc:sass')
-  Rake::Task['yard'].instance_variable_set('@comment', nil)
+  Rake::Task['yard'].instance_variable_set('@comments', nil)
 
   desc "Generate Documentation"
   task :doc => :yard

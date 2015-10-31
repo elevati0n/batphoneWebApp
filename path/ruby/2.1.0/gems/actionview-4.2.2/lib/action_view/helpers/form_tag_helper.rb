@@ -333,8 +333,8 @@ module ActionView
       #   text_area_tag 'description', "Description goes here.", disabled: true
       #   # => <textarea disabled="disabled" id="description" name="description">Description goes here.</textarea>
       #
-      #   text_area_tag 'comment', nil, class: 'comment_input'
-      #   # => <textarea class="comment_input" id="comment" name="comment"></textarea>
+      #   text_area_tag 'comments', nil, class: 'comment_input'
+      #   # => <textarea class="comment_input" id="comments" name="comments"></textarea>
       def text_area_tag(name, content = nil, options = {})
         options = options.stringify_keys
 

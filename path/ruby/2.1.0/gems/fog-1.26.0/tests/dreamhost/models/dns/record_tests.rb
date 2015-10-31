@@ -13,7 +13,7 @@ Shindo.tests("Fog::DNS[:dreamhost] | record", ['dreamhost', 'dns']) do
         :type,
         :editable,
         :account_id,
-        :comment,
+        :comments,
       ]
       attributes.each do |attribute|
         test("#{attribute} method") { record.respond_to? attribute }

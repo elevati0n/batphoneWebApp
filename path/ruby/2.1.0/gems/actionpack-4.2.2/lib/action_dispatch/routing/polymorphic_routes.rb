@@ -11,11 +11,11 @@ module ActionDispatch
     #
     # Nested resources and/or namespaces are also supported, as illustrated in the example:
     #
-    #   polymorphic_url([:admin, @article, @comment])
+    #   polymorphic_url([:admin, @article, @comments])
     #
     # results in:
     #
-    #   admin_article_comment_url(@article, @comment)
+    #   admin_article_comment_url(@article, @comments)
     #
     # == Usage within the framework
     #

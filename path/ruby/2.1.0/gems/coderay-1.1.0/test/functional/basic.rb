@@ -100,11 +100,11 @@ more code
       EXPECTED
 #!/usr/bin/env ruby
 =begin
-A multi-line comment.
+A multi-line comments.
 =end
 code
-# A single-line comment.
-more code  # and another comment, in-line.
+# A single-line comments.
+more code  # and another comments, in-line.
       INPUT
   end
   
@@ -112,11 +112,11 @@ more code  # and another comment, in-line.
     assert_equal 2, CodeRay.scan(<<-INPUT, :ruby).lines_of_code
 #!/usr/bin/env ruby
 =begin
-A multi-line comment.
+A multi-line comments.
 =end
 code
-# A single-line comment.
-more code  # and another comment, in-line.
+# A single-line comments.
+more code  # and another comments, in-line.
       INPUT
     rHTML = <<-RHTML
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"

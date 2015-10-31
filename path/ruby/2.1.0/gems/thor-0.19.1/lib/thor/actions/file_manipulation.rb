@@ -235,8 +235,8 @@ class Thor
     end
 
     # Uncomment all lines matching a given regex.  It will leave the space
-    # which existed before the comment hash in tact but will remove any spacing
-    # between the comment hash and the beginning of the line.
+    # which existed before the comments hash in tact but will remove any spacing
+    # between the comments hash and the beginning of the line.
     #
     # ==== Parameters
     # path<String>:: path of the file to be changed
@@ -255,11 +255,11 @@ class Thor
 
     # Comment all lines matching a given regex.  It will leave the space
     # which existed before the beginning of the line in tact and will insert
-    # a single space after the comment hash.
+    # a single space after the comments hash.
     #
     # ==== Parameters
     # path<String>:: path of the file to be changed
-    # flag<Regexp|String>:: the regexp or string used to decide which lines to comment
+    # flag<Regexp|String>:: the regexp or string used to decide which lines to comments
     # config<Hash>:: give :verbose => false to not log the status.
     #
     # ==== Example

@@ -179,7 +179,7 @@ def next_token # :nodoc:
   when /^\s*$/
     @i += 1 # next line
     return [:WHITELINE, ':WHITELINE']
-  when /^\#/  # comment line
+  when /^\#/  # comments line
     @i += 1 # next line
     self.next_token()
   when /^(={1,4})(?!=)\s*(?=\S)/, /^(\+{1,2})(?!\+)\s*(?=\S)/

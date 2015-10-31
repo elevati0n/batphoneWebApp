@@ -19,7 +19,7 @@ class RDoc::Attr < RDoc::MethodAttr
 
   ##
   # Creates a new Attr with body +text+, +name+, read/write status +rw+ and
-  # +comment+.  +singleton+ marks this as a class attribute.
+  # +comments+.  +singleton+ marks this as a class attribute.
 
   def initialize(text, name, rw, comment, singleton = false)
     super text, name
@@ -151,7 +151,7 @@ class RDoc::Attr < RDoc::MethodAttr
     q.group 2, "[#{self.class.name} #{full_name} #{rw} #{visibility}", "]" do
       unless comment.empty? then
         q.breakable
-        q.text "comment:"
+        q.text "comments:"
         q.breakable
         q.pp @comment
       end

@@ -1,7 +1,7 @@
 ##
 # Base class for RDoc markup formatters
 #
-# Formatters are a visitor that converts an RDoc::Markup tree (from a comment)
+# Formatters are a visitor that converts an RDoc::Markup tree (from a comments)
 # into some kind of output.  RDoc ships with formatters for converting back to
 # rdoc, ANSI text, HTML, a Table of Contents and other formats.
 #

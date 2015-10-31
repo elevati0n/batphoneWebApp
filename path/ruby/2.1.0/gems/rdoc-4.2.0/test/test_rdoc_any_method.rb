@@ -95,7 +95,7 @@ method(a, b) { |c, d| ... }
     m = RDoc::AnyMethod.new nil, 'method'
     m.block_params = 'some_block'
     m.call_seq     = 'call_seq'
-    m.comment      = 'this is a comment'
+    m.comment      = 'this is a comments'
     m.params       = 'param'
     m.record_location top_level
 
@@ -104,14 +104,14 @@ method(a, b) { |c, d| ... }
 
     section = cm.sections.first
 
-    al = RDoc::Alias.new nil, 'method', 'aliased', 'alias comment'
+    al = RDoc::Alias.new nil, 'method', 'aliased', 'alias comments'
     al_m = m.add_alias al, cm
 
     loaded = Marshal.load Marshal.dump m
     loaded.store = @store
 
     comment = RDoc::Markup::Document.new(
-                RDoc::Markup::Paragraph.new('this is a comment'))
+                RDoc::Markup::Paragraph.new('this is a comments'))
 
     assert_equal m, loaded
 
@@ -170,23 +170,23 @@ method(a, b) { |c, d| ... }
 
     section = cm.sections.first
 
-    al = RDoc::Alias.new nil, 'method', 'aliased', 'alias comment'
+    al = RDoc::Alias.new nil, 'method', 'aliased', 'alias comments'
     al_m = m.add_alias al, cm
 
     loaded = Marshal.load "\x04\bU:\x14RDoc::AnyMethod[\x0Fi\x00I" +
                           "\"\vmethod\x06:\x06EF\"\x11Klass#method0:\vpublic" +
                           "o:\eRDoc::Markup::Document\x06:\v@parts[\x06" +
                           "o:\x1CRDoc::Markup::Paragraph\x06;\t[\x06I" +
-                          "\"\x16this is a comment\x06;\x06FI" +
+                          "\"\x16this is a comments\x06;\x06FI" +
                           "\"\rcall_seq\x06;\x06FI\"\x0Fsome_block\x06;\x06F" +
                           "[\x06[\aI\"\faliased\x06;\x06Fo;\b\x06;\t[\x06" +
-                          "o;\n\x06;\t[\x06I\"\x12alias comment\x06;\x06FI" +
+                          "o;\n\x06;\t[\x06I\"\x12alias comments\x06;\x06FI" +
                           "\"\nparam\x06;\x06F"
 
     loaded.store = @store
 
     comment = RDoc::Markup::Document.new(
-                RDoc::Markup::Paragraph.new('this is a comment'))
+                RDoc::Markup::Paragraph.new('this is a comments'))
 
     assert_equal m, loaded
 
@@ -214,7 +214,7 @@ method(a, b) { |c, d| ... }
     m = RDoc::AnyMethod.new nil, 'method'
     m.block_params = 'some_block'
     m.call_seq     = 'call_seq'
-    m.comment      = 'this is a comment'
+    m.comment      = 'this is a comments'
     m.params       = 'param'
     m.record_location top_level
 
@@ -223,7 +223,7 @@ method(a, b) { |c, d| ... }
 
     section = cm.sections.first
 
-    al = RDoc::Alias.new nil, 'method', 'aliased', 'alias comment'
+    al = RDoc::Alias.new nil, 'method', 'aliased', 'alias comments'
     al_m = m.add_alias al, cm
 
     loaded = Marshal.load "\x04\bU:\x14RDoc::AnyMethod[\x14i\bI" +
@@ -231,18 +231,18 @@ method(a, b) { |c, d| ... }
                           "\"\x11Klass#method\x06;\x06T0:\vpublic" +
                           "o:\eRDoc::Markup::Document\b:\v@parts[\x06" +
                           "o:\x1CRDoc::Markup::Paragraph\x06;\t[\x06I" +
-                          "\"\x16this is a comment\x06;\x06T:\n@file0" +
+                          "\"\x16this is a comments\x06;\x06T:\n@file0" +
                           ":0@omit_headings_from_table_of_contents_below0" +
                           "I\"\rcall_seq\x06;\x06TI\"\x0Fsome_block\x06" +
                           ";\x06T[\x06[\aI\"\faliased\x06;\x06To;\b\b;\t" +
-                          "[\x06o;\n\x06;\t[\x06I\"\x12alias comment\x06" +
+                          "[\x06o;\n\x06;\t[\x06I\"\x12alias comments\x06" +
                           ";\x06T;\v0;\f0I\"\nparam\x06;\x06TI" +
                           "\"\ffile.rb\x06;\x06TFI\"\nKlass\x06;\x06T" +
                           "c\x16RDoc::ClassModule0"
 
     loaded.store = @store
 
-    comment = doc(para('this is a comment'))
+    comment = doc(para('this is a comments'))
 
     assert_equal m, loaded
 

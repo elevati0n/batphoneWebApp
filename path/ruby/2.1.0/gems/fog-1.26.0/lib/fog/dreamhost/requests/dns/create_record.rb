@@ -17,7 +17,7 @@ module Fog
                      :type      => type,
                      :value     => value,
                      :cmd       => 'dns-add_record',
-                     :comment   => comment
+                     :comments   => comment
                    }
                  )
         end

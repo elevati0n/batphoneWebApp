@@ -74,13 +74,13 @@ CSS
 
   def test_comments_multiline
     css = <<CSS
-/* comment */
+/* comments */
 elephant.rawr {
   rampages: excessively;
 }
 
 /* actual multiline
-  comment */
+  comments */
 span.turkey {
   isdinner: true;
 }
@@ -102,13 +102,13 @@ span.turkey {
 } /* just a line here */
 CSS
     sass = <<SASS
-/* comment
+/* comments
 
 elephant.rawr
   rampages: excessively
 
 /* actual multiline
- *comment
+ *comments
 
 span.turkey
   isdinner: true

@@ -65,7 +65,7 @@ module Scanners
           elsif match = scan(%r! // [^\n\\]* (?: \\. [^\n\\]* )* | /\* (?: .*? \*/ | .* ) !mx)
             value_expected = true
             after_def = false
-            encoder.text_token match, :comment
+            encoder.text_token match, :comments
           
           elsif bol? && match = scan(/ \#!.* /x)
             encoder.text_token match, :doctype
@@ -241,7 +241,7 @@ module Scanners
           
         end
         
-        last_token = match unless [:space, :comment, :doctype].include? kind
+        last_token = match unless [:space, :comments, :doctype].include? kind
         
       end
       

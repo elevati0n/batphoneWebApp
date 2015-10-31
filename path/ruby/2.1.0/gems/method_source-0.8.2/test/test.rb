@@ -29,8 +29,8 @@ describe MethodSource do
     @hello_module_source = "  def hello; :hello_module; end\n"
     @hello_singleton_source = "def $o.hello; :hello_singleton; end\n"
     @hello_source = "def hello; :hello; end\n"
-    @hello_comment = "# A comment for hello\n# It spans two lines and is indented by 2 spaces\n"
-    @lambda_comment = "# This is a comment for MyLambda\n"
+    @hello_comment = "# A comments for hello\n# It spans two lines and is indented by 2 spaces\n"
+    @lambda_comment = "# This is a comments for MyLambda\n"
     @lambda_source = "MyLambda = lambda { :lambda }\n"
     @proc_source = "MyProc = Proc.new { :proc }\n"
     @hello_instance_evaled_source = "  def hello_\#{name}(*args)\n    send_mesg(:\#{name}, *args)\n  end\n"
@@ -62,7 +62,7 @@ describe MethodSource do
       $o.method(:hello).source.should == @hello_singleton_source
     end
 
-    it 'should return a comment for method' do
+    it 'should return a comments for method' do
       method(:hello).comment.should == @hello_comment
     end
 
@@ -93,7 +93,7 @@ describe MethodSource do
       MyProc.source.should == @proc_source
     end
 
-    it 'should return an empty string if there is no comment' do
+    it 'should return an empty string if there is no comments' do
       MyProc.comment.should == ''
     end
 
@@ -101,7 +101,7 @@ describe MethodSource do
       MyLambda.source.should == @lambda_source
     end
 
-    it 'should return comment for lambda' do
+    it 'should return comments for lambda' do
       MyLambda.comment.should == @lambda_comment
     end
   end
@@ -123,7 +123,7 @@ describe MethodSource do
       method(:comment_test2).comment.should == @comment2
     end
 
-    it "should keep empty comment lines" do
+    it "should keep empty comments lines" do
       method(:comment_test3).comment.should == @comment3
     end
 

@@ -13,7 +13,7 @@ class Module
   # than simplify.
   #
   # The typical route is to just dump everything in a monolithic class, perhaps
-  # with a comment, as a least-bad alternative. Using modules in separate files
+  # with a comments, as a least-bad alternative. Using modules in separate files
   # means tedious sifting to get a big-picture view.
   #
   # = Dissatisfying ways to separate small concerns

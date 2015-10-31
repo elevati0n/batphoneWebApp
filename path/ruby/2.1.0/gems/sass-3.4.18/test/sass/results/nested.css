@@ -3,7 +3,7 @@
   color: #0000ff; }
   #main p {
     border-style: dotted;
-    /* Nested comment
+    /* Nested comments
      * More nested stuff */
     border-width: 2px; }
   #main .cool {

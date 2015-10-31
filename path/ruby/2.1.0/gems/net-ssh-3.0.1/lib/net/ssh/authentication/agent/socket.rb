@@ -85,8 +85,8 @@ module Net; module SSH; module Authentication
     end
 
     # Return an array of all identities (public keys) known to the agent.
-    # Each key returned is augmented with a +comment+ property which is set
-    # to the comment returned by the agent for that key.
+    # Each key returned is augmented with a +comments+ property which is set
+    # to the comments returned by the agent for that key.
     def identities
       type, body = send_and_wait(SSH2_AGENT_REQUEST_IDENTITIES)
       raise AgentError, "could not get identity count" if agent_failed(type)

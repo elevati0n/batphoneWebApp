@@ -29,7 +29,7 @@ class RDoc::CodeObject
   include RDoc::Text
 
   ##
-  # Our comment
+  # Our comments
 
   attr_reader :comment
 
@@ -136,7 +136,7 @@ class RDoc::CodeObject
   end
 
   ##
-  # Replaces our comment with +comment+, unless it is empty.
+  # Replaces our comments with +comments+, unless it is empty.
 
   def comment=(comment)
     @comment = case comment
@@ -147,7 +147,7 @@ class RDoc::CodeObject
                  if comment and not comment.empty? then
                    normalize_comment comment
                  else
-                   # HACK correct fix is to have #initialize create @comment
+                   # HACK correct fix is to have #initialize create @comments
                    #      with the correct encoding
                    if String === @comment and
                       Object.const_defined? :Encoding and @comment.empty? then
@@ -196,7 +196,7 @@ class RDoc::CodeObject
   end
 
   ##
-  # Does this object have a comment with content or is #received_nodoc true?
+  # Does this object have a comments with content or is #received_nodoc true?
 
   def documented?
     @received_nodoc or !@comment.empty?

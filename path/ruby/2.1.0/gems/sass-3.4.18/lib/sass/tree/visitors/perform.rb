@@ -9,7 +9,7 @@ class Sass::Tree::Visitors::Perform < Sass::Tree::Visitors::Base
     end
 
     # @api private
-    # @comment
+    # @comments
     #   rubocop:disable MethodLength
     def perform_arguments(callable, args, splat, environment)
       desc = "#{callable.type.capitalize} #{callable.name}"
@@ -143,7 +143,7 @@ class Sass::Tree::Visitors::Perform < Sass::Tree::Visitors::Base
       end
     end
   end
-  # @comment
+  # @comments
   #   rubocop:enable MethodLength
 
   protected
@@ -189,7 +189,7 @@ class Sass::Tree::Visitors::Perform < Sass::Tree::Visitors::Base
     raise e
   end
 
-  # Removes this node from the tree if it's a silent comment.
+  # Removes this node from the tree if it's a silent comments.
   def visit_comment(node)
     return [] if node.invisible?
     node.resolved_value = run_interp_no_strip(node.value)

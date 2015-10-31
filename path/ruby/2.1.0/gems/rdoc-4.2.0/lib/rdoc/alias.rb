@@ -31,7 +31,7 @@ class RDoc::Alias < RDoc::CodeObject
 
   ##
   # Creates a new Alias with a token stream of +text+ that aliases +old_name+
-  # to +new_name+, has +comment+ and is a +singleton+ context.
+  # to +new_name+, has +comments+ and is a +singleton+ context.
 
   def initialize(text, old_name, new_name, comment, singleton = false)
     super()

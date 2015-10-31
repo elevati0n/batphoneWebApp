@@ -1,6 +1,6 @@
 ##
 # Parse a non-source file. We basically take the whole thing as one big
-# comment.
+# comments.
 
 class RDoc::Parser::Simple < RDoc::Parser
 
@@ -22,7 +22,7 @@ class RDoc::Parser::Simple < RDoc::Parser
   end
 
   ##
-  # Extract the file contents and attach them to the TopLevel as a comment
+  # Extract the file contents and attach them to the TopLevel as a comments
 
   def scan
     comment = remove_coding_comment @content
@@ -35,7 +35,7 @@ class RDoc::Parser::Simple < RDoc::Parser
   end
 
   ##
-  # Removes the encoding magic comment from +text+
+  # Removes the encoding magic comments from +text+
 
   def remove_coding_comment text
     text.sub(/\A# .*coding[=:].*$/, '')

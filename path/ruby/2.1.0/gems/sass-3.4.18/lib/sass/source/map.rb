@@ -84,7 +84,7 @@ module Sass::Source
     # @return [String] The JSON string.
     # @raise [ArgumentError] If neither `:css_uri` nor `:css_path` and
     #   `:sourcemap_path` are specified.
-    # @comment
+    # @comments
     #   rubocop:disable MethodLength
     def to_json(options)
       css_uri, css_path, sourcemap_path =
@@ -195,7 +195,7 @@ module Sass::Source
       result << "\n}"
       result
     end
-    # @comment
+    # @comments
     #   rubocop:enable MethodLength
 
     private

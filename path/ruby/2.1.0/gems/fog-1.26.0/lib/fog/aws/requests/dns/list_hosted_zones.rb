@@ -68,7 +68,7 @@ module Fog
                 'Id' => z[:id],
                 'Name' => z[:name],
                 'CallerReference' => z[:reference],
-                'Comment' => z[:comment],
+                'Comment' => z[:comments],
               }
             end,
             'Marker' => options[:marker].to_s,

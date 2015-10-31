@@ -5,14 +5,14 @@ class TestRDocExtend < XrefTestCase
   def setup
     super
 
-    @ext = RDoc::Extend.new 'M1', 'comment'
+    @ext = RDoc::Extend.new 'M1', 'comments'
     @ext.parent = @m1
     @ext.store = @store
   end
 
   def test_module
     assert_equal @m1, @ext.module
-    assert_equal 'Unknown', RDoc::Extend.new('Unknown', 'comment').module
+    assert_equal 'Unknown', RDoc::Extend.new('Unknown', 'comments').module
   end
 
   def test_module_extended

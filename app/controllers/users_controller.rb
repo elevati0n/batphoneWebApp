@@ -5,6 +5,17 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
+
+    #@comments = @microposts.each { |micropost| micropost.comments }
+
+    #@comments = @microposts.each { |micropost| micropost.comments.build }
+
+
+    #for_each @microposts |m|
+    #
+    #  @comments = @m.paginate(page: params[:page])
+
+
   end
 
   def new

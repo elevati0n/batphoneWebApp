@@ -24,7 +24,7 @@ module Nokogiri
         def test_end_document_called
           @parser.<<(<<-eoxml)
             <p id="asdfasdf">
-              <!-- This is a comment -->
+              <!-- This is a comments -->
               Paragraph 1
             </p>
           eoxml
@@ -42,11 +42,11 @@ module Nokogiri
             @parser.document.start_elements
 
           @parser.<<(<<-eoxml)
-              <!-- This is a comment -->
+              <!-- This is a comments -->
               Paragraph 1
             </p>
           eoxml
-          assert_equal [' This is a comment '], @parser.document.comments
+          assert_equal [' This is a comments '], @parser.document.comments
           @parser.finish
         end
 
@@ -59,11 +59,11 @@ module Nokogiri
             @parser.document.start_elements
 
           @parser.<<(<<-eoxml)
-              <!-- This is a comment -->
+              <!-- This is a comments -->
               Paragraph 1
             </p>
           eoxml
-          assert_equal [' This is a comment '], @parser.document.comments
+          assert_equal [' This is a comments '], @parser.document.comments
           @parser.finish
         end
 
@@ -101,23 +101,23 @@ module Nokogiri
           eoxml
 
           @parser.<<(<<-eoxml)
-              <!-- This is a comment -->
+              <!-- This is a comments -->
               Paragraph 1
             </p>
           eoxml
-          assert_equal [' This is a comment '], @parser.document.comments
+          assert_equal [' This is a comments '], @parser.document.comments
           @parser.finish
         end
 
         def test_chevron
           @parser.<<(<<-eoxml)
             <p id="asdfasdf">
-              <!-- This is a comment -->
+              <!-- This is a comments -->
               Paragraph 1
             </p>
           eoxml
           @parser.finish
-          assert_equal [' This is a comment '], @parser.document.comments
+          assert_equal [' This is a comments '], @parser.document.comments
         end
 
         def test_default_options

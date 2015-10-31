@@ -625,7 +625,7 @@ The ri pager can be set with the 'RI_PAGER' environment variable or the
   end
 
   ##
-  # Adds the class +comment+ to +out+.
+  # Adds the class +comments+ to +out+.
 
   def class_document_comment out, comment # :nodoc:
     unless comment.empty? then

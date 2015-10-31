@@ -13,7 +13,7 @@ module Byebug
     def setup
       @example = -> do
         y = 3
-        # A comment
+        # A comments
         byebug
         z = 5
         BreakExample.new.b

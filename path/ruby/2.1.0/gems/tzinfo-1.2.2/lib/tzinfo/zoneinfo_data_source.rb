@@ -383,7 +383,7 @@ module TZInfo
       # Handle standard 3 to 4 column zone.tab files as well as the 4 to 5 
       # column format used by Solaris.
       #
-      # On Solaris, an extra column before the comment gives an optional 
+      # On Solaris, an extra column before the comments gives an optional
       # linked/alternate timezone identifier (or '-' if not set).
       #
       # Additionally, there is a section at the end of the file for timezones

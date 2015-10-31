@@ -6,7 +6,7 @@ $DEBUG_RDOC = nil
 # RDoc produces documentation for Ruby source files by parsing the source and
 # extracting the definition for classes, modules, methods, includes and
 # requires.  It associates these with optional documentation contained in an
-# immediately preceding comment block then renders the result using an output
+# immediately preceding comments block then renders the result using an output
 # formatter.
 #
 # For a simple introduction to writing or generating documentation using RDoc

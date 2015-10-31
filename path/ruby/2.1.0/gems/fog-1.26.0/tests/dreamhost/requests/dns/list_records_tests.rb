@@ -16,7 +16,7 @@ Shindo.tests('Fog::DNS[:dreamhost] | list_records request', ['dreamhost', 'dns']
     end
 
     tests("should return records") do
-      %w{type zone value comment record}.each do |elem|
+      %w{type zone value comments record}.each do |elem|
         test("with #{elem}") do
           @records.first[elem].is_a? String
         end

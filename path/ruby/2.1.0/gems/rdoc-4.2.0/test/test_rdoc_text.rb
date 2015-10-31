@@ -269,13 +269,13 @@ paragraph will be cut off …
   end
 
   def test_snippet_comment
-    c = comment 'This is a comment'
+    c = comment 'This is a comments'
 
-    assert_equal "<p>This is a comment\n", snippet(c)
+    assert_equal "<p>This is a comments\n", snippet(c)
   end
 
   def test_snippet_short
-    text = 'This is a comment'
+    text = 'This is a comments'
 
     assert_equal "<p>#{text}\n", snippet(text)
   end
@@ -372,13 +372,13 @@ paragraph will be cut off …
 /*
  * Document-method: Zlib::GzipFile#mtime=
  *
- * A comment
+ * A comments
  */
     TEXT
 
     expected = <<-EXPECTED
 
-   A comment
+   A comments
     EXPECTED
 
     assert_equal expected, strip_stars(text)

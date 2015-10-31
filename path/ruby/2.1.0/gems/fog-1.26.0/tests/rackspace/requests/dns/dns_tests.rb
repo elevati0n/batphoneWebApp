@@ -18,8 +18,8 @@ Shindo.tests('Fog::DNS[:rackspace] | DNS requests', ['rackspace', 'dns']) do
         Fog::DNS[:rackspace].list_domain_details(@domain_id).body
       end
 
-      tests("modify_domain('#{@domain_id}', :ttl => 500, :comment => 'woot', :email => 'randomemail@randomhost.com')").succeeds do
-        response = Fog::DNS[:rackspace].modify_domain @domain_id, :ttl => 500, :comment => 'woot', :email => 'randomemail@randomhost.com'
+      tests("modify_domain('#{@domain_id}', :ttl => 500, :comments => 'woot', :email => 'randomemail@randomhost.com')").succeeds do
+        response = Fog::DNS[:rackspace].modify_domain @domain_id, :ttl => 500, :comments => 'woot', :email => 'randomemail@randomhost.com'
         wait_for Fog::DNS[:rackspace], response
       end
     end

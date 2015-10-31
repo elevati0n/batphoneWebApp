@@ -254,7 +254,7 @@ module Rake
     end
 
     # Add a description to the task.  The description can consist of an option
-    # argument list (enclosed brackets) and an optional comment.
+    # argument list (enclosed brackets) and an optional comments.
     def add_description(description)
       return unless description
       comment = description.strip

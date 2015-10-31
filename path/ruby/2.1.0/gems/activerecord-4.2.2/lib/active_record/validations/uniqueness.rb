@@ -169,7 +169,7 @@ module ActiveRecord
       #               User 1                 |               User 2
       #  ------------------------------------+--------------------------------------
       #  # User 1 checks whether there's     |
-      #  # already a comment with the title  |
+      #  # already a comments with the title  |
       #  # 'My Post'. This is not the case.  |
       #  SELECT * FROM comments              |
       #  WHERE title = 'My Post'             |
@@ -179,7 +179,7 @@ module ActiveRecord
       #                                      | SELECT * FROM comments
       #                                      | WHERE title = 'My Post'
       #                                      |
-      #  # User 1 inserts their comment.     |
+      #  # User 1 inserts their comments.     |
       #  INSERT INTO comments                |
       #  (title, content) VALUES             |
       #  ('My Post', 'hi!')                  |

@@ -66,7 +66,7 @@ class Pry
     end
 
     # figure out start line of docs by back-calculating based on
-    # number of lines in the comment and the start line of the code_object
+    # number of lines in the comments and the start line of the code_object
     # @return [Fixnum] start line of docs
     def start_line_for(code_object)
       if code_object.command? || opts.present?(:'base-one')

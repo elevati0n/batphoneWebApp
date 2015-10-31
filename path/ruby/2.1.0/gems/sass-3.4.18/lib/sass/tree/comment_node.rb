@@ -1,25 +1,25 @@
 require 'sass/tree/node'
 
 module Sass::Tree
-  # A static node representing a Sass comment (silent or loud).
+  # A static node representing a Sass comments (silent or loud).
   #
   # @see Sass::Tree
   class CommentNode < Node
-    # The text of the comment, not including `/*` and `*/`.
+    # The text of the comments, not including `/*` and `*/`.
     # Interspersed with {Sass::Script::Tree::Node}s representing `#{}`-interpolation
-    # if this is a loud comment.
+    # if this is a loud comments.
     #
     # @return [Array<String, Sass::Script::Tree::Node>]
     attr_accessor :value
 
-    # The text of the comment
+    # The text of the comments
     # after any interpolated SassScript has been resolved.
     # Only set once \{Tree::Visitors::Perform} has been run.
     #
     # @return [String]
     attr_accessor :resolved_value
 
-    # The type of the comment. `:silent` means it's never output to CSS,
+    # The type of the comments. `:silent` means it's never output to CSS,
     # `:normal` means it's output in every compile mode except `:compressed`,
     # and `:loud` means it's output even in `:compressed`.
     #
@@ -43,7 +43,7 @@ module Sass::Tree
       self.class == other.class && value == other.value && type == other.type
     end
 
-    # Returns `true` if this is a silent comment
+    # Returns `true` if this is a silent comments
     # or the current style doesn't render comments.
     #
     # Comments starting with ! are never invisible (and the ! is removed from the output.)
@@ -57,7 +57,7 @@ module Sass::Tree
       end
     end
 
-    # Returns the number of lines in the comment.
+    # Returns the number of lines in the comments.
     #
     # @return [Fixnum]
     def lines

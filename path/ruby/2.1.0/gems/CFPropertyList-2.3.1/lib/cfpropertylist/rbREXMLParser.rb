@@ -91,7 +91,7 @@ module CFPropertyList
         if node.has_elements? then
           node.elements.each do |n|
             next if n.name == '#text' # avoid a bug of libxml
-            next if n.name == '#comment'
+            next if n.name == '#comments'
 
             if n.name == "key" then
               key = get_value(n)

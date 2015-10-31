@@ -71,22 +71,22 @@ end
 
   def rakefile_comments
     rakefile <<-COMMENTS
-# comment for t1
+# comments for t1
 task :t1 do
 end
 
-# no comment or task because there's a blank line
+# no comments or task because there's a blank line
 
 task :t2 do
 end
 
-desc "override comment for t3"
+desc "override comments for t3"
 # this is not the description
 multitask :t3 do
 end
 
 # this is not the description
-desc "override comment for t4"
+desc "override comments for t4"
 file :t4 do
 end
     COMMENTS

@@ -65,9 +65,9 @@ table.CodeRay td { padding: 2px 4px; vertical-align: top; }
 .class { color:#B06; font-weight:bold }
 .class-variable { color:#369 }
 .color { color:#0A0 }
-.comment { color:#777 }
-.comment .char { color:#444 }
-.comment .delimiter { color:#444 }
+.comments { color:#777 }
+.comments .char { color:#444 }
+.comments .delimiter { color:#444 }
 .constant { color:#036; font-weight:bold }
 .decorator { color:#B0B }
 .definition { color:#099; font-weight:bold }

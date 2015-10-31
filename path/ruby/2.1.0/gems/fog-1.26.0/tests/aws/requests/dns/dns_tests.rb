@@ -117,7 +117,7 @@ Shindo.tests('Fog::DNS[:aws] | DNS requests', ['aws', 'dns']) do
 
       change_batch = []
       change_batch << resource_record_set
-      options = { :comment => 'add A record to domain'}
+      options = { :comments => 'add A record to domain'}
       response = @r53_connection.change_resource_record_sets(@zone_id, change_batch, options)
       if response.status == 200
         change_id = response.body['Id']
@@ -137,7 +137,7 @@ Shindo.tests('Fog::DNS[:aws] | DNS requests', ['aws', 'dns']) do
 
       change_batch = []
       change_batch << resource_record_set
-      options = { :comment => 'add CNAME record to domain'}
+      options = { :comments => 'add CNAME record to domain'}
       response = @r53_connection.change_resource_record_sets( @zone_id, change_batch, options)
       if response.status == 200
         change_id = response.body['Id']
@@ -157,7 +157,7 @@ Shindo.tests('Fog::DNS[:aws] | DNS requests', ['aws', 'dns']) do
 
       change_batch = []
       change_batch << resource_record_set
-      options = { :comment => 'add MX record to domain'}
+      options = { :comments => 'add MX record to domain'}
       response = @r53_connection.change_resource_record_sets( @zone_id, change_batch, options)
       if response.status == 200
         change_id = response.body['Id']
@@ -189,7 +189,7 @@ Shindo.tests('Fog::DNS[:aws] | DNS requests', ['aws', 'dns']) do
 
       change_batch = []
       change_batch << resource_record_set
-      options = { :comment => 'add ALIAS record to domain'}
+      options = { :comments => 'add ALIAS record to domain'}
 
       puts "Hosted Zone ID (ELB): #{hosted_zone_id}"
       puts "DNS Name (ELB): #{dns_name}"
@@ -219,7 +219,7 @@ Shindo.tests('Fog::DNS[:aws] | DNS requests', ['aws', 'dns']) do
         resource_record_set = record.merge( :action => 'DELETE')
         change_batch << resource_record_set
       }
-      options = { :comment => 'remove records from domain'}
+      options = { :comments => 'remove records from domain'}
       response = @r53_connection.change_resource_record_sets(@zone_id, change_batch, options)
       if response.status != 200
         result = false

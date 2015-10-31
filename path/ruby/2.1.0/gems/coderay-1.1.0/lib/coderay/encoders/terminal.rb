@@ -36,7 +36,7 @@ module CodeRay
         :class => "\e[1;35;4m",
         :class_variable => "\e[36m",
         :color => "\e[32m",
-        :comment => {
+        :comments => {
           :self => "\e[1;30m",
           :char => "\e[37m",
           :delimiter => "\e[37m",

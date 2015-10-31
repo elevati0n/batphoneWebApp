@@ -132,7 +132,7 @@ class Pry
     # We need to consider this case because method lookups should fall
     # through to the `method_or_class_lookup()` method but a
     # defined?() on a "Klass#method` string will see the `#` as a
-    # comment and only evaluate the `Klass` part.
+    # comments and only evaluate the `Klass` part.
     # @param [String] str
     # @return [Boolean] Whether the string looks like an instance method.
     def looks_like_an_instance_method?(str)

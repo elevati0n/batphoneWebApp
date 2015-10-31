@@ -27,7 +27,7 @@
 # This parser allows rdoc-style inline markup but you should not depended on
 # it.
 #
-# This parser allows a space between the comment and the method body.
+# This parser allows a space between the comments and the method body.
 #
 # This parser does not require the default value to be described for an
 # optional argument.
@@ -45,7 +45,7 @@ class RDoc::TomDoc < RDoc::Markup::Parser
   attr_reader :tokens
 
   # Internal: Adds a post-processor which sets the RDoc section based on the
-  # comment's status.
+  # comments's status.
   #
   # Returns nothing.
 
@@ -91,7 +91,7 @@ class RDoc::TomDoc < RDoc::Markup::Parser
 
   # Internal: Extracts the Signature section's method signature
   #
-  # comment - An RDoc::Comment that will be parsed and have the signature
+  # comments - An RDoc::Comment that will be parsed and have the signature
   #           extracted
   #
   # Returns a String containing the signature and nil if not

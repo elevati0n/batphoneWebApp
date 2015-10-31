@@ -126,10 +126,10 @@ module ActionView
       private
 
         def valid_encoding(string, encoding)
-          # If a magic encoding comment was found, tag the
+          # If a magic encoding comments was found, tag the
           # String with this encoding. This is for a case
           # where the original String was assumed to be,
-          # for instance, UTF-8, but a magic comment
+          # for instance, UTF-8, but a magic comments
           # proved otherwise
           string.force_encoding(encoding) if encoding
 

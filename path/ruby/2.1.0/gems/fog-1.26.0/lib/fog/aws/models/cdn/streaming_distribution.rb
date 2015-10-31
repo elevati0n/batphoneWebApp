@@ -22,7 +22,7 @@ module Fog
         attribute :etag,               :aliases => ['Etag', 'ETag']
 
         # items part of DistributionConfig
-        CONFIG = [ :caller_reference, :cname, :comment, :enabled, :logging ]
+        CONFIG = [ :caller_reference, :cname, :comments, :enabled, :logging ]
 
         def initialize(new_attributes = {})
           super(distribution_config_to_attributes(new_attributes))

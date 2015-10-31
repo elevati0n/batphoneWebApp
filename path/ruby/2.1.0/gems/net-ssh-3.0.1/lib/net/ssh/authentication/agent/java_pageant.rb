@@ -48,8 +48,8 @@ module Net; module SSH; module Authentication
     end
 
     # Return an array of all identities (public keys) known to the agent.
-    # Each key returned is augmented with a +comment+ property which is set
-    # to the comment returned by the agent for that key.
+    # Each key returned is augmented with a +comments+ property which is set
+    # to the comments returned by the agent for that key.
     def identities
       debug { "getting identities from Pageant" }
       @agent_proxy.get_identities.map do |identity|

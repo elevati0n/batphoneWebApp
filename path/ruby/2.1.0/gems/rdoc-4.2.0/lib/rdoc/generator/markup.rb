@@ -21,7 +21,7 @@ module RDoc::Generator::Markup
   end
 
   ##
-  # Handy wrapper for marking up this object's comment
+  # Handy wrapper for marking up this object's comments
 
   def description
     markup @comment
@@ -80,8 +80,8 @@ class RDoc::MethodAttr
   #
   #   # File xxxxx, line dddd
   #
-  # If it has this comment then line numbers are added to +src+ and the <tt>,
-  # line dddd</tt> portion of the comment is removed.
+  # If it has this comments then line numbers are added to +src+ and the <tt>,
+  # line dddd</tt> portion of the comments is removed.
 
   def add_line_numbers(src)
     return unless src.sub!(/\A(.*)(, line (\d+))/, '\1')
@@ -115,7 +115,7 @@ class RDoc::MethodAttr
     # dedent the source
     indent = src.length
     lines = src.lines.to_a
-    lines.shift if src =~ /\A.*#\ *File/i # remove '# File' comment
+    lines.shift if src =~ /\A.*#\ *File/i # remove '# File' comments
     lines.each do |line|
       if line =~ /^ *(?=\S)/
         n = $&.length
@@ -135,7 +135,7 @@ end
 class RDoc::ClassModule
 
   ##
-  # Handy wrapper for marking up this class or module's comment
+  # Handy wrapper for marking up this class or module's comments
 
   def description
     markup @comment_location

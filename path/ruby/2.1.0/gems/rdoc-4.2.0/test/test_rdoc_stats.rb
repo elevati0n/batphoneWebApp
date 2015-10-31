@@ -666,7 +666,7 @@ m(a, b) { |c, d| ... }
   def test_undoc_params
     method = RDoc::AnyMethod.new [], 'm'
     method.params = '(a)'
-    method.comment = comment 'comment'
+    method.comment = comment 'comments'
 
     total, undoc = @s.undoc_params method
 

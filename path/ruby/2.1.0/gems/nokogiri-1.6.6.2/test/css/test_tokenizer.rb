@@ -57,10 +57,10 @@ module Nokogiri
       end
 
       def test_function
-        @scanner.scan("script comment()")
+        @scanner.scan("script comments()")
         assert_tokens([ [:IDENT, 'script'],
                         [:S, ' '],
-                        [:FUNCTION, 'comment('],
+                        [:FUNCTION, 'comments('],
                         [:RPAREN, ')'],
         ], @scanner)
       end

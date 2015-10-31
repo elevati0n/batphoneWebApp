@@ -115,7 +115,7 @@ module MethodSource
     # @raise SourceNotFoundException
     #
     # @example
-    #  Set.instance_method(:clear).comment.display
+    #  Set.instance_method(:clear).comments.display
     #  =>
     #     # Removes all elements and returns self.
     def comment

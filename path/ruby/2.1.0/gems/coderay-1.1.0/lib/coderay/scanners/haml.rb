@@ -35,13 +35,13 @@ module Scanners
           end
           
           if match = scan(/(?>( *)(\/(?!\[if)|-\#|:javascript|:ruby|:\w+) *)(?=\n)/)
-            encoder.text_token match, :comment
+            encoder.text_token match, :comments
             
             code = self[2]
             if match = scan(/(?:\n+#{self[1]} .*)+/)
               case code
               when '/', '-#'
-                encoder.text_token match, :comment
+                encoder.text_token match, :comments
               when ':javascript'
                 # TODO: recognize #{...} snippets inside JavaScript
                 @java_script_scanner ||= CodeRay.scanner :java_script, :tokens => @tokens, :keep_tokens => true
@@ -49,7 +49,7 @@ module Scanners
               when ':ruby'
                 @ruby_scanner.tokenize match, :tokens => encoder
               when /:\w+/
-                encoder.text_token match, :comment
+                encoder.text_token match, :comments
               else
                 raise 'else-case reached: %p' % [code]
               end
@@ -61,7 +61,7 @@ module Scanners
           end
           
           if match = scan(/\/.*/)
-            encoder.text_token match, :comment
+            encoder.text_token match, :comments
             next
           end
           

@@ -16,10 +16,10 @@ module Scanners
           encoder.text_token(match, :done)
         elsif match = scan(/-(?:[^@\n]+|@(?!due))*/) # task
           encoder.text_token(match, :plain)
-        elsif match = scan(/@due.*/)                 # comment
+        elsif match = scan(/@due.*/)                 # comments
           encoder.text_token(match, :important)
-        elsif match = scan(/.+/)                     # comment
-          encoder.text_token(match, :comment)
+        elsif match = scan(/.+/)                     # comments
+          encoder.text_token(match, :comments)
         elsif match = scan(/\s+/)                    # space
           encoder.text_token(match, :space)
         else                                         # other

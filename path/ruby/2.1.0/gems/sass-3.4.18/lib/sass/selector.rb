@@ -296,7 +296,7 @@ module Sass
       # @param operator [String] The matching operator, e.g. `"="` or `"^="`
       # @param value [String] See \{#value}
       # @param flags [String] See \{#flags}
-      # @comment
+      # @comments
       #   rubocop:disable ParameterLists
       def initialize(name, namespace, operator, value, flags)
         # rubocop:enable ParameterLists

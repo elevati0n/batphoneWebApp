@@ -335,7 +335,7 @@ foo
        raw("<div>\n\t<div>\n\t\t<div>\n\t\t\tfoo\n" +
            "\t\t</div>\n\t</div>\n</div>"),
 
-       para("This should just be an HTML comment:"),
+       para("This should just be an HTML comments:"),
        raw("<!-- Comment -->"),
 
        para("Multiline:"),
@@ -344,7 +344,7 @@ foo
        para("Code block:"),
        verb("<!-- Comment -->\n"),
 
-       para("Just plain comment, with trailing spaces on the line:"),
+       para("Just plain comments, with trailing spaces on the line:"),
        raw("<!-- foo -->"),
 
        para("Code:"),
@@ -375,13 +375,13 @@ foo
       doc(
         para("Paragraph one."),
 
-        raw("<!-- This is a simple comment -->"),
+        raw("<!-- This is a simple comments -->"),
 
-        raw("<!--\n\tThis is another comment.\n-->"),
+        raw("<!--\n\tThis is another comments.\n-->"),
 
         para("Paragraph two."),
 
-        raw("<!-- one comment block -- -- with two comments -->"),
+        raw("<!-- one comments block -- -- with two comments -->"),
 
         para("The end."))
 

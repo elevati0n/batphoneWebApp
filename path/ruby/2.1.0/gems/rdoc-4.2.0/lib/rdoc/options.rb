@@ -903,14 +903,14 @@ Usage: #{opt.program_name} [options] [names...]
       opt.on("--[no-]line-numbers", "-N",
              "Include line numbers in the source code.",
              "By default, only the number of the first",
-             "line is displayed, in a leading comment.") do |value|
+             "line is displayed, in a leading comments.") do |value|
         @line_numbers = value
       end
 
       opt.separator nil
 
       opt.on("--show-hash", "-H",
-             "A name of the form #name in a comment is a",
+             "A name of the form #name in a comments is a",
              "possible hyperlink to an instance method",
              "name. When displayed, the '#' is removed",
              "unless this option is specified.") do |value|

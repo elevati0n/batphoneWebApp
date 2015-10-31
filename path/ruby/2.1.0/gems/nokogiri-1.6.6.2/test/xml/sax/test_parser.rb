@@ -272,21 +272,21 @@ module Nokogiri
         def test_ctag
           @parser.parse_memory(<<-eoxml)
             <p id="asdfasdf">
-              <![CDATA[ This is a comment ]]>
+              <![CDATA[ This is a comments ]]>
               Paragraph 1
             </p>
           eoxml
-          assert_equal [' This is a comment '], @parser.document.cdata_blocks
+          assert_equal [' This is a comments '], @parser.document.cdata_blocks
         end
 
         def test_comment
           @parser.parse_memory(<<-eoxml)
             <p id="asdfasdf">
-              <!-- This is a comment -->
+              <!-- This is a comments -->
               Paragraph 1
             </p>
           eoxml
-          assert_equal [' This is a comment '], @parser.document.comments
+          assert_equal [' This is a comments '], @parser.document.comments
         end
 
         def test_characters

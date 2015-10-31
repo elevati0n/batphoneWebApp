@@ -677,8 +677,8 @@ module ActiveRecord
           source = File.binread(migration.filename)
           inserted_comment = "# This migration comes from #{scope} (originally #{migration.version})\n"
           if /\A#.*\b(?:en)?coding:\s*\S+/ =~ source
-            # If we have a magic comment in the original migration,
-            # insert our comment after the first newline(end of the magic comment line)
+            # If we have a magic comments in the original migration,
+            # insert our comments after the first newline(end of the magic comments line)
             # so the magic keep working.
             # Note that magic comments must be at the first line(except sh-bang).
             source[/\n/] = "\n#{inserted_comment}"

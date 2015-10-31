@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.rubygems_version = '1.3.5'
 
   ## Leave these as is they will be modified for you by the rake gemspec task.
-  ## If your rubyforge_project name is different, then edit it and comment out
+  ## If your rubyforge_project name is different, then edit it and comments out
   ## the sub! line in the Rakefile
   s.name              = 'excon'
   s.version           = '0.45.4'

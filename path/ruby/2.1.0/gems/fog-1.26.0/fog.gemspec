@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
 
   ## Leave these as is they will be modified for you by the rake gemspec task.
-  ## If your rubyforge_project name is different, then edit it and comment out
+  ## If your rubyforge_project name is different, then edit it and comments out
   ## the sub! line in the Rakefile
   s.name              = 'fog'
   s.version           = '1.26.0'

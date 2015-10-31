@@ -3,7 +3,7 @@ module Encoders
   
   load :token_kind_filter
   
-  # A simple Filter that removes all tokens of the :comment kind.
+  # A simple Filter that removes all tokens of the :comments kind.
   # 
   # Alias: +remove_comments+
   # 
@@ -17,7 +17,7 @@ module Encoders
     register_for :comment_filter
     
     DEFAULT_OPTIONS = superclass::DEFAULT_OPTIONS.merge \
-      :exclude => [:comment, :docstring]
+      :exclude => [:comments, :docstring]
     
   end
   

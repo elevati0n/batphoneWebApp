@@ -11,7 +11,7 @@ module Scanners
     register_for :html
     
     KINDS_NOT_LOC = [
-      :comment, :doctype, :preprocessor,
+      :comments, :doctype, :preprocessor,
       :tag, :attribute_name, :operator,
       :attribute_value, :string,
       :plain, :entity, :error,
@@ -114,13 +114,13 @@ module Scanners
                 encoder.text_token match, :error
               end
             elsif match = scan(/<!--(?:.*?-->|.*)/m)
-              encoder.text_token match, :comment
+              encoder.text_token match, :comments
             elsif match = scan(/<!(\w+)(?:.*?>|.*)|\]>/m)
               encoder.text_token match, :doctype
             elsif match = scan(/<\?xml(?:.*?\?>|.*)/m)
               encoder.text_token match, :preprocessor
             elsif match = scan(/<\?(?:.*?\?>|.*)/m)
-              encoder.text_token match, :comment
+              encoder.text_token match, :comments
             elsif match = scan(/<\/[-\w.:]*>?/m)
               in_tag = nil
               encoder.text_token match, :tag
@@ -179,7 +179,7 @@ module Scanners
                 encoder.begin_group :string
                 encoder.text_token match, :delimiter
                 if scan(/javascript:[ \t]*/)
-                  encoder.text_token matched, :comment
+                  encoder.text_token matched, :comments
                 end
                 code = scan_until(match == '"' ? /(?="|\z)/ : /(?='|\z)/)
                 if in_attribute == :script
@@ -229,7 +229,7 @@ module Scanners
               if scan(/(\s*<!--)(?:(.*?)(-->)|(.*))/m)
                 code = self[2] || self[4]
                 closing = self[3]
-                encoder.text_token self[1], :comment
+                encoder.text_token self[1], :comments
               else
                 code = scan_until(/(?=(?:\n\s*)?<\/#{in_tag}>)|\z/)
                 closing = false
@@ -243,7 +243,7 @@ module Scanners
                 end
                 encoder.end_group :inline
               end
-              encoder.text_token closing, :comment if closing
+              encoder.text_token closing, :comments if closing
               state = :initial
             else
               raise 'unknown special tag: %p' % [in_tag]

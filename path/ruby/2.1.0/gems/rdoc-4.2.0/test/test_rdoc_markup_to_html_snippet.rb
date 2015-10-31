@@ -575,20 +575,20 @@ like Foo::Bar#baz.
 
   def test_convert_limit_verbatim_multiline
     rdoc = <<-RDOC
-Look for directives in a normal comment block:
+Look for directives in a normal comments block:
 
   # :stopdoc:
-  # Don't display comment from this point forward
+  # Don't display comments from this point forward
 
-This routine modifies its +comment+ parameter.
+This routine modifies its +comments+ parameter.
     RDOC
 
-    inner = CGI.escapeHTML "# Don't display comment from this point forward"
+    inner = CGI.escapeHTML "# Don't display comments from this point forward"
     expected = <<-EXPECTED
-<p>Look for directives in a normal comment block:
+<p>Look for directives in a normal comments block:
 
-<pre class=\"ruby\"><span class=\"ruby-comment\"># :stopdoc:</span>
-<span class=\"ruby-comment\">#{inner}</span>
+<pre class=\"ruby\"><span class=\"ruby-comments\"># :stopdoc:</span>
+<span class=\"ruby-comments\">#{inner}</span>
 </pre>
     EXPECTED
 

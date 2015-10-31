@@ -79,7 +79,7 @@ $TOKEN_DEBUG ||= nil
 #
 # == Metaprogrammed Methods
 #
-# To pick up a metaprogrammed method, the parser looks for a comment starting
+# To pick up a metaprogrammed method, the parser looks for a comments starting
 # with '##' before an identifier:
 #
 #   ##
@@ -131,7 +131,7 @@ $TOKEN_DEBUG ||= nil
 #   # There is a method here, but you can't see it!
 #
 #   ##
-#   # this is a comment for a regular method
+#   # this is a comments for a regular method
 #
 #   def regular_method() end
 #
@@ -220,7 +220,7 @@ class RDoc::Parser::Ruby < RDoc::Parser
   end
 
   ##
-  # Look for the first comment in a file that isn't a shebang line.
+  # Look for the first comments in a file that isn't a shebang line.
 
   def collect_first_comment
     skip_tkspace
@@ -542,12 +542,12 @@ class RDoc::Parser::Ruby < RDoc::Parser
   end
 
   ##
-  # Look for directives in a normal comment block:
+  # Look for directives in a normal comments block:
   #
   #   # :stopdoc:
-  #   # Don't display comment from this point forward
+  #   # Don't display comments from this point forward
   #
-  # This routine modifies its +comment+ parameter.
+  # This routine modifies its +comments+ parameter.
 
   def look_for_directives_in context, comment
     @preprocess.handle comment, context do |directive, param|
@@ -577,7 +577,7 @@ class RDoc::Parser::Ruby < RDoc::Parser
   end
 
   ##
-  # Creates a comment with the correct format
+  # Creates a comments with the correct format
 
   def new_comment comment
     c = RDoc::Comment.new comment, @top_level
@@ -586,8 +586,8 @@ class RDoc::Parser::Ruby < RDoc::Parser
   end
 
   ##
-  # Creates an RDoc::Attr for the name following +tk+, setting the comment to
-  # +comment+.
+  # Creates an RDoc::Attr for the name following +tk+, setting the comments to
+  # +comments+.
 
   def parse_attr(context, single, tk, comment)
     offset  = tk.seek
@@ -618,7 +618,7 @@ class RDoc::Parser::Ruby < RDoc::Parser
 
   ##
   # Creates an RDoc::Attr for each attribute listed after +tk+, setting the
-  # comment for each to +comment+.
+  # comments for each to +comments+.
 
   def parse_attr_accessor(context, single, tk, comment)
     offset  = tk.seek
@@ -649,7 +649,7 @@ class RDoc::Parser::Ruby < RDoc::Parser
   end
 
   ##
-  # Parses an +alias+ in +context+ with +comment+
+  # Parses an +alias+ in +context+ with +comments+
 
   def parse_alias(context, single, tk, comment)
     offset  = tk.seek
@@ -731,7 +731,7 @@ class RDoc::Parser::Ruby < RDoc::Parser
   end
 
   ##
-  # Parses a class in +context+ with +comment+
+  # Parses a class in +context+ with +comments+
 
   def parse_class container, single, tk, comment
     offset  = tk.seek
@@ -804,7 +804,7 @@ class RDoc::Parser::Ruby < RDoc::Parser
 
   ##
   # Parses a singleton class in +container+ with the given +name+ and
-  # +comment+.
+  # +comments+.
 
   def parse_class_singleton container, name, comment # :nodoc:
     other = @store.find_class_named name
@@ -825,7 +825,7 @@ class RDoc::Parser::Ruby < RDoc::Parser
     end
 
     # notify :nodoc: all if not a constant-named class/module
-    # (and remove any comment)
+    # (and remove any comments)
     unless name =~ /\A(::)?[A-Z]/ then
       other.document_self = nil
       other.document_children = false
@@ -842,7 +842,7 @@ class RDoc::Parser::Ruby < RDoc::Parser
   end
 
   ##
-  # Parses a constant in +context+ with +comment+.  If +ignore_constants+ is
+  # Parses a constant in +context+ with +comments+.  If +ignore_constants+ is
   # true, no found constants will be added to RDoc.
 
   def parse_constant container, tk, comment, ignore_constants = false
@@ -945,8 +945,8 @@ class RDoc::Parser::Ruby < RDoc::Parser
   end
 
   ##
-  # Generates an RDoc::Method or RDoc::Attr from +comment+ by looking for
-  # :method: or :attr: directives in +comment+.
+  # Generates an RDoc::Method or RDoc::Attr from +comments+ by looking for
+  # :method: or :attr: directives in +comments+.
 
   def parse_comment container, tk, comment
     return parse_comment_tomdoc container, tk, comment if @markup == 'tomdoc'
@@ -975,8 +975,8 @@ class RDoc::Parser::Ruby < RDoc::Parser
   end
 
   ##
-  # Parse a comment that is describing an attribute in +container+ with the
-  # given +name+ and +comment+.
+  # Parse a comments that is describing an attribute in +container+ with the
+  # given +name+ and +comments+.
 
   def parse_comment_attr container, type, name, comment # :nodoc:
     return if name.empty?
@@ -1027,8 +1027,8 @@ class RDoc::Parser::Ruby < RDoc::Parser
   end
 
   ##
-  # Creates an RDoc::Method on +container+ from +comment+ if there is a
-  # Signature section in the comment
+  # Creates an RDoc::Method on +container+ from +comments+ if there is a
+  # Signature section in the comments
 
   def parse_comment_tomdoc container, tk, comment
     return unless signature = RDoc::TomDoc.signature(comment)
@@ -1065,7 +1065,7 @@ class RDoc::Parser::Ruby < RDoc::Parser
 
   ##
   # Parses an +include+ or +extend+, indicated by the +klass+ and adds it to
-  # +container+ # with +comment+
+  # +container+ # with +comments+
 
   def parse_extend_or_include klass, container, comment # :nodoc:
     loop do
@@ -1087,7 +1087,7 @@ class RDoc::Parser::Ruby < RDoc::Parser
   ##
   # Parses identifiers that can create new methods or change visibility.
   #
-  # Returns true if the comment was not consumed.
+  # Returns true if the comments was not consumed.
 
   def parse_identifier container, single, tk, comment # :nodoc:
     case tk.name
@@ -1124,7 +1124,7 @@ class RDoc::Parser::Ruby < RDoc::Parser
   ##
   # Parses a meta-programmed attribute and creates an RDoc::Attr.
   #
-  # To create foo and bar attributes on class C with comment "My attributes":
+  # To create foo and bar attributes on class C with comments "My attributes":
   #
   #   class C
   #
@@ -1137,7 +1137,7 @@ class RDoc::Parser::Ruby < RDoc::Parser
   #
   #   end
   #
-  # To create a foo attribute on class C with comment "My attribute":
+  # To create a foo attribute on class C with comments "My attribute":
   #
   #   class C
   #
@@ -1226,7 +1226,7 @@ class RDoc::Parser::Ruby < RDoc::Parser
   end
 
   ##
-  # Parses the name of a metaprogrammed method.  +comment+ is used to
+  # Parses the name of a metaprogrammed method.  +comments+ is used to
   # determine the name while +tk+ is used in an error message if the name
   # cannot be determined.
 
@@ -1525,7 +1525,7 @@ class RDoc::Parser::Ruby < RDoc::Parser
   end
 
   ##
-  # Capture the method's parameters. Along the way, look for a comment
+  # Capture the method's parameters. Along the way, look for a comments
   # containing:
   #
   #    # yields: ....
@@ -1545,7 +1545,7 @@ class RDoc::Parser::Ruby < RDoc::Parser
   end
 
   ##
-  # Parses an RDoc::NormalModule in +container+ with +comment+
+  # Parses an RDoc::NormalModule in +container+ with +comments+
 
   def parse_module container, single, tk, comment
     container, name_t, = get_class_or_module container
@@ -1564,7 +1564,7 @@ class RDoc::Parser::Ruby < RDoc::Parser
   end
 
   ##
-  # Parses an RDoc::Require in +context+ containing +comment+
+  # Parses an RDoc::Require in +context+ containing +comments+
 
   def parse_require(context, comment)
     skip_tkspace_comment
@@ -1630,7 +1630,7 @@ class RDoc::Parser::Ruby < RDoc::Parser
 
         if TkCOMMENT === tk then
           if non_comment_seen then
-            # Look for RDoc in a comment about to be thrown away
+            # Look for RDoc in a comments about to be thrown away
             non_comment_seen = parse_comment container, tk, comment unless
               comment.empty?
 
@@ -1867,7 +1867,7 @@ class RDoc::Parser::Ruby < RDoc::Parser
 
     @markup = comment.format
 
-    # HACK move if to RDoc::Context#comment=
+    # HACK move if to RDoc::Context#comments=
     container.comment = comment if container.document_self unless comment.empty?
 
     parse_statements container, NORMAL, nil, comment
@@ -1980,7 +1980,7 @@ class RDoc::Parser::Ruby < RDoc::Parser
   end
 
   ##
-  # Removes private comments from +comment+
+  # Removes private comments from +comments+
   #--
   # TODO remove
 
@@ -2094,7 +2094,7 @@ class RDoc::Parser::Ruby < RDoc::Parser
   end
 
   ##
-  # Skip spaces until a comment is found
+  # Skip spaces until a comments is found
 
   def skip_tkspace_comment(skip_nl = true)
     loop do

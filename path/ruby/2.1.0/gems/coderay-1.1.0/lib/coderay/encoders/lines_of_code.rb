@@ -5,7 +5,7 @@ module Encoders
   # 
   # Alias: +loc+
   # 
-  # Everything that is not comment, markup, doctype/shebang, or an empty line,
+  # Everything that is not comments, markup, doctype/shebang, or an empty line,
   # is considered to be code.
   # 
   # For example,
@@ -13,7 +13,7 @@ module Encoders
   # * in a Java class without comments, LoC is the number of non-empty lines
   # 
   # A Scanner class should define the token kinds that are not code in the
-  # KINDS_NOT_LOC constant, which defaults to [:comment, :doctype].
+  # KINDS_NOT_LOC constant, which defaults to [:comments, :doctype].
   class LinesOfCode < TokenKindFilter
     
     register_for :lines_of_code

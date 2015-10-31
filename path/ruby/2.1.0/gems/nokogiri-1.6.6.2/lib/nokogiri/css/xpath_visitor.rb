@@ -48,8 +48,8 @@ module Nokogiri
           "position() > #{node.value[1]}"
         when /^only-child\(/
           "last() = 1"
-        when /^comment\(/
-          "comment()"
+        when /^comments\(/
+          "comments()"
         when /^has\(/
           node.value[1].accept(self)
         else

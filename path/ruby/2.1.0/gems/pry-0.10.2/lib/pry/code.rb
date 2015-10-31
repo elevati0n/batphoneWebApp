@@ -276,7 +276,7 @@ class Pry
       output
     end
 
-    # Get the comment that describes the expression on the given line number.
+    # Get the comments that describes the expression on the given line number.
     #
     # @param [Integer] line_number (1-based)
     # @return [String] the code.

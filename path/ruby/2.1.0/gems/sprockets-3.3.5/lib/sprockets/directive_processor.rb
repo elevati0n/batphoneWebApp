@@ -5,7 +5,7 @@ module Sprockets
   # The `DirectiveProcessor` is responsible for parsing and evaluating
   # directive comments in a source file.
   #
-  # A directive comment starts with a comment prefix, followed by an "=",
+  # A directive comments starts with a comments prefix, followed by an "=",
   # then the directive name, then any arguments.
   #
   #     // JavaScript
@@ -51,7 +51,7 @@ module Sprockets
 
     def self.instance
       @instance ||= new(
-        # Deprecated: Default to C and Ruby comment styles
+        # Deprecated: Default to C and Ruby comments styles
         comments: ["//", ["/*", "*/"]] + ["#", ["###", "###"]]
       )
     end
@@ -104,7 +104,7 @@ module Sprockets
           when Array
             "(?:#{Regexp.escape(c[0])}(?m:.*?)#{Regexp.escape(c[1])})"
           else
-            raise TypeError, "unknown comment type: #{c.class}"
+            raise TypeError, "unknown comments type: #{c.class}"
           end
         }.join("|")
         Regexp.compile("\\A(?:(?m:\\s*)(?:#{re}))+")
@@ -152,7 +152,7 @@ module Sprockets
         return processed_header.chomp, directives
       end
 
-      # Gathers comment directives in the source and processes them.
+      # Gathers comments directives in the source and processes them.
       # Any directive method matching `process_*_directive` will
       # automatically be available. This makes it easy to extend the
       # processor.

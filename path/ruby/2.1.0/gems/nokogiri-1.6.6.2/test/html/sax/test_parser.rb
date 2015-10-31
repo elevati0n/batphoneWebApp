@@ -26,7 +26,7 @@ module Nokogiri
         def test_parse_file
           @parser.parse_file(HTML_FILE)
 
-          # Take a look at the comment in test_parse_document to know
+          # Take a look at the comments in test_parse_document to know
           # a possible reason to this difference.
           if Nokogiri.uses_libxml?
             assert_equal 1110, @parser.document.end_elements.length

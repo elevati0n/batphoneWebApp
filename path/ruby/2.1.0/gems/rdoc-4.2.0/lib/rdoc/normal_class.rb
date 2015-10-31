@@ -82,7 +82,7 @@ class RDoc::NormalClass < RDoc::ClassModule
       q.seplist @aliases do |aliaz| q.pp aliaz end
 
       q.breakable
-      q.text "comment:"
+      q.text "comments:"
       q.breakable
       q.pp comment
     end

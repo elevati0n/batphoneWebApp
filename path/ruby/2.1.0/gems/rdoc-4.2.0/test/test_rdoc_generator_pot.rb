@@ -14,7 +14,7 @@ class TestRDocGeneratorPOT < RDoc::TestCase
     @top_level = @store.add_file 'file.rb'
     @klass = @top_level.add_class RDoc::NormalClass, 'Object'
     @klass.add_comment 'This is a class', @top_level
-    @klass.add_section 'This is a section', comment('This is a section comment')
+    @klass.add_section 'This is a section', comment('This is a section comments')
 
     @const = RDoc::Constant.new "CONSTANT", "29", "This is a constant"
 
@@ -79,7 +79,7 @@ msgid "This is a section"
 msgstr ""
 
 #. Object: This is a section
-msgid "This is a section comment"
+msgid "This is a section comments"
 msgstr ""
 
 #. Object#attr

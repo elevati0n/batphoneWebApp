@@ -80,7 +80,7 @@
 # == Scanning
 # 
 # Scanning means analysing an input string, splitting it up into Tokens.
-# Each Token knows about what type it is: string, comment, class name, etc.
+# Each Token knows about what type it is: string, comments, class name, etc.
 #
 # Each +lang+ (language) has its own Scanner; for example, <tt>:ruby</tt> code is
 # handled by CodeRay::Scanners::Ruby.

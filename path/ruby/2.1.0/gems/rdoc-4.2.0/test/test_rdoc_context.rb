@@ -33,7 +33,7 @@ class TestRDocContext < XrefTestCase
   end
 
   def test_add_alias
-    as = RDoc::Alias.new nil, 'old_name', 'new_name', 'comment'
+    as = RDoc::Alias.new nil, 'old_name', 'new_name', 'comments'
 
     @context.add_alias as
 
@@ -42,8 +42,8 @@ class TestRDocContext < XrefTestCase
   end
 
   def test_add
-    @context.add RDoc::Extend,  'Ext', 'comment'
-    @context.add RDoc::Include, 'Incl', 'comment'
+    @context.add RDoc::Extend,  'Ext', 'comments'
+    @context.add RDoc::Include, 'Incl', 'comments'
 
     refute_empty @context.extends
     refute_empty @context.includes
@@ -54,7 +54,7 @@ class TestRDocContext < XrefTestCase
 
     attr = RDoc::Attr.new nil, 'old_name', 'R', ''
 
-    as = RDoc::Alias.new nil, 'old_name', 'new_name', 'comment'
+    as = RDoc::Alias.new nil, 'old_name', 'new_name', 'comments'
     as.record_location top_level
     as.parent = @context
 
@@ -75,7 +75,7 @@ class TestRDocContext < XrefTestCase
     meth = RDoc::AnyMethod.new nil, 'old_name'
     meth.singleton = false
 
-    as = RDoc::Alias.new nil, 'old_name', 'new_name', 'comment'
+    as = RDoc::Alias.new nil, 'old_name', 'new_name', 'comments'
     as.record_location top_level
     as.parent = @context
 
@@ -94,7 +94,7 @@ class TestRDocContext < XrefTestCase
     meth = RDoc::AnyMethod.new nil, 'old_name'
     meth.singleton = true
 
-    as = RDoc::Alias.new nil, 'old_name', 'new_name', 'comment'
+    as = RDoc::Alias.new nil, 'old_name', 'new_name', 'comments'
     as.singleton = true
 
     as.parent = @context
@@ -180,21 +180,21 @@ class TestRDocContext < XrefTestCase
   end
 
   def test_add_constant
-    const = RDoc::Constant.new 'NAME', 'value', 'comment'
+    const = RDoc::Constant.new 'NAME', 'value', 'comments'
     @context.add_constant const
 
     assert_equal [const], @context.constants
   end
 
   def test_add_extend
-    ext = RDoc::Extend.new 'Name', 'comment'
+    ext = RDoc::Extend.new 'Name', 'comments'
     @context.add_extend ext
 
     assert_equal [ext], @context.extends
   end
 
   def test_add_include
-    incl = RDoc::Include.new 'Name', 'comment'
+    incl = RDoc::Include.new 'Name', 'comments'
     @context.add_include incl
 
     assert_equal [incl], @context.includes
@@ -211,7 +211,7 @@ class TestRDocContext < XrefTestCase
   end
 
   def test_add_method_alias
-    as = RDoc::Alias.new nil, 'old_name', 'new_name', 'comment'
+    as = RDoc::Alias.new nil, 'old_name', 'new_name', 'comments'
     meth = RDoc::AnyMethod.new nil, 'old_name'
 
     @context.add_alias as
@@ -300,7 +300,7 @@ class TestRDocContext < XrefTestCase
     top_level = store.add_file 'file.rb'
 
     klass  = top_level.add_class RDoc::NormalClass, 'Klass'
-    klass.comment = 'klass comment'
+    klass.comment = 'klass comments'
 
     object = top_level.add_class RDoc::NormalClass, 'Object'
 
@@ -310,7 +310,7 @@ class TestRDocContext < XrefTestCase
 
     constant = object.constants.first
 
-    assert_equal 'klass comment', constant.comment
+    assert_equal 'klass comments', constant.comment
   end
 
   def test_add_module_class
@@ -322,7 +322,7 @@ class TestRDocContext < XrefTestCase
   end
 
   def test_add_require
-    req = RDoc::Require.new 'require', 'comment'
+    req = RDoc::Require.new 'require', 'comments'
     @c1.add_require req
 
     assert_empty @c1.requires
@@ -332,17 +332,17 @@ class TestRDocContext < XrefTestCase
   def test_add_section
     default_section = @context.sections.first
 
-    @context.add_section nil, comment('comment', @top_level)
+    @context.add_section nil, comment('comments', @top_level)
 
     assert_equal 1, @context.sections.length
-    assert_equal [comment("comment", @top_level)],
+    assert_equal [comment("comments", @top_level)],
                  @context.sections.first.comments
 
-    @context.add_section nil, comment('new comment', @top_level)
+    @context.add_section nil, comment('new comments', @top_level)
 
     assert_equal 1, @context.sections.length
-    assert_equal [comment('comment', @top_level),
-                  comment('new comment', @top_level)],
+    assert_equal [comment('comments', @top_level),
+                  comment('new comments', @top_level)],
                  @context.sections.first.comments
 
     @context.add_section 'other', comment('', @top_level)
@@ -372,7 +372,7 @@ class TestRDocContext < XrefTestCase
   end
 
   def test_add_to
-    incl = RDoc::Include.new 'Name', 'comment'
+    incl = RDoc::Include.new 'Name', 'comments'
     arr = []
     @context.add_to arr, incl
 
@@ -382,7 +382,7 @@ class TestRDocContext < XrefTestCase
   end
 
   def test_add_to_temporary_section
-    incl = RDoc::Include.new 'Name', 'comment'
+    incl = RDoc::Include.new 'Name', 'comments'
     arr = []
     section =
       @context.add_section 'temporary', RDoc::Comment.new('', @top_level)
@@ -396,7 +396,7 @@ class TestRDocContext < XrefTestCase
   end
 
   def test_add_to_no_document_self
-    incl = RDoc::Include.new 'Name', 'comment'
+    incl = RDoc::Include.new 'Name', 'comments'
     arr = []
     @context.document_self = false
     @context.add_to arr, incl
@@ -405,7 +405,7 @@ class TestRDocContext < XrefTestCase
   end
 
   def test_add_to_done_documenting
-    incl = RDoc::Include.new 'Name', 'comment'
+    incl = RDoc::Include.new 'Name', 'comments'
     arr = []
     @context.done_documenting = true
     @context.add_to arr, incl

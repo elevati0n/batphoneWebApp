@@ -1,6 +1,6 @@
 module Rails
   module Html
-    XPATHS_TO_REMOVE = %w{.//script .//form comment()}
+    XPATHS_TO_REMOVE = %w{.//script .//form comments()}
 
     class Sanitizer # :nodoc:
       def sanitize(html, options = {})

@@ -137,7 +137,7 @@ module Nokogiri
 
         ###
         # Called when comments are encountered
-        # +string+ contains the comment data
+        # +string+ contains the comments data
         def comment string
         end
 

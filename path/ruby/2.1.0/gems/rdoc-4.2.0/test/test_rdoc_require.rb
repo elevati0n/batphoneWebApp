@@ -5,7 +5,7 @@ class TestRDocRequire < XrefTestCase
   def setup
     super
 
-    @req = RDoc::Require.new 'foo', 'comment'
+    @req = RDoc::Require.new 'foo', 'comments'
   end
 
   def test_initialize

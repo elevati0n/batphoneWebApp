@@ -1,7 +1,7 @@
 require 'sass/script/value/helpers'
 
 module Sass::Script
-  # @comment
+  # @comments
   #   YARD can't handle some multiline tags, and we need really long tags for function declarations.
   #   rubocop:disable LineLength
   # Methods in this module are accessible from the SassScript context.
@@ -354,7 +354,7 @@ module Sass::Script
   # representation) on those objects without first setting {Tree::Node#options=
   # the #options attribute}.
   #
-  # @comment
+  # @comments
   #   rubocop:enable LineLength
   module Functions
     @signatures = {}
@@ -1098,10 +1098,10 @@ module Sass::Script
     #   adjust-color(#102030, $blue: 5) => #102035
     #   adjust-color(#102030, $red: -5, $blue: 5) => #0b2035
     #   adjust-color(hsl(25, 100%, 80%), $lightness: -30%, $alpha: -0.4) => hsla(25, 100%, 50%, 0.6)
-    # @comment
+    # @comments
     #   rubocop:disable LineLength
     # @overload adjust_color($color, [$red], [$green], [$blue], [$hue], [$saturation], [$lightness], [$alpha])
-    #   @comment
+    #   @comments
     #     rubocop:disable LineLength
     #   @param $color [Sass::Script::Value::Color]
     #   @param $red [Sass::Script::Value::Number] The adjustment to make on the
@@ -1179,10 +1179,10 @@ module Sass::Script
     #   scale-color(hsl(120, 70%, 80%), $lightness: 50%) => hsl(120, 70%, 90%)
     #   scale-color(rgb(200, 150%, 170%), $green: -40%, $blue: 70%) => rgb(200, 90, 229)
     #   scale-color(hsl(200, 70%, 80%), $saturation: -90%, $alpha: -30%) => hsla(200, 7%, 80%, 0.7)
-    # @comment
+    # @comments
     #   rubocop:disable LineLength
     # @overload scale_color($color, [$red], [$green], [$blue], [$saturation], [$lightness], [$alpha])
-    #   @comment
+    #   @comments
     #     rubocop:disable LineLength
     #   @param $color [Sass::Script::Value::Color]
     #   @param $red [Sass::Script::Value::Number]
@@ -1240,10 +1240,10 @@ module Sass::Script
     #   change-color(#102030, $blue: 5) => #102005
     #   change-color(#102030, $red: 120, $blue: 5) => #782005
     #   change-color(hsl(25, 100%, 80%), $lightness: 40%, $alpha: 0.8) => hsla(25, 100%, 40%, 0.8)
-    # @comment
+    # @comments
     #   rubocop:disable LineLength
     # @overload change_color($color, [$red], [$green], [$blue], [$hue], [$saturation], [$lightness], [$alpha])
-    #   @comment
+    #   @comments
     #     rubocop:disable LineLength
     #   @param $color [Sass::Script::Value::Color]
     #   @param $red [Sass::Script::Value::Number] The new red component for the
@@ -2666,7 +2666,7 @@ MESSAGE
         yield(value.value), value.numerator_units, value.denominator_units)
     end
 
-    # @comment
+    # @comments
     #   rubocop:disable ParameterLists
     def _adjust(color, amount, attr, range, op, units = "")
       # rubocop:enable ParameterLists

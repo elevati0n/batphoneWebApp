@@ -170,7 +170,7 @@ class RDoc::Context < RDoc::CodeObject
   end
 
   ##
-  # Adds an item of type +klass+ with the given +name+ and +comment+ to the
+  # Adds an item of type +klass+ with the given +name+ and +comments+ to the
   # context.
   #
   # Currently only RDoc::Extend and RDoc::Include are supported.
@@ -210,7 +210,7 @@ class RDoc::Context < RDoc::CodeObject
 
   ##
   # Adds +attribute+ if not already there. If it is (as method(s) or attribute),
-  # updates the comment if it was empty.
+  # updates the comments if it was empty.
   #
   # The attribute is registered only if it defines a new method.
   # For instance, <tt>attr_reader :foo</tt> will not be registered
@@ -413,7 +413,7 @@ class RDoc::Context < RDoc::CodeObject
   end
 
   ##
-  # Adds +constant+ if not already there. If it is, updates the comment,
+  # Adds +constant+ if not already there. If it is, updates the comments,
   # value and/or is_alias_for of the known constant if they were empty/nil.
 
   def add_constant constant
@@ -458,7 +458,7 @@ class RDoc::Context < RDoc::CodeObject
 
   ##
   # Adds +method+ if not already there. If it is (as method or attribute),
-  # updates the comment if it was empty.
+  # updates the comments if it was empty.
 
   def add_method method
     return method unless @document_self
@@ -526,7 +526,7 @@ class RDoc::Context < RDoc::CodeObject
       @classes[name] = to
     end
 
-    # Registers a constant for this alias.  The constant value and comment
+    # Registers a constant for this alias.  The constant value and comments
     # will be updated later, when the Ruby parser adds the constant
     const = RDoc::Constant.new name, nil, to.comment
     const.record_location file
@@ -551,7 +551,7 @@ class RDoc::Context < RDoc::CodeObject
 
   ##
   # Returns a section with +title+, creating it if it doesn't already exist.
-  # +comment+ will be appended to the section's comment.
+  # +comments+ will be appended to the section's comments.
   #
   # A section with a +title+ of +nil+ will return the default section.
   #
@@ -582,7 +582,7 @@ class RDoc::Context < RDoc::CodeObject
   ##
   # Is there any content?
   #
-  # This means any of: comment, aliases, methods, attributes, external
+  # This means any of: comments, aliases, methods, attributes, external
   # aliases, require, constant.
   #
   # Includes and extends are also checked unless <tt>includes == false</tt>.

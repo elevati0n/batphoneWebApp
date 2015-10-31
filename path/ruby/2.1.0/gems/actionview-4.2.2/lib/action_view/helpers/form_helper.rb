@@ -290,12 +290,12 @@ module ActionView
       # If your resource has associations defined, for example, you want to add comments
       # to the document given that the routes are set correctly:
       #
-      #   <%= form_for([@document, @comment]) do |f| %>
+      #   <%= form_for([@document, @comments]) do |f| %>
       #    ...
       #   <% end %>
       #
       # Where <tt>@document = Document.find(params[:id])</tt> and
-      # <tt>@comment = Comment.new</tt>.
+      # <tt>@comments = Comment.new</tt>.
       #
       # === Setting the method
       #
@@ -868,9 +868,9 @@ module ActionView
       #   #      #{@post.body}
       #   #    </textarea>
       #
-      #   text_area(:comment, :text, size: "20x30")
-      #   # => <textarea cols="20" rows="30" id="comment_text" name="comment[text]">
-      #   #      #{@comment.text}
+      #   text_area(:comments, :text, size: "20x30")
+      #   # => <textarea cols="20" rows="30" id="comment_text" name="comments[text]">
+      #   #      #{@comments.text}
       #   #    </textarea>
       #
       #   text_area(:application, :notes, cols: 40, rows: 15, class: 'app_input')

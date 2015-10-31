@@ -12,7 +12,7 @@ TIMEOUT = 5.0 # seconds to wait for an async operation to complete
 # Print 'x' continuously to demonstrate that other threads aren't
 # blocked while waiting for the connection, for the query to be sent,
 # for results, etc. You might want to sleep inside the loop or
-# comment this out entirely for cleaner output.
+# comments this out entirely for cleaner output.
 progress_thread = Thread.new { loop { print 'x' } }
 
 # Output progress messages

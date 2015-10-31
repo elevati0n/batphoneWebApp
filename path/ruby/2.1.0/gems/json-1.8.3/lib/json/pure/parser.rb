@@ -39,11 +39,11 @@ module JSON
          /\*               # c-style comments
          (?:
           [^*/]|        # normal chars
-          /[^*]|        # slashes that do not start a nested comment
-          \*[^/]|       # asterisks that do not end this comment
-          /(?=\*/)      # single slash before this comment's end
+          /[^*]|        # slashes that do not start a nested comments
+          \*[^/]|       # asterisks that do not end this comments
+          /(?=\*/)      # single slash before this comments's end
          )*
-           \*/               # the End of this comment
+           \*/               # the End of this comments
            |[ \t\r\n]+       # whitespaces: space, horicontal tab, lf, cr
         )+
       )mx

@@ -82,15 +82,15 @@ module ActiveRecord
   #
   #   post = Post.new(title: 'ruby rocks')
   #   post.comments.build(body: 'hello world')
-  #   post.save # => saves both post and comment
+  #   post.save # => saves both post and comments
   #
   #   post = Post.create(title: 'ruby rocks')
   #   post.comments.build(body: 'hello world')
-  #   post.save # => saves both post and comment
+  #   post.save # => saves both post and comments
   #
   #   post = Post.create(title: 'ruby rocks')
   #   post.comments.create(body: 'hello world')
-  #   post.save # => saves both post and comment
+  #   post.save # => saves both post and comments
   #
   # When <tt>:autosave</tt> is true all children are saved, no matter whether they
   # are new records or not:

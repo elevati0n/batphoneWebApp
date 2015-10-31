@@ -8,40 +8,40 @@ class TestRDocClassModule < XrefTestCase
     tl3 = @store.add_file 'three.rb'
 
     cm = RDoc::ClassModule.new 'Klass'
-    cm.add_comment '# comment 1', tl1
+    cm.add_comment '# comments 1', tl1
 
-    assert_equal [['comment 1', tl1]], cm.comment_location
-    assert_equal 'comment 1', cm.comment
+    assert_equal [['comments 1', tl1]], cm.comment_location
+    assert_equal 'comments 1', cm.comment
 
-    cm.add_comment '# comment 2', tl2
+    cm.add_comment '# comments 2', tl2
 
-    assert_equal [['comment 1', tl1], ['comment 2', tl2]], cm.comment_location
-    assert_equal "comment 1\n---\ncomment 2", cm.comment
+    assert_equal [['comments 1', tl1], ['comments 2', tl2]], cm.comment_location
+    assert_equal "comments 1\n---\ncomments 2", cm.comment
 
-    cm.add_comment "# * comment 3", tl3
+    cm.add_comment "# * comments 3", tl3
 
-    assert_equal [['comment 1', tl1],
-                  ['comment 2', tl2],
-                  ['* comment 3', tl3]], cm.comment_location
-    assert_equal "comment 1\n---\ncomment 2\n---\n* comment 3", cm.comment
+    assert_equal [['comments 1', tl1],
+                  ['comments 2', tl2],
+                  ['* comments 3', tl3]], cm.comment_location
+    assert_equal "comments 1\n---\ncomments 2\n---\n* comments 3", cm.comment
   end
 
   def test_add_comment_comment
     cm = RDoc::ClassModule.new 'Klass'
 
-    cm.add_comment comment('comment'), @top_level
+    cm.add_comment comment('comments'), @top_level
 
-    assert_equal 'comment', cm.comment.text
+    assert_equal 'comments', cm.comment.text
   end
 
   def test_add_comment_duplicate
     tl1 = @store.add_file 'one.rb'
 
     cm = RDoc::ClassModule.new 'Klass'
-    cm.add_comment '# comment 1', tl1
-    cm.add_comment '# comment 2', tl1
+    cm.add_comment '# comments 1', tl1
+    cm.add_comment '# comments 2', tl1
 
-    assert_equal [['comment 2', tl1]], cm.comment_location
+    assert_equal [['comments 2', tl1]], cm.comment_location
   end
 
   def test_add_comment_stopdoc
@@ -50,7 +50,7 @@ class TestRDocClassModule < XrefTestCase
     cm = RDoc::ClassModule.new 'Klass'
     cm.stop_doc
 
-    cm.add_comment '# comment 1', tl
+    cm.add_comment '# comments 1', tl
 
     assert_empty cm.comment
   end
@@ -61,25 +61,25 @@ class TestRDocClassModule < XrefTestCase
 
   def test_comment_equals
     cm = RDoc::ClassModule.new 'Klass'
-    cm.comment = '# comment 1'
+    cm.comment = '# comments 1'
 
-    assert_equal 'comment 1', cm.comment
+    assert_equal 'comments 1', cm.comment
 
-    cm.comment = '# comment 2'
+    cm.comment = '# comments 2'
 
-    assert_equal "comment 1\n---\ncomment 2", cm.comment
+    assert_equal "comments 1\n---\ncomments 2", cm.comment
 
-    cm.comment = "# * comment 3"
+    cm.comment = "# * comments 3"
 
-    assert_equal "comment 1\n---\ncomment 2\n---\n* comment 3", cm.comment
+    assert_equal "comments 1\n---\ncomments 2\n---\n* comments 3", cm.comment
   end
 
   def test_comment_equals_comment
     cm = RDoc::ClassModule.new 'Klass'
 
-    cm.comment = comment 'comment'
+    cm.comment = comment 'comments'
 
-    assert_equal 'comment', cm.comment.text
+    assert_equal 'comments', cm.comment.text
   end
 
   def test_docuent_self_or_methods
@@ -105,7 +105,7 @@ class TestRDocClassModule < XrefTestCase
 
     cm.add_comment '', @top_level
 
-    refute cm.documented?, 'empty comment'
+    refute cm.documented?, 'empty comments'
 
     cm.add_comment 'hi', @top_level
 
@@ -113,7 +113,7 @@ class TestRDocClassModule < XrefTestCase
 
     cm.comment_location.clear
 
-    refute cm.documented?, 'no comment'
+    refute cm.documented?, 'no comments'
 
     cm.document_self = nil # notify :nodoc:
 
@@ -178,7 +178,7 @@ class TestRDocClassModule < XrefTestCase
     e1 = RDoc::Extend.new 'E1', ''
     e1.record_location tl
 
-    section_comment = RDoc::Comment.new('section comment')
+    section_comment = RDoc::Comment.new('section comments')
     section_comment.location = tl
 
     assert_equal 1, cm.sections.length, 'sanity, default section only'
@@ -191,7 +191,7 @@ class TestRDocClassModule < XrefTestCase
     cm.add_constant c1
     cm.add_include i1
     cm.add_extend e1
-    cm.add_comment 'this is a comment', tl
+    cm.add_comment 'this is a comments', tl
 
     loaded = Marshal.load Marshal.dump cm
     loaded.store = @store
@@ -199,7 +199,7 @@ class TestRDocClassModule < XrefTestCase
     assert_equal cm, loaded
 
     inner = RDoc::Markup::Document.new(
-      RDoc::Markup::Paragraph.new('this is a comment'))
+      RDoc::Markup::Paragraph.new('this is a comments'))
     inner.file = tl
 
     comment = RDoc::Markup::Document.new inner
@@ -259,7 +259,7 @@ class TestRDocClassModule < XrefTestCase
     e1.record_location tl
     e1.document_self = false
 
-    section_comment = RDoc::Comment.new('section comment')
+    section_comment = RDoc::Comment.new('section comments')
     section_comment.location = tl
 
     assert_equal 1, cm.sections.length, 'sanity, default section only'
@@ -269,7 +269,7 @@ class TestRDocClassModule < XrefTestCase
     cm.add_constant c1
     cm.add_include i1
     cm.add_extend e1
-    cm.add_comment 'this is a comment', tl
+    cm.add_comment 'this is a comments', tl
 
     loaded = Marshal.load Marshal.dump cm
     loaded.store = @store
@@ -299,13 +299,13 @@ class TestRDocClassModule < XrefTestCase
     cm.add_method m
     cm.add_constant c
     cm.add_include i
-    cm.add_comment 'this is a comment', tl
+    cm.add_comment 'this is a comments', tl
 
     loaded = Marshal.load "\x04\bU:\x16RDoc::NormalClass[\x0Ei\x00\"\nKlass" +
                           "\"\x15Namespace::KlassI\"\nSuper\x06:\x06EF" +
                           "o:\eRDoc::Markup::Document\x06:\v@parts[\x06" +
                           "o:\x1CRDoc::Markup::Paragraph\x06;\b[\x06I" +
-                          "\"\x16this is a comment\x06;\x06F[\x06[\aI" +
+                          "\"\x16this is a comments\x06;\x06F[\x06[\aI" +
                           "\"\aa1\x06;\x06FI\"\aRW\x06;\x06F[\x06[\aI" +
                           "\"\aC1\x06;\x06Fo;\a\x06;\b[\x00[\x06[\aI" +
                           "\"\aI1\x06;\x06Fo;\a\x06;\b[\x00[\a[\aI" +
@@ -319,7 +319,7 @@ class TestRDocClassModule < XrefTestCase
     assert_equal cm, loaded
 
     comment = RDoc::Markup::Document.new(
-                RDoc::Markup::Paragraph.new('this is a comment'))
+                RDoc::Markup::Paragraph.new('this is a comments'))
 
     assert_equal [a],                loaded.attributes
     assert_equal comment,            loaded.comment
@@ -369,14 +369,14 @@ class TestRDocClassModule < XrefTestCase
     cm.add_method m1
     cm.add_constant c1
     cm.add_include i1
-    cm.add_comment 'this is a comment', tl
+    cm.add_comment 'this is a comments', tl
 
     loaded = Marshal.load "\x04\bU:\x16RDoc::NormalClass[\x0Ei\x06I\"\nKlass" +
                           "\x06:\x06EFI\"\x15Namespace::Klass\x06;\x06FI" +
                           "\"\nSuper\x06;\x06Fo:\eRDoc::Markup::Document\a" +
                           ":\v@parts[\x06o;\a\a;\b[\x06o" +
                           ":\x1CRDoc::Markup::Paragraph\x06;\b" +
-                          "[\x06I\"\x16this is a comment\x06;\x06F" +
+                          "[\x06I\"\x16this is a comments\x06;\x06F" +
                           ":\n@fileI\"\ffile.rb\x06;\x06F;\n0[\a[\nI" +
                           "\"\aa2\x06;\x06FI\"\aRW\x06;\x06F:\vpublicT@\x11" +
                           "[\nI\"\aa1\x06;\x06FI\"\aRW\x06;\x06F;\vF@\x11" +
@@ -392,7 +392,7 @@ class TestRDocClassModule < XrefTestCase
     assert_equal cm, loaded
 
     inner = RDoc::Markup::Document.new(
-      RDoc::Markup::Paragraph.new('this is a comment'))
+      RDoc::Markup::Paragraph.new('this is a comments'))
     inner.file = tl
 
     comment = RDoc::Markup::Document.new inner
@@ -452,14 +452,14 @@ class TestRDocClassModule < XrefTestCase
     cm.add_constant c1
     cm.add_include i1
     cm.add_extend e1
-    cm.add_comment 'this is a comment', tl
+    cm.add_comment 'this is a comments', tl
 
     loaded = Marshal.load "\x04\bU:\x16RDoc::NormalClass[\x0Fi\aI\"\nKlass" +
                           "\x06:\x06EFI\"\x15Namespace::Klass\x06;\x06FI" +
                           "\"\nSuper\x06;\x06Fo:\eRDoc::Markup::Document\a" +
                           ":\v@parts[\x06o;\a\a;\b[\x06o" +
                           ":\x1CRDoc::Markup::Paragraph\x06;\b" +
-                          "[\x06I\"\x16this is a comment\x06;\x06F" +
+                          "[\x06I\"\x16this is a comments\x06;\x06F" +
                           ":\n@fileI\"\ffile.rb\x06;\x06F;\n0[\a[\nI" +
                           "\"\aa2\x06;\x06FI\"\aRW\x06;\x06F:\vpublicT@\x11" +
                           "[\nI\"\aa1\x06;\x06FI\"\aRW\x06;\x06F;\vF@\x11" +
@@ -476,7 +476,7 @@ class TestRDocClassModule < XrefTestCase
     assert_equal cm, loaded
 
     inner = RDoc::Markup::Document.new(
-      RDoc::Markup::Paragraph.new('this is a comment'))
+      RDoc::Markup::Paragraph.new('this is a comments'))
     inner.file = tl
 
     comment = RDoc::Markup::Document.new inner
@@ -529,7 +529,7 @@ class TestRDocClassModule < XrefTestCase
     e1 = RDoc::Extend.new 'E1', ''
     e1.record_location tl
 
-    section_comment = RDoc::Comment.new('section comment')
+    section_comment = RDoc::Comment.new('section comments')
     section_comment.location = tl
 
     assert_equal 1, cm.sections.length, 'sanity, default section only'
@@ -542,14 +542,14 @@ class TestRDocClassModule < XrefTestCase
     cm.add_constant c1
     cm.add_include i1
     cm.add_extend e1
-    cm.add_comment 'this is a comment', tl
+    cm.add_comment 'this is a comments', tl
 
     loaded = Marshal.load "\x04\bU:\x16RDoc::NormalClass[\x13i\bI\"\nKlass" +
                           "\x06:\x06ETI\"\x15Namespace::Klass\x06;\x06TI" +
                           "\"\nSuper\x06;\x06To:\eRDoc::Markup::Document\a" +
                           ":\v@parts[\x06o;\a\a;\b[\x06o" +
                           ":\x1CRDoc::Markup::Paragraph\x06;\b[\x06I" +
-                          "\"\x16this is a comment\x06;\x06T:\n@fileI" +
+                          "\"\x16this is a comments\x06;\x06T:\n@fileI" +
                           "\"\ffile.rb\x06;\x06T;\n0[\a[\nI\"\aa2\x06;" +
                           "\x06TI\"\aRW\x06;\x06T:\vpublicT@\x11[\nI" +
                           "\"\aa1\x06;\x06TI\"\aRW\x06;\x06T;\vF@\x11" +
@@ -565,7 +565,7 @@ class TestRDocClassModule < XrefTestCase
                           "[\aU:\eRDoc::Context::Section[\bi\x000o;\a\a;\b" +
                           "[\x00;\n0U;\x0F[\bi\x00I\"\fsection\x06;\x06To" +
                           ";\a\a;\b[\x06o;\a\a;\b[\x06o;\t\x06;\b[\x06I" +
-                          "\"\x14section comment\x06;\x06T;\n@\x11;\n0" +
+                          "\"\x14section comments\x06;\x06T;\n@\x11;\n0" +
                           "[\x06@\x11I\"\x0ENamespace\x06" +
                           ";\x06Tc\x17RDoc::NormalModule"
 
@@ -574,7 +574,7 @@ class TestRDocClassModule < XrefTestCase
     assert_equal cm, loaded
 
     inner = RDoc::Markup::Document.new(
-      RDoc::Markup::Paragraph.new('this is a comment'))
+      RDoc::Markup::Paragraph.new('this is a comments'))
     inner.file = tl
 
     comment = RDoc::Markup::Document.new inner
@@ -636,7 +636,7 @@ class TestRDocClassModule < XrefTestCase
     attr.record_location tl1
 
     cm2 = RDoc::ClassModule.new 'Klass'
-    # TODO allow merging when comment == ''
+    # TODO allow merging when comments == ''
     cm2.instance_variable_set :@comment, @RM::Document.new
 
     attr = cm2.add_attribute RDoc::Attr.new(nil, 'a2', 'RW', '')
@@ -671,7 +671,7 @@ class TestRDocClassModule < XrefTestCase
     attr.record_location tl1
 
     cm2 = RDoc::ClassModule.new 'Klass'
-    # TODO allow merging when comment == ''
+    # TODO allow merging when comments == ''
     cm2.instance_variable_set :@comment, @RM::Document.new
 
     attr = cm2.add_attribute RDoc::Attr.new(nil, 'a2', 'RW', '')
@@ -1022,9 +1022,9 @@ class TestRDocClassModule < XrefTestCase
     cm1.record_location tl1_1
 
     s1_0 = cm1.sections.first
-    s1_1 = cm1.add_section 'section 1', comment('comment 1',   tl1_1)
-           cm1.add_section 'section 2', comment('comment 2 a', tl1_1)
-           cm1.add_section 'section 4', comment('comment 4 a', tl1_1)
+    s1_1 = cm1.add_section 'section 1', comment('comments 1',   tl1_1)
+           cm1.add_section 'section 2', comment('comments 2 a', tl1_1)
+           cm1.add_section 'section 4', comment('comments 4 a', tl1_1)
 
     store2 = RDoc::Store.new
     tl2_1 = store2.add_file 'one.rb'
@@ -1035,9 +1035,9 @@ class TestRDocClassModule < XrefTestCase
     cm2.record_location tl2_2
 
            cm2.sections.first
-    s2_2 = cm2.add_section 'section 2', comment('comment 2 b', tl2_1)
-    s2_3 = cm2.add_section 'section 3', comment('comment 3',   tl2_2)
-           cm2.add_section 'section 4', comment('comment 4 b', tl2_2)
+    s2_2 = cm2.add_section 'section 2', comment('comments 2 b', tl2_1)
+    s2_3 = cm2.add_section 'section 3', comment('comments 3',   tl2_2)
+           cm2.add_section 'section 4', comment('comments 4 b', tl2_2)
 
     cm1.merge cm2
 
@@ -1055,12 +1055,12 @@ class TestRDocClassModule < XrefTestCase
 
     assert_equal expected, merged_sections
 
-    assert_equal [comment('comment 2 b', tl2_1)],
+    assert_equal [comment('comments 2 b', tl2_1)],
                  cm1.sections_hash['section 2'].comments
 
     expected_s4_comments = [
-      comment('comment 4 a', tl2_1),
-      comment('comment 4 b', tl2_2),
+      comment('comments 4 a', tl2_1),
+      comment('comments 4 b', tl2_2),
     ]
 
     assert_equal expected_s4_comments, cm1.sections_hash['section 4'].comments
@@ -1075,8 +1075,8 @@ class TestRDocClassModule < XrefTestCase
     cm1  = tl1_1.add_class RDoc::ClassModule, 'Klass'
     cm1.record_location tl1_1
 
-    cm1.add_section 'section', comment('comment 1 a', tl1_1)
-    cm1.add_section 'section', comment('comment 3',   tl1_3)
+    cm1.add_section 'section', comment('comments 1 a', tl1_1)
+    cm1.add_section 'section', comment('comments 3',   tl1_3)
 
     store2 = RDoc::Store.new
     tl2_1 = store2.add_file 'one.rb'
@@ -1088,8 +1088,8 @@ class TestRDocClassModule < XrefTestCase
     cm2.record_location tl2_2
 
     s2_0 = cm2.sections.first
-    s2_1 = cm2.add_section 'section', comment('comment 1 b', tl1_1)
-           cm2.add_section 'section', comment('comment 2',   tl2_2)
+    s2_1 = cm2.add_section 'section', comment('comments 1 b', tl1_1)
+           cm2.add_section 'section', comment('comments 2',   tl2_2)
 
     cm1.merge_sections cm2
 
@@ -1105,9 +1105,9 @@ class TestRDocClassModule < XrefTestCase
     assert_equal expected, merged_sections
 
     expected = [
-      comment('comment 1 b', tl2_1),
-      comment('comment 3',   tl2_3),
-      comment('comment 2',   tl2_2),
+      comment('comments 1 b', tl2_1),
+      comment('comments 3',   tl2_3),
+      comment('comments 2',   tl2_2),
     ]
 
     comments = cm1.sections_hash['section'].comments
@@ -1120,12 +1120,12 @@ class TestRDocClassModule < XrefTestCase
     tl2 = @store.add_file 'two.rb'
 
     cm = RDoc::ClassModule.new 'Klass'
-    cm.add_comment 'comment 1', tl1
-    cm.add_comment 'comment 2', tl2
+    cm.add_comment 'comments 1', tl1
+    cm.add_comment 'comments 2', tl2
 
-    doc1 = @RM::Document.new @RM::Paragraph.new 'comment 1'
+    doc1 = @RM::Document.new @RM::Paragraph.new 'comments 1'
     doc1.file = tl1
-    doc2 = @RM::Document.new @RM::Paragraph.new 'comment 2'
+    doc2 = @RM::Document.new @RM::Paragraph.new 'comments 2'
     doc2.file = tl2
 
     expected = @RM::Document.new doc1, doc2
@@ -1137,9 +1137,9 @@ class TestRDocClassModule < XrefTestCase
     tl1 = @store.add_file 'one.rb'
 
     cm = RDoc::ClassModule.new 'Klass'
-    cm.comment = comment 'comment 1', tl1
+    cm.comment = comment 'comments 1', tl1
 
-    doc = @RM::Document.new @RM::Paragraph.new 'comment 1'
+    doc = @RM::Document.new @RM::Paragraph.new 'comments 1'
     doc.file = tl1
 
     assert_equal doc, cm.parse(cm.comment)
@@ -1149,10 +1149,10 @@ class TestRDocClassModule < XrefTestCase
     tl1 = @store.add_file 'one.rb'
 
     cm = RDoc::ClassModule.new 'Klass'
-    cm.comment = comment 'comment ((*1*))', tl1
+    cm.comment = comment 'comments ((*1*))', tl1
     cm.comment.format = 'rd'
 
-    doc = @RM::Document.new @RM::Paragraph.new 'comment <em>1</em>'
+    doc = @RM::Document.new @RM::Paragraph.new 'comments <em>1</em>'
     doc.file = tl1
 
     assert_equal doc, cm.parse(cm.comment)
@@ -1163,14 +1163,14 @@ class TestRDocClassModule < XrefTestCase
     tl2 = @store.add_file 'two.rb'
 
     cm = tl1.add_class RDoc::NormalClass, 'Klass'
-    cm.add_comment 'comment 1', tl1
-    cm.add_comment 'comment 2', tl2
+    cm.add_comment 'comments 1', tl1
+    cm.add_comment 'comments 2', tl2
 
     cm = Marshal.load Marshal.dump cm
 
-    doc1 = @RM::Document.new @RM::Paragraph.new 'comment 1'
+    doc1 = @RM::Document.new @RM::Paragraph.new 'comments 1'
     doc1.file = tl1
-    doc2 = @RM::Document.new @RM::Paragraph.new 'comment 2'
+    doc2 = @RM::Document.new @RM::Paragraph.new 'comments 2'
     doc2.file = tl2
 
     assert_same cm.comment_location, cm.parse(cm.comment_location)
@@ -1191,7 +1191,7 @@ class TestRDocClassModule < XrefTestCase
   end
 
   def test_search_record
-    @c2_c3.add_comment 'This is a comment.', @xref_data
+    @c2_c3.add_comment 'This is a comments.', @xref_data
 
     expected = [
       'C3',
@@ -1200,15 +1200,15 @@ class TestRDocClassModule < XrefTestCase
       '',
       'C2/C3.html',
       '',
-      "<p>This is a comment.\n"
+      "<p>This is a comments.\n"
     ]
 
     assert_equal expected, @c2_c3.search_record
   end
 
   def test_search_record_merged
-    @c2_c3.add_comment 'comment A', @store.add_file('a.rb')
-    @c2_c3.add_comment 'comment B', @store.add_file('b.rb')
+    @c2_c3.add_comment 'comments A', @store.add_file('a.rb')
+    @c2_c3.add_comment 'comments B', @store.add_file('b.rb')
 
     expected = [
       'C3',
@@ -1217,7 +1217,7 @@ class TestRDocClassModule < XrefTestCase
       '',
       'C2/C3.html',
       '',
-      "<p>comment A\n<p>comment B\n"
+      "<p>comments A\n<p>comments B\n"
     ]
 
     assert_equal expected, @c2_c3.search_record
@@ -1230,7 +1230,7 @@ class TestRDocClassModule < XrefTestCase
                           "\"\nSuper\x06;\x06Fo:\eRDoc::Markup::Document\a" +
                           ":\v@parts[\x06o;\a\a;\b[\x06o" +
                           ":\x1CRDoc::Markup::Paragraph\x06;\b" +
-                          "[\x06I\"\x16this is a comment\x06;\x06F" +
+                          "[\x06I\"\x16this is a comments\x06;\x06F" +
                           ":\n@fileI\"\ffile.rb\x06;\x06F;\n0[\a[\nI" +
                           "\"\aa2\x06;\x06FI\"\aRW\x06;\x06F:\vpublicT@\x11" +
                           "[\nI\"\aa1\x06;\x06FI\"\aRW\x06;\x06F;\vF@\x11" +

@@ -828,9 +828,9 @@ __END__
        <?rb for item in list ?>
          <?rb-value item ?>
        <?rb end ?>
-       <?rb-comment
-       # comment
-       # comment
+       <?rb-comments
+       # comments
+       # comments
        ?>
       </ul>
       <?rb-footer

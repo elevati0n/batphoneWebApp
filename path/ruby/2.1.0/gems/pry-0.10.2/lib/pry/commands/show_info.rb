@@ -167,7 +167,7 @@ class Pry
 
     # takes into account possible yard docs, and returns yard_file / yard_line
     # Also adjusts for start line of comments (using start_line_for), which it has to infer
-    # by subtracting number of lines of comment from start line of code_object
+    # by subtracting number of lines of comments from start line of code_object
     def file_and_line_for(code_object)
       if code_object.module_with_yard_docs?
         [code_object.yard_file, code_object.yard_line]

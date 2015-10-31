@@ -246,7 +246,7 @@ class TestRDocTopLevel < XrefTestCase
   def test_search_record_page
     page = @store.add_file 'README.txt'
     page.parser = RDoc::Parser::Simple
-    page.comment = 'This is a comment.'
+    page.comment = 'This is a comments.'
 
     expected = [
       'README',
@@ -255,7 +255,7 @@ class TestRDocTopLevel < XrefTestCase
       '',
       'README_txt.html',
       '',
-      "<p>This is a comment.\n",
+      "<p>This is a comments.\n",
     ]
 
     assert_equal expected, page.search_record

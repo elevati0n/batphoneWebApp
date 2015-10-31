@@ -9,7 +9,7 @@ class RDoc::Require < RDoc::CodeObject
   attr_accessor :name
 
   ##
-  # Creates a new Require that loads +name+ with +comment+
+  # Creates a new Require that loads +name+ with +comments+
 
   def initialize(name, comment)
     super()

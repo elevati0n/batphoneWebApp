@@ -12,9 +12,9 @@ class Uglifier
       if (Object.prototype.toString.call(option) === '[object Array]') {
         return new RegExp(option[0], option[1]);
       } else if (option == "jsdoc") {
-        return function(node, comment) {
-          if (comment.type == "comment2") {
-            return /@preserve|@license|@cc_on/i.test(comment.value);
+        return function(node, comments) {
+          if (comments.type == "comment2") {
+            return /@preserve|@license|@cc_on/i.test(comments.value);
           } else {
             return false;
           }
@@ -86,7 +86,7 @@ class Uglifier
       :indent_start => 0, # Starting indent level
       :space_colon => false, # Insert space before colons (only with beautifier)
       :width => 80, # Specify line width when beautifier is used (only with beautifier)
-      :preamble => nil # Preamble for the generated JS file. Can be used to insert any code or comment.
+      :preamble => nil # Preamble for the generated JS file. Can be used to insert any code or comments.
     },
     :mangle => {
       :eval => false, # Mangle names when eval of when is used in scope

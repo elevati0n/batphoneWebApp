@@ -27,7 +27,7 @@ describe Fission::Lease do
                       :start        => '2010/02/16 23:16:05',
                       :end          => '2010/02/16 23:46:05' } ]
 
-    @lease_file_content = '# This is a comment
+    @lease_file_content = '# This is a comments
 # And here is another
 lease 172.16.248.197 {
     starts 2 2011/10/11 01:50:58;

@@ -21,7 +21,7 @@ module Fog
         #     * OriginProtocolPolicy [String] - Policy on using http vs https, in ['http-only', 'match-viewer'].
         #   OPTIONAL:
         #   * CallerReference [String] Used to prevent replay, defaults to Time.now.to_i.to_s.
-        #   * Comment [String] Optional comment about distribution.
+        #   * Comment [String] Optional comments about distribution.
         #   * CNAME [Array] Optional array of strings to set as CNAMEs.
         #   * DefaultRootObject [String] Optional default object to return for '/'.
         #   * Enabled [Boolean] Whether or not distribution should accept requests, defaults to true.

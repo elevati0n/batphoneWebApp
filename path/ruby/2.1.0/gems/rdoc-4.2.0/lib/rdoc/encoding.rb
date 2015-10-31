@@ -74,7 +74,7 @@ module RDoc::Encoding
   end
 
   ##
-  # Sets the encoding of +string+ based on the magic comment
+  # Sets the encoding of +string+ based on the magic comments
 
   def self.set_encoding string
     string =~ /\A(?:#!.*\n)?(.*\n)/

@@ -10,7 +10,7 @@ class Converter
     SELECTOR_CHAR               = '\[\]$\w\-{}#,.:&>@'
     # 1 selector (the part before the {)
     SELECTOR_RE                 = /[#{SELECTOR_CHAR}]+[#{SELECTOR_CHAR}\s]*/
-    # 1 // comment
+    # 1 // comments
     COMMENT_RE                  = %r((?:^[ \t]*//[^\n]*\n))
     # 1 {, except when part of @{ and #{
     RULE_OPEN_BRACE_RE          = /(?<![@#\$])\{/
@@ -440,7 +440,7 @@ SASS
 
     def replace_vars(less)
       less = less.dup
-      # skip header comment
+      # skip header comments
       less =~ %r(\A/\*(.*?)\*/)m
       from           = $~ ? $~.to_s.length : 0
       less[from..-1] = less[from..-1].

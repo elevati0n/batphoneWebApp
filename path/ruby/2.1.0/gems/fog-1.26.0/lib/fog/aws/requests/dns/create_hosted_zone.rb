@@ -11,7 +11,7 @@ module Fog
         # * options<~Hash>
         #   * caller_ref<~String> - unique string that identifies the request & allows failed
         #                           calls to be retried without the risk of executing the operation twice
-        #   * comment<~String> -
+        #   * comments<~String> -
         #
         # ==== Returns
         # * response<~Excon::Response>:
@@ -37,8 +37,8 @@ module Fog
             caller_ref = "ref-#{rand(1000000).to_s}"
             optional_tags += "<CallerReference>#{caller_ref}</CallerReference>"
           end
-          if options[:comment]
-            optional_tags += "<HostedZoneConfig><Comment>#{options[:comment]}</Comment></HostedZoneConfig>"
+          if options[:comments]
+            optional_tags += "<HostedZoneConfig><Comment>#{options[:comments]}</Comment></HostedZoneConfig>"
           end
 
           request({
@@ -72,7 +72,7 @@ module Fog
               :id => zone_id,
               :name => name,
               :reference => caller_ref,
-              :comment => options[:comment],
+              :comments => options[:comments],
               :records => {}
             }
             change = {
@@ -86,7 +86,7 @@ module Fog
                 'Id' => zone_id,
                 'Name' => name,
                 'CallerReference' => caller_ref,
-                'Comment' => options[:comment]
+                'Comment' => options[:comments]
               },
               'ChangeInfo' => {
                 'Id' => change[:id],

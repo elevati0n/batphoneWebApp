@@ -50,7 +50,7 @@ module HTML #:nodoc:
       # greater-than characters within quoted strings.
       def scan_tag
         tag = @scanner.getch
-        if @scanner.scan(/!--/) # comment
+        if @scanner.scan(/!--/) # comments
           tag << @scanner.matched
           tag << (@scanner.scan_until(/--\s*>/) || @scanner.scan_until(/\Z/))
         elsif @scanner.scan(/!\[CDATA\[/)

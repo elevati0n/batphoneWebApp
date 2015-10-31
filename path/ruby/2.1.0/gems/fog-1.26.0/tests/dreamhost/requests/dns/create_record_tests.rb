@@ -2,7 +2,7 @@ Shindo.tests('Fog::DNS[:dreamhost] | create_record request', ['dreamhost', 'dns'
 
   tests("success") do
 
-    test("create an A resource record without comment") do
+    test("create an A resource record without comments") do
       name = "foo.testing.#{test_domain}"
       type = "A"
       value = "1.2.3.4"
@@ -11,7 +11,7 @@ Shindo.tests('Fog::DNS[:dreamhost] | create_record request', ['dreamhost', 'dns'
       response.body['result'] == 'success'
     end
 
-    test("create an A resource record with comment") do
+    test("create an A resource record with comments") do
       name = "foo2.testing.#{test_domain}"
       type = "A"
       value = "1.2.3.4"

@@ -182,7 +182,7 @@ names[] - names of arguments
     text = <<-TEXT
 Do some stuff
 
-foo - A comment goes here
+foo - A comments goes here
   and is more than one line
     TEXT
 
@@ -192,7 +192,7 @@ foo - A comment goes here
         blank_line,
         list(:NOTE,
           item(%w[foo],
-            para('A comment goes here', ' ', 'and is more than one line'))))
+            para('A comments goes here', ' ', 'and is more than one line'))))
 
     assert_equal expected, @TD.parse(text)
   end
@@ -201,7 +201,7 @@ foo - A comment goes here
     text = <<-TEXT
 Do some stuff
 
-foo - A comment goes here
+foo - A comments goes here
       :bar - bar documentation
     TEXT
 
@@ -211,7 +211,7 @@ foo - A comment goes here
         blank_line,
         list(:NOTE,
           item(%w[foo],
-            para('A comment goes here'),
+            para('A comments goes here'),
             list(:NOTE,
               item(%w[:bar],
                 para('bar documentation'))))))
@@ -412,7 +412,7 @@ names[stuff] - names of arguments
     @td.tokenize <<-TEXT
 Do some stuff
 
-foo - A comment goes here
+foo - A comments goes here
   and is more than one line
     TEXT
 
@@ -421,7 +421,7 @@ foo - A comment goes here
       [:NEWLINE, "\n",                        13, 0],
       [:NEWLINE, "\n",                         0, 1],
       [:NOTE,    "foo",                        0, 2],
-      [:TEXT,    "A comment goes here",        6, 2],
+      [:TEXT,    "A comments goes here",        6, 2],
       [:NEWLINE, "\n",                        25, 2],
       [:TEXT,    "and is more than one line",  2, 3],
       [:NEWLINE, "\n",                        27, 3],
@@ -434,7 +434,7 @@ foo - A comment goes here
     @td.tokenize <<-TEXT
 Do some stuff
 
-foo - A comment goes here
+foo - A comments goes here
       :bar - bar documentation
     TEXT
 
@@ -443,7 +443,7 @@ foo - A comment goes here
       [:NEWLINE, "\n",                        13, 0],
       [:NEWLINE, "\n",                         0, 1],
       [:NOTE,    "foo",                        0, 2],
-      [:TEXT,    "A comment goes here",        6, 2],
+      [:TEXT,    "A comments goes here",        6, 2],
       [:NEWLINE, "\n",                        25, 2],
       [:NOTE,    ":bar",                       6, 3],
       [:TEXT,    "bar documentation",         13, 3],

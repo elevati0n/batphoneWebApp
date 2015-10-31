@@ -37,17 +37,17 @@ module ActionView
       #
       # Normal use:
       #
-      #   <%= sanitize @comment.body %>
+      #   <%= sanitize @comments.body %>
       #
       # Providing custom whitelisted tags and attributes:
       #
-      #   <%= sanitize @comment.body, tags: %w(strong em a), attributes: %w(href) %>
+      #   <%= sanitize @comments.body, tags: %w(strong em a), attributes: %w(href) %>
       #
       # Providing a custom Rails::Html scrubber:
       #
       #   class CommentScrubber < Rails::Html::PermitScrubber
       #     def allowed_node?(node)
-      #       !%w(form script comment blockquote).include?(node.name)
+      #       !%w(form script comments blockquote).include?(node.name)
       #     end
       #
       #     def skip_node?(node)
@@ -59,7 +59,7 @@ module ActionView
       #     end
       #   end
       #
-      #   <%= sanitize @comment.body, scrubber: CommentScrubber.new %>
+      #   <%= sanitize @comments.body, scrubber: CommentScrubber.new %>
       #
       # See {Rails HTML Sanitizer}[https://github.com/rails/rails-html-sanitizer] for
       # documentation about Rails::Html scrubbers.
@@ -70,7 +70,7 @@ module ActionView
       #     node.remove if node.name == 'script'
       #   end
       #
-      #   <%= sanitize @comment.body, scrubber: scrubber %>
+      #   <%= sanitize @comments.body, scrubber: scrubber %>
       #
       # See {Loofah's documentation}[https://github.com/flavorjones/loofah] for more
       # information about defining custom Loofah::Scrubber objects.

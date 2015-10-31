@@ -42,7 +42,7 @@ module Sass
     #     }
     #
     # @return [{Symbol => String/Fixnum}] The version hash
-    # @comment
+    # @comments
     #   rubocop:disable ClassVars
     def version
       return @@version if defined?(@@version)

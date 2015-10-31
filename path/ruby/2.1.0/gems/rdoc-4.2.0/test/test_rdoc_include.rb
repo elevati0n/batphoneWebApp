@@ -5,7 +5,7 @@ class TestRDocInclude < XrefTestCase
   def setup
     super
 
-    @inc = RDoc::Include.new 'M1', 'comment'
+    @inc = RDoc::Include.new 'M1', 'comments'
     @inc.parent = @m1
     @inc.record_location @top_level
     @inc.store = @store
@@ -13,7 +13,7 @@ class TestRDocInclude < XrefTestCase
 
   def test_module
     assert_equal @m1, @inc.module
-    assert_equal 'Unknown', RDoc::Include.new('Unknown', 'comment').module
+    assert_equal 'Unknown', RDoc::Include.new('Unknown', 'comments').module
   end
 
   def test_module_extended

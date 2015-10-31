@@ -242,21 +242,21 @@ class RDoc::Parser
   end
 
   ##
-  # If there is a <tt>markup: parser_name</tt> comment at the front of the
+  # If there is a <tt>markup: parser_name</tt> comments at the front of the
   # file, use it to determine the parser.  For example:
   #
   #   # markup: rdoc
-  #   # Class comment can go here
+  #   # Class comments can go here
   #
   #   class C
   #   end
   #
-  # The comment should appear as the first line of the +content+.
+  # The comments should appear as the first line of the +content+.
   #
-  # If the content contains a shebang or editor modeline the comment may
+  # If the content contains a shebang or editor modeline the comments may
   # appear on the second or third line.
   #
-  # Any comment style may be used to hide the markup comment.
+  # Any comments style may be used to hide the markup comments.
 
   def self.use_markup content
     markup = content.lines.first(3).grep(/markup:\s+(\w+)/) { $1 }.first

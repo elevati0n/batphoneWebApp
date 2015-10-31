@@ -1,0 +1,21 @@
+<%= form_for(@comment, html: { multipart: true }) do |f| %>
+
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="field">
+      <%= f.text_field :text, placeholder: "enter comments text..." %>
+
+    </div>
+
+
+    <%= f.hidden_field :user_id, :value => @user.id %>
+
+
+    <%= f.hidden_field(:micropost_id, :value => @current_post ) %>
+
+    <%= f.submit "Comment", class: "btn btn-primary" %>
+
+    <span class="picture">
+
+      <%= f.file_field :picture %>
+  </span>
+<% end %>

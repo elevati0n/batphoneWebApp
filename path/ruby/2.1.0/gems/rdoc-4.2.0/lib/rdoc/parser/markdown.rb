@@ -1,6 +1,6 @@
 ##
 # Parse a Markdown format file.  The parsed RDoc::Markup::Document is attached
-# as a file comment.
+# as a file comments.
 
 class RDoc::Parser::Markdown < RDoc::Parser
 

@@ -14,7 +14,7 @@ end
 $o = Object.new
 def $o.hello; :hello_singleton; end
 
-# A comment for hello
+# A comments for hello
 
   # It spans two lines and is indented by 2 spaces
 def hello; :hello; end
@@ -44,7 +44,7 @@ def comment_test4; end
 # d
 def comment_test5; end
 
-# This is a comment for MyLambda
+# This is a comments for MyLambda
 MyLambda = lambda { :lambda }
 MyProc = Proc.new { :proc }
 

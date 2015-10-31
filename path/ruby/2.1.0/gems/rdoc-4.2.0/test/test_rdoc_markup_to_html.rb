@@ -623,7 +623,7 @@ class TestRDocMarkupToHtml < RDoc::Markup::FormatterTestCase
       'a # => blah',
       'x { |y| nil }',
       'x do |y| nil end',
-      '# only a comment',
+      '# only a comments',
       'require "foo"',
       'cls="foo"'
     ]
@@ -635,7 +635,7 @@ class TestRDocMarkupToHtml < RDoc::Markup::FormatterTestCase
       'a=># blah',
       'x { |y| ... }',
       'x do |y| ... end',
-      '// only a comment',
+      '// only a comments',
       '<% require "foo" %>',
       'class="foo"'
     ]

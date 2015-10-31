@@ -16,7 +16,7 @@ end
 require 'json'
 
 ##
-# Methods for manipulating comment text
+# Methods for manipulating comments text
 
 module RDoc::Text
 

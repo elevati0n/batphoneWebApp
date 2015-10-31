@@ -197,7 +197,7 @@ describe Rack::Builder do
 
     it "supports multi-line comments" do
       lambda {
-        Rack::Builder.parse_file config_file('comment.ru')
+        Rack::Builder.parse_file config_file('comments.ru')
       }.should.not.raise(SyntaxError)
     end
 

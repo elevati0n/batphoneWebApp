@@ -6,7 +6,7 @@ module Scanners
     register_for :css
     
     KINDS_NOT_LOC = [
-      :comment,
+      :comments,
       :class, :pseudo_class, :tag,
       :id, :directive,
       :key, :value, :operator, :color, :float, :string,
@@ -119,7 +119,7 @@ module Scanners
           end
           
         elsif match = scan(/\/\*(?:.*?\*\/|\z)/m)
-          encoder.text_token match, :comment
+          encoder.text_token match, :comments
           
         elsif match = scan(/\{/)
           value_expected = false

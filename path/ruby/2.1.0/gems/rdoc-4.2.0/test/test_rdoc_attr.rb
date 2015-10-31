@@ -45,7 +45,7 @@ class TestRDocAttr < RDoc::TestCase
   def test_marshal_dump
     tl = @store.add_file 'file.rb'
 
-    @a.comment = 'this is a comment'
+    @a.comment = 'this is a comments'
     @a.record_location tl
 
     cm = tl.add_class RDoc::NormalClass, 'Klass'
@@ -59,7 +59,7 @@ class TestRDocAttr < RDoc::TestCase
     assert_equal @a, loaded
 
     comment = RDoc::Markup::Document.new(
-                RDoc::Markup::Paragraph.new('this is a comment'))
+                RDoc::Markup::Paragraph.new('this is a comments'))
 
     assert_equal comment,      loaded.comment
     assert_equal 'file.rb',    loaded.file.relative_name
@@ -76,7 +76,7 @@ class TestRDocAttr < RDoc::TestCase
   def test_marshal_dump_singleton
     tl = @store.add_file 'file.rb'
 
-    @a.comment = 'this is a comment'
+    @a.comment = 'this is a comments'
     @a.record_location tl
 
     cm = tl.add_class RDoc::NormalClass, 'Klass'
@@ -94,7 +94,7 @@ class TestRDocAttr < RDoc::TestCase
     assert_equal @a, loaded
 
     comment = RDoc::Markup::Document.new(
-                RDoc::Markup::Paragraph.new('this is a comment'))
+                RDoc::Markup::Paragraph.new('this is a comments'))
 
     assert_equal comment,       loaded.comment
     assert_equal 'Klass::attr', loaded.full_name
@@ -116,13 +116,13 @@ class TestRDocAttr < RDoc::TestCase
            "\"\x0FKlass#attrI\"\aRW\x06;\x06F:\vpublic" +
            "o:\eRDoc::Markup::Document\x06:\v@parts[\x06" +
            "o:\x1CRDoc::Markup::Paragraph\x06;\t[\x06I" +
-           "\"\x16this is a comment\x06;\x06FF"
+           "\"\x16this is a comments\x06;\x06FF"
 
     loaded = Marshal.load data
     loaded.store = @store
 
     comment = RDoc::Markup::Document.new(
-                RDoc::Markup::Paragraph.new('this is a comment'))
+                RDoc::Markup::Paragraph.new('this is a comments'))
 
     assert_equal comment,      loaded.comment
     assert_equal 'Klass#attr', loaded.full_name
@@ -150,11 +150,11 @@ class TestRDocAttr < RDoc::TestCase
                           ":\x06ETI\"\x0FKlass#attr\x06;\x06TI\"\aRW\x06" +
                           ";\x06T:\vpublico:\eRDoc::Markup::Document\a" +
                           ":\v@parts[\x06o:\x1CRDoc::Markup::Paragraph\x06;" +
-                          "\t[\x06I\"\x16this is a comment\x06;\x06T:\n" +
+                          "\t[\x06I\"\x16this is a comments\x06;\x06T:\n" +
                           "@file0FI\"\ffile.rb\x06;\x06T"
     loaded.store = @store
 
-    comment = doc(para('this is a comment'))
+    comment = doc(para('this is a comments'))
 
     assert_equal comment,      loaded.comment
     assert_equal 'Klass#attr', loaded.full_name

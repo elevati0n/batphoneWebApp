@@ -9,7 +9,7 @@
 # using RDoc::Markup::PreProcess::register.
 #
 # Any directive that is not built-in to RDoc (including those registered via
-# plugins) will be stored in the metadata hash on the CodeObject the comment
+# plugins) will be stored in the metadata hash on the CodeObject the comments
 # is attached to.  See RDoc::Markup@Directives for the list of built-in
 # directives.
 
@@ -24,7 +24,7 @@ class RDoc::Markup::PreProcess
   ##
   # Adds a post-process handler for directives.  The handler will be called
   # with the result RDoc::Comment (or text String) and the code object for the
-  # comment (if any).
+  # comments (if any).
 
   def self.post_process &block
     @post_processors << block
@@ -252,7 +252,7 @@ class RDoc::Markup::PreProcess
   #--
   # so all content will be verbatim because of the likely space after '#'?
   # TODO shift left the whole file content in that case
-  # TODO comment stop/start #-- and #++ in included file must be processed here
+  # TODO comments stop/start #-- and #++ in included file must be processed here
 
   def include_file name, indent, encoding
     full_name = find_include_file name
@@ -264,7 +264,7 @@ class RDoc::Markup::PreProcess
 
     content = RDoc::Encoding.read_file full_name, encoding, true
 
-    # strip magic comment
+    # strip magic comments
     content = content.sub(/\A# .*coding[=:].*$/, '').lstrip
 
     # strip leading '#'s, but only if all lines start with them

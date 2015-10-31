@@ -26,7 +26,7 @@ class Jbuilder
   def set!(key, value = BLANK, *args, &block)
     result = if block
       if !_blank?(value)
-        # json.comments @post.comments { |comment| ... }
+        # json.comments @post.comments { |comments| ... }
         # { "comments": [ { ... }, { ... } ] }
         _scope{ array! value, &block }
       else
@@ -135,8 +135,8 @@ class Jbuilder
   #
   # More commonly, you'd use the combined iterator, though:
   #
-  #   json.comments(@post.comments) do |comment|
-  #     json.content comment.formatted_content
+  #   json.comments(@post.comments) do |comments|
+  #     json.content comments.formatted_content
   #   end
   def child!
     @attributes = [] unless ::Array === @attributes

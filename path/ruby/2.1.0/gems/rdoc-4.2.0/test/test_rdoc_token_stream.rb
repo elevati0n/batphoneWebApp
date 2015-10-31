@@ -24,7 +24,7 @@ class TestRDocTokenStream < RDoc::TestCase
       '<span class="ruby-operator">Op</span>',
       '<span class="ruby-identifier">Id</span>',
       '<span class="ruby-node">Node</span>',
-      '<span class="ruby-comment">COMMENT</span>',
+      '<span class="ruby-comments">COMMENT</span>',
       '<span class="ruby-regexp">REGEXP</span>',
       '<span class="ruby-string">STRING</span>',
       '<span class="ruby-value">Val</span>',

@@ -202,7 +202,7 @@ describe Rack::Lint do
 
     # From RFC 7230:<F24><F25>
     # Most HTTP header field values are defined using common syntax
-    # components (token, quoted-string, and comment) separated by
+    # components (token, quoted-string, and comments) separated by
     # whitespace or specific delimiting characters.  Delimiters are chosen
     # from the set of US-ASCII visual characters not allowed in a token
     # (DQUOTE and "(),/:;<=>?@[\]{}").

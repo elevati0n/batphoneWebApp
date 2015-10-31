@@ -57,7 +57,7 @@ module CodeRay
       # Define @default_options for subclasses.
       DEFAULT_OPTIONS = { }
       
-      KINDS_NOT_LOC = [:comment, :doctype, :docstring]
+      KINDS_NOT_LOC = [:comments, :doctype, :docstring]
       
       attr_accessor :state
       

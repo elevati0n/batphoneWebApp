@@ -270,7 +270,7 @@ module Scanners
             encoder.text_token match, :space
           
           elsif match = scan(%r! (?m: \/\* (?: .*? \*\/ | .* ) ) | (?://|\#) .*? (?=#{RE::PHP_END}|$) !xo)
-            encoder.text_token match, :comment
+            encoder.text_token match, :comments
           
           elsif match = scan(RE::IDENTIFIER)
             kind = Words::IDENT_KIND[match]

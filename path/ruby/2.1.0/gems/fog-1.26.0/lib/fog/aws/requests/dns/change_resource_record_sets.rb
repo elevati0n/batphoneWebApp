@@ -10,7 +10,7 @@ module Fog
         # ==== Parameters
         # * zone_id<~String> - ID of the zone these changes apply to
         # * options<~Hash>
-        #   * comment<~String> - Any comments you want to include about the change.
+        #   * comments<~String> - Any comments you want to include about the change.
         # * change_batch<~Array> - The information for a change request
         #   * changes<~Hash> -
         #     * action<~String> - 'CREATE' or 'DELETE'
@@ -68,7 +68,7 @@ module Fog
           optional_tags = ''
           options.each do |option, value|
             case option
-            when :comment
+            when :comments
               optional_tags += "<Comment>#{value}</Comment>"
             end
           end

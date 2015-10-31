@@ -608,21 +608,21 @@ SCSS
   def test_immediately_following_comments
     assert_sass_to_scss <<SCSS, <<SASS
 .foobar {
-  // trailing comment
+  // trailing comments
   a: 1px;
 }
 SCSS
-.foobar // trailing comment
+.foobar // trailing comments
   a: 1px
 SASS
 
     assert_sass_to_scss <<SCSS, <<SASS
 .foobar {
-  // trailing comment
+  // trailing comments
   a: 1px;
 }
 SCSS
-.foobar  /* trailing comment */
+.foobar  /* trailing comments */
   a: 1px
 SASS
   end

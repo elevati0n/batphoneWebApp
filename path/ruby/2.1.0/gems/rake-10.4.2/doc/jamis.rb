@@ -475,7 +475,7 @@ SRC_PAGE = XHTML_PREAMBLE + <<HTML
 <head><title>%title%</title>
 <meta http-equiv="Content-Type" content="text/html; charset=%charset%">
 <style>
-.ruby-comment    { color: green; font-style: italic }
+.ruby-comments    { color: green; font-style: italic }
 .ruby-constant   { color: #4433aa; font-weight: bold; }
 .ruby-identifier { color: #222222;  }
 .ruby-ivar       { color: #2233dd; }

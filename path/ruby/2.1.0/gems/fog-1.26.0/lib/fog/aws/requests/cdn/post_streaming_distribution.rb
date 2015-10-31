@@ -13,7 +13,7 @@ module Fog
         #     * DNSName [String] Origin to associate with distribution, ie 'mybucket.s3.amazonaws.com'.
         #   OPTIONAL:
         #   * CallerReference [String] Used to prevent replay, defaults to Time.now.to_i.to_s.
-        #   * Comment [String] Optional comment about distribution.
+        #   * Comment [String] Optional comments about distribution.
         #   * CNAME [Array] Optional array of strings to set as CNAMEs.
         #   * Enabled [Boolean] Whether or not distribution should accept requests, defaults to true.
         #   * Logging [Hash]: Optional logging config.

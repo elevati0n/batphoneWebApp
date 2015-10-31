@@ -16,7 +16,7 @@ class TestRDocConstant < XrefTestCase
 
     refute const.documented?
 
-    const.comment = comment 'comment'
+    const.comment = comment 'comments'
 
     assert const.documented?
   end
@@ -33,7 +33,7 @@ class TestRDocConstant < XrefTestCase
 
     refute const.documented?
 
-    @c1.add_comment comment('comment'), @top_level
+    @c1.add_comment comment('comments'), @top_level
 
     assert const.documented?
   end
@@ -45,7 +45,7 @@ class TestRDocConstant < XrefTestCase
   def test_is_alias_for
     top_level = @store.add_file 'file.rb'
 
-    c = RDoc::Constant.new 'CONST', nil, 'comment'
+    c = RDoc::Constant.new 'CONST', nil, 'comments'
     top_level.add_constant c
 
     assert_nil c.is_alias_for
@@ -62,7 +62,7 @@ class TestRDocConstant < XrefTestCase
   def test_marshal_dump
     top_level = @store.add_file 'file.rb'
 
-    c = RDoc::Constant.new 'CONST', nil, 'this is a comment'
+    c = RDoc::Constant.new 'CONST', nil, 'this is a comments'
     c.record_location top_level
 
     aliased = top_level.add_class RDoc::NormalClass, 'Aliased'
@@ -76,7 +76,7 @@ class TestRDocConstant < XrefTestCase
     loaded = Marshal.load Marshal.dump c
     loaded.store = @store
 
-    comment = doc(para('this is a comment'))
+    comment = doc(para('this is a comments'))
 
     assert_equal c, loaded
 
@@ -93,7 +93,7 @@ class TestRDocConstant < XrefTestCase
   def test_marshal_load
     top_level = @store.add_file 'file.rb'
 
-    c = RDoc::Constant.new 'CONST', nil, 'this is a comment'
+    c = RDoc::Constant.new 'CONST', nil, 'this is a comments'
     c.record_location top_level
 
     cm = top_level.add_class RDoc::NormalClass, 'Klass'
@@ -104,7 +104,7 @@ class TestRDocConstant < XrefTestCase
     loaded = Marshal.load Marshal.dump c
     loaded.store = @store
 
-    comment = doc(para('this is a comment'))
+    comment = doc(para('this is a comments'))
 
     assert_equal c, loaded
 
@@ -132,13 +132,13 @@ class TestRDocConstant < XrefTestCase
                           ";\x06T0I\"\fAliased\x06;\x06To" +
                           ":\eRDoc::Markup::Document\a:\v@parts[\x06o" +
                           ":\x1CRDoc::Markup::Paragraph\x06;\b[\x06I" +
-                          "\"\x16this is a comment\x06;\x06T:\n@file0I" +
+                          "\"\x16this is a comments\x06;\x06T:\n@file0I" +
                           "\"\ffile.rb\x06;\x06TI\"\nKlass\x06" +
                           ";\x06Tc\x16RDoc::NormalClass0"
 
     loaded.store = @store
 
-    comment = doc(para('this is a comment'))
+    comment = doc(para('this is a comments'))
 
     assert_equal aliased,        loaded.is_alias_for
     assert_equal comment,        loaded.comment
@@ -155,7 +155,7 @@ class TestRDocConstant < XrefTestCase
   def test_marshal_round_trip
     top_level = @store.add_file 'file.rb'
 
-    c = RDoc::Constant.new 'CONST', nil, 'this is a comment'
+    c = RDoc::Constant.new 'CONST', nil, 'this is a comments'
     c.record_location top_level
     c.is_alias_for = 'Unknown'
 

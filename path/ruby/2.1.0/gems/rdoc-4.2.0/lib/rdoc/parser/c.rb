@@ -8,7 +8,7 @@ require 'tsort'
 # we don't worry too much.
 #
 # The comments associated with a Ruby method are extracted from the C
-# comment block associated with the routine that _implements_ that
+# comments block associated with the routine that _implements_ that
 # method, that is to say the method whose name is given in the
 # <tt>rb_define_method</tt> call. For example, you might write:
 #
@@ -41,11 +41,11 @@ require 'tsort'
 #
 # Here RDoc will determine from the rb_define_method line that there's a
 # method called "flatten" in class Array, and will look for the implementation
-# in the method rb_ary_flatten. It will then use the comment from that
+# in the method rb_ary_flatten. It will then use the comments from that
 # method in the HTML output. This method must be in the same source file
 # as the rb_define_method.
 #
-# The comment blocks may include special directives:
+# The comments blocks may include special directives:
 #
 # [Document-class: +name+]
 #   Documentation for the named class.
@@ -56,7 +56,7 @@ require 'tsort'
 # [Document-const: +name+]
 #   Documentation for the named +rb_define_const+.
 #
-#   Constant values can be supplied on the first line of the comment like so:
+#   Constant values can be supplied on the first line of the comments like so:
 #
 #     /* 300: The highest possible score in bowling */
 #     rb_define_const(cFoo, "PERFECT", INT2FIX(300));
@@ -90,7 +90,7 @@ require 'tsort'
 #
 # In addition, RDoc assumes by default that the C method implementing a
 # Ruby function is in the same source file as the rb_define_method call.
-# If this isn't the case, add the comment:
+# If this isn't the case, add the comments:
 #
 #   rb_define_method(....);  // in filename
 #
@@ -229,7 +229,7 @@ class RDoc::Parser::C < RDoc::Parser
   end
 
   ##
-  # If two ruby methods share a C implementation (and comment) this
+  # If two ruby methods share a C implementation (and comments) this
   # deduplicates the examples in the call_seq for the method to reduce
   # confusion in the output.
 
@@ -554,7 +554,7 @@ class RDoc::Parser::C < RDoc::Parser
   end
 
   ##
-  # Finds the comment for an alias on +class_name+ from +new_name+ to
+  # Finds the comments for an alias on +class_name+ from +new_name+ to
   # +old_name+
 
   def find_alias_comment class_name, new_name, old_name
@@ -567,7 +567,7 @@ class RDoc::Parser::C < RDoc::Parser
   end
 
   ##
-  # Finds a comment for rb_define_attr, rb_attr or Document-attr.
+  # Finds a comments for rb_define_attr, rb_attr or Document-attr.
   #
   # +var_name+ is the C class variable the attribute is defined on.
   # +attr_name+ is the attribute's name.
@@ -623,7 +623,7 @@ class RDoc::Parser::C < RDoc::Parser
       # try to find the whole body
       body = $& if /#{Regexp.escape body}[^(]*?\{.*?^\}/m =~ file_content
 
-      # The comment block may have been overridden with a 'Document-method'
+      # The comments block may have been overridden with a 'Document-method'
       # block. This happens in the interpreter when multiple methods are
       # vectored through to the same C method but those methods are logically
       # distinct (for example Kernel.hash and Kernel.object_id share the same
@@ -665,7 +665,7 @@ class RDoc::Parser::C < RDoc::Parser
 
       body
     when %r%^\s*\#\s*define\s+#{meth_name}\s+(\w+)%m then
-      # with no comment we hope the aliased definition has it and use it's
+      # with no comments we hope the aliased definition has it and use it's
       # definition
 
       body = find_body(class_name, $1, meth_obj, file_content, true)
@@ -674,7 +674,7 @@ class RDoc::Parser::C < RDoc::Parser
 
       @options.warn "No definition for #{meth_name}"
       false
-    else # No body, but might still have an override comment
+    else # No body, but might still have an override comments
       comment = find_override_comment class_name, meth_obj
 
       if comment then
@@ -709,12 +709,12 @@ class RDoc::Parser::C < RDoc::Parser
 
   ##
   # Look for class or module documentation above Init_+class_name+(void),
-  # in a Document-class +class_name+ (or module) comment or above an
-  # rb_define_class (or module).  If a comment is supplied above a matching
-  # Init_ and a rb_define_class the Init_ comment is used.
+  # in a Document-class +class_name+ (or module) comments or above an
+  # rb_define_class (or module).  If a comments is supplied above a matching
+  # Init_ and a rb_define_class the Init_ comments is used.
   #
   #   /*
-  #    * This is a comment for Foo
+  #    * This is a comments for Foo
   #    */
   #   Init_Foo(void) {
   #       VALUE cFoo = rb_define_class("Foo", rb_cObject);
@@ -722,14 +722,14 @@ class RDoc::Parser::C < RDoc::Parser
   #
   #   /*
   #    * Document-class: Foo
-  #    * This is a comment for Foo
+  #    * This is a comments for Foo
   #    */
   #   Init_foo(void) {
   #       VALUE cFoo = rb_define_class("Foo", rb_cObject);
   #   }
   #
   #   /*
-  #    * This is a comment for Foo
+  #    * This is a comments for Foo
   #    */
   #   VALUE cFoo = rb_define_class("Foo", rb_cObject);
 
@@ -764,8 +764,8 @@ class RDoc::Parser::C < RDoc::Parser
   end
 
   ##
-  # Finds a comment matching +type+ and +const_name+ either above the
-  # comment or in the matching Document- section.
+  # Finds a comments matching +type+ and +const_name+ either above the
+  # comments or in the matching Document- section.
 
   def find_const_comment(type, const_name, class_name = nil)
     comment = if @content =~ %r%((?>^\s*/\*.*?\*/\s+))
@@ -790,7 +790,7 @@ class RDoc::Parser::C < RDoc::Parser
   end
 
   ##
-  # Handles modifiers in +comment+ and updates +meth_obj+ as appropriate.
+  # Handles modifiers in +comments+ and updates +meth_obj+ as appropriate.
 
   def find_modifiers comment, meth_obj
     comment.normalize
@@ -909,8 +909,8 @@ class RDoc::Parser::C < RDoc::Parser
   end
 
   ##
-  # Adds constants.  By providing some_value: at the start of the comment you
-  # can override the C value of the comment to give a friendly definition.
+  # Adds constants.  By providing some_value: at the start of the comments you
+  # can override the C value of the comments to give a friendly definition.
   #
   #   /* 300: The perfect score in bowling */
   #   rb_define_const(cFoo, "PERFECT", INT2FIX(300);
@@ -933,8 +933,8 @@ class RDoc::Parser::C < RDoc::Parser
     comment = find_const_comment type, const_name, class_name
     comment.normalize
 
-    # In the case of rb_define_const, the definition and comment are in
-    # "/* definition: comment */" form.  The literal ':' and '\' characters
+    # In the case of rb_define_const, the definition and comments are in
+    # "/* definition: comments */" form.  The literal ':' and '\' characters
     # can be escaped with a backslash.
     if type.downcase == 'const' then
       no_match, new_definition, new_comment = comment.text.split(/(\A.*):/)
@@ -1087,13 +1087,13 @@ class RDoc::Parser::C < RDoc::Parser
   end
 
   ##
-  # Look for directives in a normal comment block:
+  # Look for directives in a normal comments block:
   #
   #   /*
   #    * :title: My Awesome Project
   #    */
   #
-  # This method modifies the +comment+
+  # This method modifies the +comments+
 
   def look_for_directives_in context, comment
     @preprocess.handle comment, context do |directive, param|

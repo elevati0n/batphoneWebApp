@@ -11,8 +11,8 @@ module Fog
           if options.key? :ttl
             data['ttl'] = options[:ttl]
           end
-          if options.key? :comment
-            data['comment'] = options[:comment]
+          if options.key? :comments
+            data['comments'] = options[:comments]
           end
           if options.key? :email
             data['emailAddress'] = options[:email]

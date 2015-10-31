@@ -56,7 +56,7 @@ Shindo.tests('Fog::Compute[:aws] | snapshot requests', ['aws']) do
     end
 
     #NOTE: waiting for the copy to complete can sometimes take up to 5 minutes (but sometimes it's nearly instant)
-    #for faster tests: comment out the rest of this block
+    #for faster tests: comments out the rest of this block
     Fog.wait_for { Fog::Compute.new(:provider => :aws, :region => "us-west-1").snapshots.get(@west_snapshot_id) }
 
     tests("#delete_snapshots(#{@west_snapshot_id})").formats(AWS::Compute::Formats::BASIC) do

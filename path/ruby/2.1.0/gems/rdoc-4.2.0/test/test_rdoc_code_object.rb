@@ -16,7 +16,7 @@ class TestRDocCodeObject < XrefTestCase
     refute @co.force_documentation, 'force_documentation'
     refute @co.done_documenting, 'done_documenting'
     refute @co.received_nodoc, 'received_nodoc'
-    assert_equal '', @co.comment, 'comment is empty'
+    assert_equal '', @co.comment, 'comments is empty'
   end
 
   def test_comment_equals
@@ -24,9 +24,9 @@ class TestRDocCodeObject < XrefTestCase
 
     assert_equal '', @co.comment
 
-    @co.comment = 'I am a comment'
+    @co.comment = 'I am a comments'
 
-    assert_equal 'I am a comment', @co.comment
+    assert_equal 'I am a comments', @co.comment
   end
 
   def test_comment_equals_comment
@@ -34,9 +34,9 @@ class TestRDocCodeObject < XrefTestCase
 
     assert_equal '', @co.comment.text
 
-    @co.comment = comment 'I am a comment'
+    @co.comment = comment 'I am a comments'
 
-    assert_equal 'I am a comment', @co.comment.text
+    assert_equal 'I am a comments', @co.comment.text
   end
 
   def test_comment_equals_document

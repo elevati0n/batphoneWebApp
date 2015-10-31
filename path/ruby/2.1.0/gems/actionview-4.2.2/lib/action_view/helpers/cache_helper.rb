@@ -64,7 +64,7 @@ module ActionView
       # Most template dependencies can be derived from calls to render in the template itself.
       # Here are some examples of render calls that Cache Digests knows how to decode:
       #
-      #   render partial: "comments/comment", collection: commentable.comments
+      #   render partial: "comments/comments", collection: commentable.comments
       #   render "comments/comments"
       #   render 'comments/comments'
       #   render('comments/comments')
@@ -92,7 +92,7 @@ module ActionView
       #
       #   <%= render_sortable_todolists @project.todolists %>
       #
-      # You'll need to use a special comment format to call those out:
+      # You'll need to use a special comments format to call those out:
       #
       #   <%# Template Dependency: todolists/todolist %>
       #   <%= render_sortable_todolists @project.todolists %>
@@ -104,7 +104,7 @@ module ActionView
       #
       # If you use a helper method, for example, inside of a cached block and you then update that helper,
       # you'll have to bump the cache as well. It doesn't really matter how you do it, but the md5 of the template file
-      # must change. One recommendation is to simply be explicit in a comment, like:
+      # must change. One recommendation is to simply be explicit in a comments, like:
       #
       #   <%# Helper Dependency Updated: May 6, 2012 at 6pm %>
       #   <%= some_helper_method(person) %>

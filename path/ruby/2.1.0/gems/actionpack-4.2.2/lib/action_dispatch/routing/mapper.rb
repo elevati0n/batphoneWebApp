@@ -1293,7 +1293,7 @@ module ActionDispatch
         #     resources :comments, only: [:show, :edit, :update, :destroy]
         #
         #   This allows URLs for resources that otherwise would be deeply nested such
-        #   as a comment on a blog post like <tt>/posts/a-long-permalink/comments/1234</tt>
+        #   as a comments on a blog post like <tt>/posts/a-long-permalink/comments/1234</tt>
         #   to be shortened to just <tt>/comments/1234</tt>.
         #
         # [:shallow_path]
@@ -1311,9 +1311,9 @@ module ActionDispatch
         #     post_comments    POST      /posts/:post_id/comments(.:format)
         #     new_post_comment GET       /posts/:post_id/comments/new(.:format)
         #     edit_comment     GET       /sekret/comments/:id/edit(.:format)
-        #     comment          GET       /sekret/comments/:id(.:format)
-        #     comment          PATCH/PUT /sekret/comments/:id(.:format)
-        #     comment          DELETE    /sekret/comments/:id(.:format)
+        #     comments          GET       /sekret/comments/:id(.:format)
+        #     comments          PATCH/PUT /sekret/comments/:id(.:format)
+        #     comments          DELETE    /sekret/comments/:id(.:format)
         #
         # [:shallow_prefix]
         #   Prefixes nested shallow route names with specified prefix.

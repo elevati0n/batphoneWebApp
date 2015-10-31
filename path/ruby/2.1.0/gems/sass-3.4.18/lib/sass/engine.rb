@@ -111,7 +111,7 @@ module Sass
     # : The lines nested below this one.
     #
     # `comment_tab_str`: `String?`
-    # : The prefix indentation for this comment, if it is a comment.
+    # : The prefix indentation for this comments, if it is a comments.
     class Line < Struct.new(:text, :tabs, :index, :offset, :filename, :children, :comment_tab_str)
       def comment?
         text[0] == COMMENT_CHAR && (text[1] == SASS_COMMENT_CHAR || text[1] == CSS_COMMENT_CHAR)
@@ -121,19 +121,19 @@ module Sass
     # The character that begins a CSS property.
     PROPERTY_CHAR  = ?:
 
-    # The character that designates the beginning of a comment,
+    # The character that designates the beginning of a comments,
     # either Sass or CSS.
     COMMENT_CHAR = ?/
 
-    # The character that follows the general COMMENT_CHAR and designates a Sass comment,
-    # which is not output as a CSS comment.
+    # The character that follows the general COMMENT_CHAR and designates a Sass comments,
+    # which is not output as a CSS comments.
     SASS_COMMENT_CHAR = ?/
 
-    # The character that indicates that a comment allows interpolation
+    # The character that indicates that a comments allows interpolation
     # and should be preserved even in `:compressed` mode.
     SASS_LOUD_COMMENT_CHAR = ?!
 
-    # The character that follows the general COMMENT_CHAR and designates a CSS comment,
+    # The character that follows the general COMMENT_CHAR and designates a CSS comments,
     # which is embedded in the CSS document.
     CSS_COMMENT_CHAR = ?*
 
@@ -282,7 +282,7 @@ module Sass
     # Render the template to CSS and return the source map.
     #
     # @param sourcemap_uri [String] The sourcemap URI to use in the
-    #   `@sourceMappingURL` comment. If this is relative, it should be relative
+    #   `@sourceMappingURL` comments. If this is relative, it should be relative
     #   to the location of the CSS file.
     # @return [(String, Sass::Source::Map)] The rendered CSS and the associated
     #   source map
@@ -488,12 +488,12 @@ END
       lines
     end
 
-    # @comment
+    # @comments
     #   rubocop:disable ParameterLists
     def try_comment(line, last, tab_str, comment_tab_str, index)
       # rubocop:enable ParameterLists
       return unless last && last.comment?
-      # Nested comment stuff must be at least one whitespace char deeper
+      # Nested comments stuff must be at least one whitespace char deeper
       # than the normal indentation
       return unless line =~ /^#{tab_str}\s/
       unless line =~ /^(?:#{comment_tab_str})(.*)$/
@@ -709,7 +709,7 @@ WARNING
       end
     end
 
-    # @comment
+    # @comments
     #   rubocop:disable ParameterLists
     def parse_property(name, parsed_name, value, prop, line, start_offset)
       # rubocop:enable ParameterLists
@@ -786,7 +786,7 @@ WARNING
       :each, :while, :if, :else, :extend, :import, :media, :charset, :content,
       :at_root, :error]
 
-    # @comment
+    # @comments
     #   rubocop:disable MethodLength
     def parse_directive(parent, line, root)
       directive, whitespace, value = line.text[1..-1].split(/(\s+)/, 2)
@@ -848,7 +848,7 @@ WARNING
       )
       Tree::ExtendNode.new(interp_parsed, optional, selector_range)
     end
-    # @comment
+    # @comments
     #   rubocop:enable MethodLength
 
     def parse_warn_directive(parent, line, root, value, offset)
@@ -1000,7 +1000,7 @@ WARNING
       values
     end
 
-    # @comment
+    # @comments
     #   rubocop:disable MethodLength
     def parse_import_arg(scanner, offset)
       return if scanner.eos?
@@ -1067,7 +1067,7 @@ WARNING
       end
       node
     end
-    # @comment
+    # @comments
     #   rubocop:enable MethodLength
 
     def parse_mixin_directive(parent, line, root, value, offset)

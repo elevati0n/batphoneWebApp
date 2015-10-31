@@ -290,7 +290,7 @@ EOF
       assert_equal tmpl, res.encode(tmpl.encoding)
     end
 
-    test "uses the magic comment from the generated source code" do
+    test "uses the magic comments from the generated source code" do
       tmpl = "ふが"
       code = ("# coding: Shift_JIS\n" + tmpl.inspect).encode('Shift_JIS')
       # Set it to an incorrect encoding

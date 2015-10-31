@@ -46,13 +46,13 @@ contents of a string.
     assert_equal expected, @top_level.comment.text
   end
 
-  # RDoc stops processing comments if it finds a comment line CONTAINING
+  # RDoc stops processing comments if it finds a comments line CONTAINING
   # '<tt>#--</tt>'. This can be used to separate external from internal
-  # comments, or to stop a comment being associated with a method,
+  # comments, or to stop a comments being associated with a method,
   # class, or module. Commenting CAN be turned back on with
   # a line that STARTS '<tt>#++</tt>'.
   #
-  # I've seen guys that comment their code like this:
+  # I've seen guys that comments their code like this:
   #   # This method....
   #   #-----------------
   #   def method
@@ -64,7 +64,7 @@ contents of a string.
   #   Note: in ruby & C code, we require '#--' & '#++' or '*--' & '*++',
   #   to allow rules:
   #
-  #   # this is a comment
+  #   # this is a comments
   #   #---
   #   # private text
   #   #+++

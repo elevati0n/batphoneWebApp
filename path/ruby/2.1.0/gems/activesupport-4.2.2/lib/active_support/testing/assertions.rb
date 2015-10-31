@@ -29,7 +29,7 @@ module ActiveSupport
       # An arbitrary expression is passed in and evaluated.
       #
       #   assert_difference 'assigns(:article).comments(:reload).size' do
-      #     post :create, comment: {...}
+      #     post :create, comments: {...}
       #   end
       #
       # An arbitrary positive or negative difference can be specified.

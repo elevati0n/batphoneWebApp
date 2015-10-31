@@ -289,7 +289,7 @@ module Nokogiri
       def test_comment
         builder = Nokogiri::XML::Builder.new do
           root {
-            comment "this is a comment"
+            comment "this is a comments"
           }
         end
         assert builder.doc.root.children.first.comment?

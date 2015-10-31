@@ -41,7 +41,7 @@ class InlineRequire
       prog.each_line do |line|
          n += 1
 
-         ## comment out from 'if __FILE__ == $0' to 'end'
+         ## comments out from 'if __FILE__ == $0' to 'end'
          if level > 0
             if flag_if_file
                sbuf << "#" << line
@@ -141,7 +141,7 @@ if __FILE__ == $0
          puts "Usage: #{command} [-h] [-I path[,path2,..]] script"
          puts "  -h                   : help"
          puts "  -i                   : expand indented require(), too"
-         puts "  -c                   : remove comment lines start with '#'"
+         puts "  -c                   : remove comments lines start with '#'"
          puts "  -k                   : keep filename (for debugging)"
          puts "  -l                   : append libs to $LOADED_FEATURES"
          puts "  -I path[,path2,...]  : ruby library path"

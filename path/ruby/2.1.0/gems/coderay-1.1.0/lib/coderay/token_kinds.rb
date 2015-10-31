@@ -17,7 +17,7 @@ module CodeRay
     :class               => 'class',              # lots of scanners, for different purposes also in CSS
     :class_variable      => 'class-variable',     # Ruby, YAML
     :color               => 'color',              # CSS
-    :comment             => 'comment',            # most scanners
+    :comments             => 'comments',            # most scanners
     :constant            => 'constant',           # PHP, Ruby
     :content             => 'content',            # inside of strings, most scanners
     :decorator           => 'decorator',          # Python

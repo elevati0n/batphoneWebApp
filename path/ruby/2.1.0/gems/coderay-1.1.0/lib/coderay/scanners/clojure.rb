@@ -23,7 +23,7 @@ module CodeRay
         bit-set bit-shift-left bit-shift-right bit-test bit-xor boolean boolean-array
         booleans bound-fn bound-fn* bound? butlast byte byte-array bytes case cast char
         char-array char-escape-string char-name-string char? chars class class?
-        clear-agent-errors clojure-version coll? comment commute comp comparator
+        clear-agent-errors clojure-version coll? comments commute comp comparator
         compare compare-and-set! compile complement concat cond condp conj conj!
         cons constantly construct-proxy contains? count counted? create-ns
         create-struct cycle dec decimal? declare definline defmacro defmethod defmulti
@@ -156,7 +156,7 @@ module CodeRay
             elsif match = scan(/['`\(\[\)\]\{\}]|\#[({]|~@?|[@\^]/)
               encoder.text_token match, :operator
             elsif match = scan(/;.*/)
-              encoder.text_token match, :comment  # TODO: recognize (comment ...) too
+              encoder.text_token match, :comments  # TODO: recognize (comments ...) too
             elsif match = scan(/\#?\\(?:newline|space|.?)/)
               encoder.text_token match, :char
             elsif match = scan(/\#[ft]/)

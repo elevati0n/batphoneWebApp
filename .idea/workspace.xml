@@ -1,7 +1,265 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2ef0b51d-9977-40c7-b1dc-7a325492aa25" name="Default" comment="" />
+    <list default="true" id="2ef0b51d-9977-40c7-b1dc-7a325492aa25" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comments/_comment.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/shared/_comment_form.html.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comments/index.erb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/comments/index.html.erb" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/comment.rb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/db/migrate/20151004192838_create_comments.rb" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-ecloud-0.3.0/.rubocop.yml" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-ecloud-0.3.0/.rubocop.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/railties-4.2.2/lib/rails/generators/rails/app/templates/Gemfile" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/railties-4.2.2/lib/rails/generators/rails/app/templates/Gemfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/railties-4.2.2/lib/rails/generators/rails/plugin/templates/Gemfile" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/railties-4.2.2/lib/rails/generators/rails/plugin/templates/Gemfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/excon-0.45.4/Rakefile" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/excon-0.45.4/Rakefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/Rakefile" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/Rakefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-softlayer-0.4.7/Rakefile" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-softlayer-0.4.7/Rakefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/formatador-0.2.5/Rakefile" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/formatador-0.2.5/Rakefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/Rakefile" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/Rakefile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/microposts/_micropost.html.erb" afterPath="$PROJECT_DIR$/app/views/microposts/_micropost.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/mail-2.6.3/lib/mail/elements/address.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/mail-2.6.3/lib/mail/elements/address.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/alias.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/alias.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/styles/alpha.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/styles/alpha.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/railties-4.2.2/lib/rails/generators/app_base.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/railties-4.2.2/lib/rails/generators/app_base.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/activesupport-4.2.2/lib/active_support/testing/assertions.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/activesupport-4.2.2/lib/active_support/testing/assertions.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/activerecord-4.2.2/lib/active_record/associations.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/activerecord-4.2.2/lib/active_record/associations.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/pg-0.17.1/sample/async_api.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/pg-0.17.1/sample/async_api.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/attr.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/attr.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/activerecord-4.2.2/lib/active_record/autosave_association.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/activerecord-4.2.2/lib/active_record/autosave_association.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/test/functional/basic.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/test/functional/basic.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/rd/block_parser.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/rd/block_parser.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/byebug-3.4.0/test/commands/break_test.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/byebug-3.4.0/test/commands/break_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/c.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/c.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/parser/c.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/parser/c.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/actionview-4.2.2/lib/action_view/helpers/cache_helper.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/actionview-4.2.2/lib/action_view/helpers/cache_helper.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/lib/fog/aws/requests/dns/change_resource_record_sets.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/lib/fog/aws/requests/dns/change_resource_record_sets.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/class_module.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/class_module.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/clojure.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/clojure.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/pry-0.10.2/lib/pry/code.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/pry-0.10.2/lib/pry/code.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/method_source-0.8.2/lib/method_source/code_helpers.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/method_source-0.8.2/lib/method_source/code_helpers.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/pry-0.10.2/lib/pry/code_object.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/pry-0.10.2/lib/pry/code_object.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/code_object.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/code_object.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/pry-0.10.2/lib/pry/color_printer.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/pry-0.10.2/lib/pry/color_printer.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/mini_magick-3.8.0/lib/mini_magick/command_builder.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/mini_magick-3.8.0/lib/mini_magick/command_builder.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/pry-0.10.2/lib/pry/helpers/command_helpers.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/pry-0.10.2/lib/pry/helpers/command_helpers.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/comment.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/comment.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/encoders/comment_filter.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/encoders/comment_filter.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/lib/sass/tree/comment_node.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/lib/sass/tree/comment_node.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/comments.yml" afterPath="$PROJECT_DIR$/test/fixtures/comments.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/mail-2.6.3/lib/mail/fields/comments_field.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/mail-2.6.3/lib/mail/fields/comments_field.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/test/sass/results/compact.css" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/test/sass/results/compact.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/test/sass/results/complex.css" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/test/sass/results/complex.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/activesupport-4.2.2/lib/active_support/core_ext/module/concerning.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/activesupport-4.2.2/lib/active_support/core_ext/module/concerning.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/constant.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/constant.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/context.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/context.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/test/sass/conversion_test.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/test/sass/conversion_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/erubis-2.7.0/lib/erubis/converter.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/erubis-2.7.0/lib/erubis/converter.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/cpp.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/cpp.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/lib/fog/aws/requests/dns/create_hosted_zone.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/lib/fog/aws/requests/dns/create_hosted_zone.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/lib/fog/dreamhost/requests/dns/create_record.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/lib/fog/dreamhost/requests/dns/create_record.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/tests/dreamhost/requests/dns/create_record_tests.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/tests/dreamhost/requests/dns/create_record_tests.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/css.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/css.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/test/sass/css2sass_test.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/test/sass/css2sass_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/test/sass/scss/css_test.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/test/sass/scss/css_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/delphi.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/delphi.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/activesupport-4.2.2/lib/active_support/dependencies.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/activesupport-4.2.2/lib/active_support/dependencies.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/actionview-4.2.2/lib/action_view/dependency_tracker.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/actionview-4.2.2/lib/action_view/dependency_tracker.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/jbuilder-2.2.3/lib/jbuilder/dependency_tracker.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/jbuilder-2.2.3/lib/jbuilder/dependency_tracker.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/diff.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/diff.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sprockets-3.3.5/lib/sprockets/directive_processor.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sprockets-3.3.5/lib/sprockets/directive_processor.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/lib/fog/aws/models/cdn/distribution.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/lib/fog/aws/models/cdn/distribution.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/tests/aws/requests/dns/dns_tests.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/tests/aws/requests/dns/dns_tests.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/tests/rackspace/requests/dns/dns_tests.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/tests/rackspace/requests/dns/dns_tests.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/nokogiri-1.6.6.2/lib/nokogiri/xml/sax/document.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/nokogiri-1.6.6.2/lib/nokogiri/xml/sax/document.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/pry-0.10.2/lib/pry/helpers/documentation_helpers.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/pry-0.10.2/lib/pry/helpers/documentation_helpers.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/ri/driver.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/ri/driver.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/encoding.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/encoding.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/lib/sass/engine.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/lib/sass/engine.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/test/sass/engine_test.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/test/sass/engine_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/actionview-4.2.2/lib/action_view/template/handlers/erb.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/actionview-4.2.2/lib/action_view/template/handlers/erb.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/erb.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/erb.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/erubis-2.7.0/contrib/erubis" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/erubis-2.7.0/contrib/erubis" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/test/functional/examples.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/test/functional/examples.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/excon-0.45.4/excon.gemspec" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/excon-0.45.4/excon.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/test/sass/results/expanded.css" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/test/sass/results/expanded.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/extend.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/extend.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/thor-0.19.1/lib/thor/actions/file_manipulation.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/thor-0.19.1/lib/thor/actions/file_manipulation.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/fog.gemspec" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/fog.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/actionview-4.2.2/lib/action_view/helpers/form_helper.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/actionview-4.2.2/lib/action_view/helpers/form_helper.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/actionview-4.2.2/lib/action_view/helpers/form_tag_helper.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/actionview-4.2.2/lib/action_view/helpers/form_tag_helper.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/formatador-0.2.5/formatador.gemspec" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/formatador-0.2.5/formatador.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/markup/formatter.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/markup/formatter.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/lib/sass/script/functions.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/lib/sass/script/functions.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sdoc-0.4.0/lib/sdoc/generator.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sdoc-0.4.0/lib/sdoc/generator.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/lib/fog/aws/requests/dns/get_hosted_zone.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/lib/fog/aws/requests/dns/get_hosted_zone.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/ghost_method.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/ghost_method.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/go.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/go.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/groovy.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/groovy.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/haml.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/haml.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/html.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/html.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/include.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/include.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/erubis-2.7.0/contrib/inline-require" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/erubis-2.7.0/contrib/inline-require" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/lib/sass/script/tree/interpolation.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/lib/sass/script/tree/interpolation.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/builder-3.2.2/doc/jamis.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/builder-3.2.2/doc/jamis.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rake-10.4.2/doc/jamis.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rake-10.4.2/doc/jamis.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/java.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/java.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/net-ssh-3.0.1/lib/net/ssh/authentication/agent/java_pageant.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/net-ssh-3.0.1/lib/net/ssh/authentication/agent/java_pageant.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/java_script.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/java_script.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/jbuilder-2.2.3/lib/jbuilder.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/jbuilder-2.2.3/lib/jbuilder.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/jbuilder-2.2.3/test/jbuilder_dependency_tracker_test.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/jbuilder-2.2.3/test/jbuilder_dependency_tracker_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/jquery-rails-4.0.3/vendor/assets/javascripts/jquery.js" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/jquery-rails-4.0.3/vendor/assets/javascripts/jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/jquery-rails-4.0.3/vendor/assets/javascripts/jquery2.js" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/jquery-rails-4.0.3/vendor/assets/javascripts/jquery2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/generator/json_index.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/generator/json_index.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fission-0.5.0/spec/fission/lease_spec.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fission-0.5.0/spec/fission/lease_spec.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/bootstrap-sass-3.2.0.0/tasks/converter/less_conversion.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/bootstrap-sass-3.2.0.0/tasks/converter/less_conversion.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/lib/sass/script/lexer.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/lib/sass/script/lexer.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/encoders/lines_of_code.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/encoders/lines_of_code.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/lib/fog/aws/requests/dns/list_hosted_zones.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/lib/fog/aws/requests/dns/list_hosted_zones.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/tests/dreamhost/requests/dns/list_records_tests.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/tests/dreamhost/requests/dns/list_records_tests.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/debugger-linecache-1.2.0/test/lnum-diag.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/debugger-linecache-1.2.0/test/lnum-diag.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/lua.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/lua.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/lib/sass/source/map.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/lib/sass/source/map.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/actionpack-4.2.2/lib/action_dispatch/routing/mapper.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/actionpack-4.2.2/lib/action_dispatch/routing/mapper.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/parser/markdown.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/parser/markdown.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/markup.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/markup.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/generator/markup.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/generator/markup.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/method_attr.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/method_attr.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/method_source-0.8.2/lib/method_source.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/method_source-0.8.2/lib/method_source.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/micropost.rb" afterPath="$PROJECT_DIR$/app/models/micropost.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/microposts_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/microposts_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/activerecord-4.2.2/lib/active_record/migration.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/activerecord-4.2.2/lib/active_record/migration.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/mixin.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/mixin.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/lib/fog/rackspace/requests/dns/modify_domain.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/lib/fog/rackspace/requests/dns/modify_domain.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/test/sass/results/nested.css" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/test/sass/results/nested.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/nokogiri-1.6.6.2/lib/xsd/xmlparser/nokogiri.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/nokogiri-1.6.6.2/lib/xsd/xmlparser/nokogiri.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/normal_class.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/normal_class.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/normal_module.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/normal_module.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/options.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/options.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/json-1.8.3/lib/json/pure/parser.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/json-1.8.3/lib/json/pure/parser.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/parser.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/parser.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/php.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/php.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/inflecto-0.0.2/spec/unit/inflector/class_methods/pluralize_spec.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/inflecto-0.0.2/spec/unit/inflector/class_methods/pluralize_spec.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/i18n-0.7.0/lib/i18n/gettext/po_parser.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/i18n-0.7.0/lib/i18n/gettext/po_parser.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/actionpack-4.2.2/lib/action_dispatch/routing/polymorphic_routes.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/actionpack-4.2.2/lib/action_dispatch/routing/polymorphic_routes.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/lib/fog/aws/requests/cdn/post_distribution.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/lib/fog/aws/requests/cdn/post_distribution.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/lib/fog/aws/requests/cdn/post_streaming_distribution.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/lib/fog/aws/requests/cdn/post_streaming_distribution.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/markup/pre_process.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/markup/pre_process.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rails_stdout_logging-0.0.4/test/dummy/config/environments/production.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rails_stdout_logging-0.0.4/test/dummy/config/environments/production.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rails_stdout_logging-0.0.4/test/dummy/public/javascripts/prototype.js" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rails_stdout_logging-0.0.4/test/dummy/public/javascripts/prototype.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/lib/fog/aws/requests/cdn/put_distribution_config.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/lib/fog/aws/requests/cdn/put_distribution_config.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/lib/fog/aws/requests/cdn/put_streaming_distribution_config.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/lib/fog/aws/requests/cdn/put_streaming_distribution_config.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/python.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/python.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rake-10.4.2/test/support/rakefile_definitions.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rake-10.4.2/test/support/rakefile_definitions.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/CFPropertyList-2.3.1/lib/cfpropertylist/rbREXMLParser.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/CFPropertyList-2.3.1/lib/cfpropertylist/rbREXMLParser.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/parser/rd.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/parser/rd.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/tests/dreamhost/models/dns/record_tests.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/tests/dreamhost/models/dns/record_tests.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/require.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/require.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/ruby.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/ruby.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/parser/ruby.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/parser/ruby.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/actionview-4.2.2/lib/action_view/helpers/sanitize_helper.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/actionview-4.2.2/lib/action_view/helpers/sanitize_helper.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rails-deprecated_sanitizer-1.0.3/lib/rails/deprecated_sanitizer/html-scanner/html/sanitizer.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rails-deprecated_sanitizer-1.0.3/lib/rails/deprecated_sanitizer/html-scanner/html/sanitizer.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rails-html-sanitizer-1.0.2/lib/rails/html/sanitizer.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rails-html-sanitizer-1.0.2/lib/rails/html/sanitizer.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rails-html-sanitizer-1.0.2/test/sanitizer_test.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rails-html-sanitizer-1.0.2/test/sanitizer_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/sass.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/sass.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/lib/sass/exec/sass_scss.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/lib/sass/exec/sass_scss.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanner.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanner.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rails-html-sanitizer-1.0.2/lib/rails/html/scrubbers.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rails-html-sanitizer-1.0.2/lib/rails/html/scrubbers.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/test/sass/scss/scss_test.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/test/sass/scss/scss_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/context/section.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/context/section.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/lib/sass/selector.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/lib/sass/selector.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/lib/sass/selector/sequence.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/lib/sass/selector/sequence.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/pry-0.10.2/lib/pry/commands/show_doc.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/pry-0.10.2/lib/pry/commands/show_doc.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/pry-0.10.2/lib/pry/commands/show_info.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/pry-0.10.2/lib/pry/commands/show_info.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/parser/simple.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/parser/simple.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/tests/aws/requests/compute/snapshot_tests.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/tests/aws/requests/compute/snapshot_tests.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/net-ssh-3.0.1/lib/net/ssh/authentication/agent/socket.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/net-ssh-3.0.1/lib/net/ssh/authentication/agent/socket.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/railties-4.2.2/lib/rails/source_annotation_extractor.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/railties-4.2.2/lib/rails/source_annotation_extractor.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rack-1.6.4/test/spec_builder.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rack-1.6.4/test/spec_builder.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rack-1.6.4/test/spec_lint.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rack-1.6.4/test/spec_lint.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/sql.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/sql.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/nokogiri-1.6.6.2/test/files/staff.xml" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/nokogiri-1.6.6.2/test/files/staff.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/static_pages_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/static_pages_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/lib/sass/scss/static_parser.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/lib/sass/scss/static_parser.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/lib/fog/aws/models/cdn/streaming_distribution.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/lib/fog/aws/models/cdn/streaming_distribution.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rake-10.4.2/lib/rake/task.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rake-10.4.2/lib/rake/task.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rake-10.4.2/lib/rake/task_manager.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rake-10.4.2/lib/rake/task_manager.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/taskpaper.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/taskpaper.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/tzinfo-1.2.2/test/tc_zoneinfo_data_source.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/tzinfo-1.2.2/test/tc_zoneinfo_data_source.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/actionview-4.2.2/lib/action_view/template.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/actionview-4.2.2/lib/action_view/template.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/tilt-1.4.1/lib/tilt/template.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/tilt-1.4.1/lib/tilt/template.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/encoders/terminal.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/encoders/terminal.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/erubis-2.7.0/test/test-erubis.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/erubis-2.7.0/test/test-erubis.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/method_source-0.8.2/test/test.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/method_source-0.8.2/test/test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/nokogiri-1.6.6.2/test/xml/test_builder.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/nokogiri-1.6.6.2/test/xml/test_builder.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/test_case.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/test_case.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/nokogiri-1.6.6.2/test/test_convert_xpath.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/nokogiri-1.6.6.2/test/test_convert_xpath.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/method_source-0.8.2/test/test_helper.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/method_source-0.8.2/test/test_helper.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/json-1.8.3/tests/test_json.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/json-1.8.3/tests/test_json.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/nokogiri-1.6.6.2/test/xml/test_node.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/nokogiri-1.6.6.2/test/xml/test_node.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/nokogiri-1.6.6.2/test/css/test_parser.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/nokogiri-1.6.6.2/test/css/test_parser.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/nokogiri-1.6.6.2/test/html/sax/test_parser.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/nokogiri-1.6.6.2/test/html/sax/test_parser.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/nokogiri-1.6.6.2/test/xml/sax/test_parser.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/nokogiri-1.6.6.2/test/xml/sax/test_parser.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/nokogiri-1.6.6.2/test/html/sax/test_push_parser.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/nokogiri-1.6.6.2/test/html/sax/test_push_parser.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/nokogiri-1.6.6.2/test/xml/sax/test_push_parser.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/nokogiri-1.6.6.2/test/xml/sax/test_push_parser.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rake-10.4.2/test/test_rake_functional.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rake-10.4.2/test/test_rake_functional.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rake-10.4.2/test/test_rake_task.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rake-10.4.2/test/test_rake_task.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_any_method.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_any_method.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_attr.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_attr.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_class_module.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_class_module.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_code_object.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_code_object.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_comment.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_comment.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_constant.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_constant.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_context.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_context.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_context_section.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_context_section.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_extend.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_extend.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_generator_pot.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_generator_pot.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_include.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_include.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_markdown_test.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_markdown_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_markup_to_html.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_markup_to_html.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_markup_to_html_snippet.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_markup_to_html_snippet.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_method_attr.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_method_attr.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_parser_c.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_parser_c.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_parser_ruby.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_parser_ruby.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_parser_simple.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_parser_simple.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_require.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_require.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_stats.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_stats.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_store.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_store.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_text.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_text.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_token_stream.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_token_stream.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_tom_doc.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_tom_doc.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_top_level.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/test/test_rdoc_top_level.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/nokogiri-1.6.6.2/test/css/test_tokenizer.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/nokogiri-1.6.6.2/test/css/test_tokenizer.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/text.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/text.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/tilt-1.4.1/test/tilt_erbtemplate_test.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/tilt-1.4.1/test/tilt_erbtemplate_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/tilt-1.4.1/test/tilt_template_test.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/tilt-1.4.1/test/tilt_template_test.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/to_css.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/to_css.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/token_kinds.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/token_kinds.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/token_stream.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/token_stream.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rails-deprecated_sanitizer-1.0.3/lib/rails/deprecated_sanitizer/html-scanner/html/tokenizer.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rails-deprecated_sanitizer-1.0.3/lib/rails/deprecated_sanitizer/html-scanner/html/tokenizer.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/tokens.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/tokens.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/tom_doc.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/rdoc-4.2.0/lib/rdoc/tom_doc.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/uglifier-2.5.3/lib/uglifier.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/uglifier-2.5.3/lib/uglifier.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/uglifier-2.5.3/spec/uglifier_spec.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/uglifier-2.5.3/spec/uglifier_spec.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/uglifier-2.5.3/lib/uglify.js" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/uglifier-2.5.3/lib/uglify.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/activerecord-4.2.2/lib/active_record/validations/uniqueness.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/activerecord-4.2.2/lib/active_record/validations/uniqueness.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/users_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/users_helper.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/activemodel-4.2.2/lib/active_model/validations.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/activemodel-4.2.2/lib/active_model/validations.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/lib/sass/version.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/sass-3.4.18/lib/sass/version.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/builder-3.2.2/lib/builder/xmlmarkup.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/builder-3.2.2/lib/builder/xmlmarkup.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/nokogiri-1.6.6.2/lib/nokogiri/css/xpath_visitor.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/nokogiri-1.6.6.2/lib/nokogiri/css/xpath_visitor.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/yaml.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/coderay-1.1.0/lib/coderay/scanners/yaml.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/lib/fog/aws/models/dns/zone.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/lib/fog/aws/models/dns/zone.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/lib/fog/rackspace/models/dns/zone.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/fog-1.26.0/lib/fog/rackspace/models/dns/zone.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/path/ruby/2.1.0/gems/tzinfo-1.2.2/lib/tzinfo/zoneinfo_data_source.rb" afterPath="$PROJECT_DIR$/path/ruby/2.1.0/gems/tzinfo-1.2.2/lib/tzinfo/zoneinfo_data_source.rb" />
+    </list>
     <ignored path="batphoneApp.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -30,74 +288,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="devices_controller.rb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/devices_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3301759">
-              <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_device.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/devices/_device.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.3333333">
-              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="3" selection-end-column="116" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/devices/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.625">
-              <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="new.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/devices/new.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.625">
-              <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_footer.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/_footer.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_header.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
+      <file leaf-file-name="_comment.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/comments/_comment.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-1.875">
-              <caret line="3" column="116" selection-start-line="3" selection-start-column="116" selection-end-line="3" selection-end-column="116" />
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <file leaf-file-name="users_helper.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/helpers/users_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1445712462000" expanded="true" signature="459:475" placeholder="..." />
-              </folding>
+            <state vertical-scroll-proportion="-2.7777777">
+              <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_comment_form.html.erb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/shared/_comment_form.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.37762237">
+              <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -105,25 +321,45 @@
       <file leaf-file-name="_micropost.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/microposts/_micropost.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.125">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state vertical-scroll-proportion="-11.875">
+              <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_feed.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/shared/_feed.html.erb">
+      <file leaf-file-name="comments_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/comments_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="25" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+      <file leaf-file-name="comment.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/comment.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="microposts_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/microposts_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="comment_helper.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/helpers/comment_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -132,7 +368,34 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="index.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/comments/index.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/comments/index.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.625">
+              <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Erb File.html" />
+      </list>
+    </option>
   </component>
   <component name="GeneratorOptions">
     <option name="VCS_SHOW_CONFIRMATION" value="true" />
@@ -151,18 +414,14 @@
         <option value="$PROJECT_DIR$/app/views/sessions/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/edit.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-        <option value="$PROJECT_DIR$/app/models/micropost.rb" />
         <option value="$PROJECT_DIR$/app/views/shared/_micropost_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/microposts/_micropost.html.erb" />
         <option value="$PROJECT_DIR$/config/application.rb" />
         <option value="$PROJECT_DIR$/app/uploaders/picture_uploader.rb" />
         <option value="$PROJECT_DIR$/app/models/relationship.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/relationships_controller.rb" />
         <option value="$PROJECT_DIR$/app/helpers/sessions_helper.rb" />
         <option value="$PROJECT_DIR$/app/views/users/_follow_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/static_pages_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/app/controllers/sessions_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/network.rb" />
@@ -170,17 +429,29 @@
         <option value="$PROJECT_DIR$/app/views/devices/_devices.html.erb" />
         <option value="$PROJECT_DIR$/app/views/devices/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/microposts/index.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/microposts_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/networks/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/networks/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/devices/_device.html.erb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/views/devices/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/networks/_network.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/devices_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/networks_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/networks/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/comment.rb" />
+        <option value="$PROJECT_DIR$/app/models/micropost.rb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/comment/_comment.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/comment_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/microposts_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/static_pages_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/comments/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/comments_controller.rb" />
+        <option value="$PROJECT_DIR$/app/helpers/users_helper.rb" />
+        <option value="$PROJECT_DIR$/app/views/comments/_comment.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/microposts/_micropost.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/shared/_comment_form.html.erb" />
       </list>
     </option>
   </component>
@@ -227,8 +498,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
@@ -480,6 +749,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comments" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="batphoneApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="batphoneWebApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="uploaders" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -572,6 +863,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -873,7 +1166,7 @@
     <frame x="11" y="23" width="1400" height="833" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19808541" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20103092" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985657" sideWeight="0.4920635" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3285528" sideWeight="0.5104261" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -910,168 +1203,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/relationship.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/microposts_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/show_follow.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/shared/_stats.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/_unfollow.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/static_pages_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/networks.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_shim.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb.save">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20151024194404_create_networks.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/networks_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20151024221000_create_devices.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/group.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/show.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.0">
-          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/sessions_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.2.1/gems/activerecord-4.2.2/lib/active_record/core.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="161" column="10" selection-start-line="161" selection-start-column="10" selection-end-line="161" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/users/_follow_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/sessions/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/devices_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-14.375">
           <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/micropost.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="6" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1079,7 +1214,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.75">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1087,15 +1221,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.5">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1103,7 +1228,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.125">
           <caret line="13" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1119,7 +1243,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.875">
           <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1127,7 +1250,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.875">
           <caret line="3" column="51" selection-start-line="3" selection-start-column="51" selection-end-line="3" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1135,15 +1257,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.0">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/device.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1171,22 +1284,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/microposts_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="19" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/sessions_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1199,7 +1296,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.5">
           <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1207,7 +1303,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.125">
           <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1215,7 +1310,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.875">
           <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1227,26 +1321,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/devices/_device.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.3333333">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="3" selection-end-column="116" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/devices/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.625">
-          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/devices/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.625">
+        <state vertical-scroll-proportion="0.0">
           <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="116" selection-start-line="3" selection-start-column="116" selection-end-line="3" selection-end-column="116" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1445712462000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/device.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/microposts_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/relationships_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/networks_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/devices_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/devices/_device.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.625">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="3" selection-end-column="116" />
           <folding />
         </state>
       </provider>
@@ -1259,36 +1419,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_header.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/shared/_user_info.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.875">
-          <caret line="3" column="116" selection-start-line="3" selection-start-column="116" selection-end-line="3" selection-end-column="116" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1445712462000" expanded="true" signature="459:475" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/microposts/_micropost.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.125">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/shared/_feed.html.erb">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.125">
+          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/shared/_stats.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="25" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/shared/_micropost_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.625">
+          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/static_pages_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/devices_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/micropost.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/rubystubs22/enumerator.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="364" column="32" selection-start-line="364" selection-start-column="32" selection-end-line="364" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="73" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/sessions_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1301,10 +1507,98 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/devices_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/static_pages_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3301759">
-          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/devices/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.625">
+          <caret line="9" column="23" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/comments/index.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/comments/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.625">
+          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/microposts_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/comments_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/comment.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/comment_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/users_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.7777777">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/comments/_comment.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.875">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/microposts/_micropost.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.875">
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/shared/_comment_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37762237">
+          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
           <folding />
         </state>
       </provider>

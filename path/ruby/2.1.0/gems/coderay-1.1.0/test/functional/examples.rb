@@ -110,7 +110,7 @@ Token Types (7):
     # scanning into tokens
     tokens = python_scanner.tokenize 'import this;  # The Zen of Python'
     assert_equal ["import", :keyword, " ", :space, "this", :include,
-      ";", :operator, "  ", :space, "# The Zen of Python", :comment], tokens
+      ";", :operator, "  ", :space, "# The Zen of Python", :comments], tokens
     
     # format the tokens
     term = terminal_encoder.encode_tokens(tokens)

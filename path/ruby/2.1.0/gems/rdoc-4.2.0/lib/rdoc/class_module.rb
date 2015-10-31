@@ -113,13 +113,13 @@ class RDoc::ClassModule < RDoc::Context
     @is_alias_for     = nil
     @name             = name
     @superclass       = superclass
-    @comment_location = [] # [[comment, location]]
+    @comment_location = [] # [[comments, location]]
 
     super()
   end
 
   ##
-  # Adds +comment+ to this ClassModule's list of comments at +location+.  This
+  # Adds +comments+ to this ClassModule's list of comments at +location+.  This
   # method is preferred over #comment= since it allows ri data to be updated
   # across multiple runs.
 
@@ -187,7 +187,7 @@ class RDoc::ClassModule < RDoc::Context
   alias direct_ancestors ancestors
 
   ##
-  # Clears the comment. Used by the Ruby parser.
+  # Clears the comments. Used by the Ruby parser.
 
   def clear_comment
     @comment = ''
@@ -196,7 +196,7 @@ class RDoc::ClassModule < RDoc::Context
   ##
   # This method is deprecated, use #add_comment instead.
   #
-  # Appends +comment+ to the current comment, but separated by a rule.  Works
+  # Appends +comments+ to the current comments, but separated by a rule.  Works
   # more like <tt>+=</tt>.
 
   def comment= comment # :nodoc:
@@ -232,7 +232,7 @@ class RDoc::ClassModule < RDoc::Context
   end
 
   ##
-  # Does this class or module have a comment with content or is
+  # Does this class or module have a comments with content or is
   # #received_nodoc true?
 
   def documented?
@@ -600,7 +600,7 @@ class RDoc::ClassModule < RDoc::Context
     when RDoc::Markup::Document then
       return comment_location
     else
-      raise ArgumentError, "unknown comment class #{comment_location.class}"
+      raise ArgumentError, "unknown comments class #{comment_location.class}"
     end
   end
 

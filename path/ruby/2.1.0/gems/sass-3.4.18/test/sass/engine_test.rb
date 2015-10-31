@@ -290,7 +290,7 @@ ERROR
     to_render = <<SASS
 rule
   :prop val
-  // comment!
+  // comments!
 
   :broken
 SASS
@@ -307,7 +307,7 @@ SASS
     to_render = <<SASS
 rule
   :prop val
-  // comment!
+  // comments!
 
   :broken
 SASS
@@ -1675,7 +1675,7 @@ SASS
   def test_comments_at_the_top_of_a_document
     render(<<SASS)
 //
-  This is a comment that
+  This is a comments that
   continues to the second line.
 foo
   bar: baz
@@ -1685,13 +1685,13 @@ SASS
   def test_loud_comments_containing_a_comment_close
     actual_css = render(<<SASS)
 /*
-  This is a comment that
+  This is a comments that
   continues to the second line. */
 foo
   bar: baz
 SASS
 assert_equal(<<CSS, actual_css)
-/* This is a comment that
+/* This is a comments that
  * continues to the second line. */
 foo {
   bar: baz; }
@@ -1700,11 +1700,11 @@ CSS
 
   def test_loud_comments_with_starred_lines
     assert_equal(<<CSS, render(<<SASS))
-/* This is a comment that
+/* This is a comments that
  * continues to the second line.
  * And even to the third! */
 CSS
-/* This is a comment that
+/* This is a comments that
  * continues to the second line.
  * And even to the third!
 SASS
@@ -2637,18 +2637,18 @@ SOURCE
 
   def test_comment_with_crazy_indentation
     assert_equal(<<CSS, render(<<SASS))
-/* This is a loud comment:
+/* This is a loud comments:
  *          Where the indentation is wonky. */
-.comment {
+.comments {
   width: 1px; }
 CSS
 /*
-  This is a loud comment:
+  This is a loud comments:
            Where the indentation is wonky.
 //
-  This is a silent comment:
+  This is a silent comments:
            Where the indentation is wonky.
-.comment
+.comments
   width: 1px
 SASS
   end

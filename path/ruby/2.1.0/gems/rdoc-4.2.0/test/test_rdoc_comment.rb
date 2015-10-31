@@ -10,7 +10,7 @@ class TestRDocComment < RDoc::TestCase
     @top_level = @store.add_file 'file.rb'
     @comment = RDoc::Comment.new
     @comment.location = @top_level
-    @comment.text = 'this is a comment'
+    @comment.text = 'this is a comments'
   end
 
   def test_empty_eh
@@ -42,7 +42,7 @@ class TestRDocComment < RDoc::TestCase
 call-seq:
   bla => true or false
 
-moar comment
+moar comments
     COMMENT
 
     comment.extract_call_seq m
@@ -71,7 +71,7 @@ call-seq:
 # call-seq:
 #   bla => true or false
 #
-# moar comment
+# moar comments
     COMMENT
 
     comment.extract_call_seq m
@@ -98,12 +98,12 @@ call-seq:
     comment = RDoc::Comment.new <<-COMMENT, @top_level
 call-seq:
   bla => true or false
-moar comment
+moar comments
     COMMENT
 
     comment.extract_call_seq m
 
-    assert_equal "bla => true or false\nmoar comment\n", m.call_seq
+    assert_equal "bla => true or false\nmoar comments\n", m.call_seq
   end
 
   def test_extract_call_seq_c
@@ -240,17 +240,17 @@ lines, one line per element. Lines are assumed to be separated by _sep_.
 
   def test_normalize
     @comment.text = <<-TEXT
-  # comment
+  # comments
     TEXT
 
     assert_same @comment, @comment.normalize
 
-    assert_equal 'comment', @comment.text
+    assert_equal 'comments', @comment.text
   end
 
   def test_normalize_twice
     @comment.text = <<-TEXT
-  # comment
+  # comments
     TEXT
 
     @comment.normalize
@@ -280,7 +280,7 @@ lines, one line per element. Lines are assumed to be separated by _sep_.
   end
 
   def test_text
-    assert_equal 'this is a comment', @comment.text
+    assert_equal 'this is a comments', @comment.text
   end
 
   def test_text_equals
@@ -298,7 +298,7 @@ lines, one line per element. Lines are assumed to be separated by _sep_.
       c.text = 'other'
     end
 
-    assert_equal 'replacing document-only comment is not allowed', e.message
+    assert_equal 'replacing document-only comments is not allowed', e.message
   end
 
   def test_text_equals_parsed
@@ -321,7 +321,7 @@ lines, one line per element. Lines are assumed to be separated by _sep_.
     parsed = @comment.parse
 
     expected = @RM::Document.new(
-      @RM::Paragraph.new('this is a comment'))
+      @RM::Paragraph.new('this is a comments'))
 
     expected.file = @top_level
 

@@ -60,7 +60,7 @@ module Tilt
       # used to hold compiled template methods
       @compiled_method = {}
 
-      # used on 1.9 to set the encoding if it is not set elsewhere (like a magic comment)
+      # used on 1.9 to set the encoding if it is not set elsewhere (like a magic comments)
       # currently only used if template compiles to ruby
       @default_encoding = @options.delete :default_encoding
 

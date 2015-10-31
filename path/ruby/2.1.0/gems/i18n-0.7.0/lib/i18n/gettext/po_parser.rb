@@ -102,9 +102,9 @@ module_eval <<'..end src/poparser.ry modeval..id7a99570e05', 'src/poparser.ry', 
     @msgctxt = ""
   end
       
-  def on_comment(comment)
-    @fuzzy = true if (/fuzzy/ =~ comment)
-    @comments << comment
+  def on_comment(comments)
+    @fuzzy = true if (/fuzzy/ =~ comments)
+    @comments << comments
   end 
 
 
@@ -209,7 +209,7 @@ Racc_token_to_s_table = [
 'PLURAL_NUM',
 '$start',
 'msgfmt',
-'comment',
+'comments',
 'msgctxt',
 'message',
 'string_list',

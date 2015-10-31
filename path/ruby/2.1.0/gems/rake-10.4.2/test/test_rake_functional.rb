@@ -389,7 +389,7 @@ class TestRakeFunctional < Rake::TestCase
 
     rake "-T"
 
-    refute_match(/comment for t1/, @out)
+    refute_match(/comments for t1/, @out)
   end
 
   def test_comment_separated_from_task_by_blank_line_is_not_picked_up
@@ -405,7 +405,7 @@ class TestRakeFunctional < Rake::TestCase
 
     rake "-T"
 
-    assert_match("override comment for t3", @out)
+    assert_match("override comments for t3", @out)
   end
 
   def test_comment_before_desc_is_ignored
@@ -413,7 +413,7 @@ class TestRakeFunctional < Rake::TestCase
 
     rake "-T"
 
-    assert_match("override comment for t4", @out)
+    assert_match("override comments for t4", @out)
   end
 
   def test_correct_number_of_tasks_reported

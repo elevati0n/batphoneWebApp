@@ -14,7 +14,7 @@ class RDoc::Context::Section
   MARSHAL_VERSION = 0 # :nodoc:
 
   ##
-  # Section comment
+  # Section comments
 
   attr_reader :comment
 
@@ -36,7 +36,7 @@ class RDoc::Context::Section
   @@sequence = "SEC00000"
 
   ##
-  # Creates a new section with +title+ and +comment+
+  # Creates a new section with +title+ and +comments+
 
   def initialize parent, title, comment
     @parent = parent
@@ -58,7 +58,7 @@ class RDoc::Context::Section
   end
 
   ##
-  # Adds +comment+ to this section
+  # Adds +comments+ to this section
 
   def add_comment comment
     comment = extract_comment comment
@@ -73,7 +73,7 @@ class RDoc::Context::Section
     when Array then
       @comments.concat comment
     else
-      raise TypeError, "unknown comment type: #{comment.inspect}"
+      raise TypeError, "unknown comments type: #{comment.inspect}"
     end
   end
 
@@ -87,7 +87,7 @@ class RDoc::Context::Section
   end
 
   ##
-  # Extracts the comment for this section from the original comment block.
+  # Extracts the comments for this section from the original comments block.
   # If the first line contains :section:, strip it and use the rest.
   # Otherwise remove lines up to the line containing :section:, and look
   # for those lines again at the end and remove them. This lets us write
@@ -119,7 +119,7 @@ class RDoc::Context::Section
     when RDoc::Markup::Document then
       comment
     else
-      raise TypeError, "unknown comment #{comment.inspect}"
+      raise TypeError, "unknown comments #{comment.inspect}"
     end
   end
 
@@ -143,12 +143,12 @@ class RDoc::Context::Section
         document.file
       end
     else
-      raise RDoc::Error, "BUG: unknown comment class #{@comments.class}"
+      raise RDoc::Error, "BUG: unknown comments class #{@comments.class}"
     end
   end
 
   ##
-  # Serializes this Section.  The title and parsed comment are saved, but not
+  # Serializes this Section.  The title and parsed comments are saved, but not
   # the section parent which must be restored manually.
 
   def marshal_dump
@@ -192,7 +192,7 @@ class RDoc::Context::Section
     when RDoc::Markup::Document then
       return @comments
     else
-      raise ArgumentError, "unknown comment class #{comments.class}"
+      raise ArgumentError, "unknown comments class #{comments.class}"
     end
   end
 
@@ -206,8 +206,8 @@ class RDoc::Context::Section
   end
 
   ##
-  # Removes a comment from this section if it is from the same file as
-  # +comment+
+  # Removes a comments from this section if it is from the same file as
+  # +comments+
 
   def remove_comment comment
     return if @comments.empty?
@@ -222,7 +222,7 @@ class RDoc::Context::Section
         document.file == comment.file.name
       end
     else
-      raise RDoc::Error, "BUG: unknown comment class #{@comments.class}"
+      raise RDoc::Error, "BUG: unknown comments class #{@comments.class}"
     end
   end
 

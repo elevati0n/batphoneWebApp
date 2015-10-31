@@ -417,27 +417,27 @@ void Init_foo(){
    /* Default definition */
    rb_define_const(cFoo, "NOSEMI", INT2FIX(99));
 
-   rb_define_const(cFoo, "NOCOMMENT", rb_str_new2("No comment"));
+   rb_define_const(cFoo, "NOCOMMENT", rb_str_new2("No comments"));
 
    /*
-    * Multiline comment goes here because this comment spans multiple lines.
-    * Multiline comment goes here because this comment spans multiple lines.
+    * Multiline comments goes here because this comments spans multiple lines.
+    * Multiline comments goes here because this comments spans multiple lines.
     */
    rb_define_const(cFoo, "MULTILINE", INT2FIX(1));
 
    /*
-    * 1: Multiline comment goes here because this comment spans multiple lines.
-    * Multiline comment goes here because this comment spans multiple lines.
+    * 1: Multiline comments goes here because this comments spans multiple lines.
+    * Multiline comments goes here because this comments spans multiple lines.
     */
    rb_define_const(cFoo, "MULTILINE_VALUE", INT2FIX(1));
 
-   /* Multiline comment goes here because this comment spans multiple lines.
-    * Multiline comment goes here because this comment spans multiple lines.
+   /* Multiline comments goes here because this comments spans multiple lines.
+    * Multiline comments goes here because this comments spans multiple lines.
     */
    rb_define_const(cFoo, "MULTILINE_NOT_EMPTY", INT2FIX(1));
 
    /*
-    * Multiline comment goes here because this comment spans multiple lines.
+    * Multiline comments goes here because this comments spans multiple lines.
     * 1: However, the value extraction should only happen for the first line
     */
    rb_define_const(cFoo, "MULTILINE_COLON_ON_SECOND_LINE", INT2FIX(1));
@@ -480,19 +480,19 @@ void Init_foo(){
     assert_equal ['NOSEMI', 'INT2FIX(99)',
                   'Default definition   '],
                  constants.shift
-    assert_equal ['NOCOMMENT', 'rb_str_new2("No comment")', ''],
+    assert_equal ['NOCOMMENT', 'rb_str_new2("No comments")', ''],
                  constants.shift
 
     comment = <<-EOF.chomp
-Multiline comment goes here because this comment spans multiple lines.
-Multiline comment goes here because this comment spans multiple lines.
+Multiline comments goes here because this comments spans multiple lines.
+Multiline comments goes here because this comments spans multiple lines.
     EOF
     assert_equal ['MULTILINE',           'INT2FIX(1)', comment], constants.shift
     assert_equal ['MULTILINE_VALUE',     '1',          comment], constants.shift
     assert_equal ['MULTILINE_NOT_EMPTY', 'INT2FIX(1)', comment], constants.shift
 
     comment = <<-EOF.chomp
-Multiline comment goes here because this comment spans multiple lines.
+Multiline comments goes here because this comments spans multiple lines.
 1: However, the value extraction should only happen for the first line
     EOF
     assert_equal ['MULTILINE_COLON_ON_SECOND_LINE', 'INT2FIX(1)', comment],
@@ -725,7 +725,7 @@ void Init_Blah(void) {
 
     parser = util_parser <<-C
 /*
- * comment
+ * comments
  */
 
 rb_define_alias(C, "[]", "index");
@@ -733,48 +733,48 @@ rb_define_alias(C, "[]", "index");
 
     comment = parser.find_alias_comment 'C', '[]', 'index'
 
-    assert_equal "/*\n * comment\n */\n\n", comment.text
+    assert_equal "/*\n * comments\n */\n\n", comment.text
   end
 
   def test_find_attr_comment_document_attr
     parser= util_parser <<-C
 /*
  * Document-attr: y
- * comment
+ * comments
  */
     C
 
     comment = parser.find_attr_comment nil, 'y'
 
-    assert_equal "/*\n * \n * comment\n */", comment.text
+    assert_equal "/*\n * \n * comments\n */", comment.text
   end
 
   def test_find_attr_comment_document_attr_oneline
     parser= util_parser <<-C
 /* Document-attr: y
- * comment
+ * comments
  */
     C
 
     comment = parser.find_attr_comment nil, 'y'
 
-    assert_equal "/* \n * comment\n */", comment.text
+    assert_equal "/* \n * comments\n */", comment.text
   end
 
   def test_find_attr_comment_document_attr_overlap
     parser= util_parser <<-C
 /* Document-attr: x
- * comment
+ * comments
  */
 
 /* Document-attr: y
- * comment
+ * comments
  */
     C
 
     comment = parser.find_attr_comment nil, 'y'
 
-    assert_equal "/* \n * comment\n */", comment.text
+    assert_equal "/* \n * comments\n */", comment.text
   end
 
   def test_find_class_comment
@@ -801,7 +801,7 @@ bar = rb_define_class("MyClassName2", rb_cObject);
   def test_find_class_comment_init
     content = <<-EOF
 /*
- * a comment for class Foo
+ * a comments for class Foo
  */
 void
 Init_Foo(void) {
@@ -811,31 +811,31 @@ Init_Foo(void) {
 
     klass = util_get_class content, 'foo'
 
-    assert_equal "a comment for class Foo", klass.comment.text
+    assert_equal "a comments for class Foo", klass.comment.text
   end
 
   def test_find_class_comment_define_class
     content = <<-EOF
 /*
- * a comment for class Foo
+ * a comments for class Foo
  */
 VALUE foo = rb_define_class("Foo", rb_cObject);
     EOF
 
     klass = util_get_class content, 'foo'
 
-    assert_equal "a comment for class Foo", klass.comment.text
+    assert_equal "a comments for class Foo", klass.comment.text
   end
 
   def test_find_class_comment_define_class_Init_Foo
     content = <<-EOF
 /*
- * a comment for class Foo on Init
+ * a comments for class Foo on Init
  */
 void
 Init_Foo(void) {
     /*
-     * a comment for class Foo on rb_define_class
+     * a comments for class Foo on rb_define_class
      */
     VALUE foo = rb_define_class("Foo", rb_cObject);
 }
@@ -843,18 +843,18 @@ Init_Foo(void) {
 
     klass = util_get_class content, 'foo'
 
-    assert_equal "a comment for class Foo on Init", klass.comment.text
+    assert_equal "a comments for class Foo on Init", klass.comment.text
   end
 
   def test_find_class_comment_define_class_Init_Foo_no_void
     content = <<-EOF
 /*
- * a comment for class Foo on Init
+ * a comments for class Foo on Init
  */
 void
 Init_Foo() {
     /*
-     * a comment for class Foo on rb_define_class
+     * a comments for class Foo on rb_define_class
      */
     VALUE foo = rb_define_class("Foo", rb_cObject);
 }
@@ -862,13 +862,13 @@ Init_Foo() {
 
     klass = util_get_class content, 'foo'
 
-    assert_equal "a comment for class Foo on Init", klass.comment.text
+    assert_equal "a comments for class Foo on Init", klass.comment.text
   end
 
   def test_find_class_comment_define_class_bogus_comment
     content = <<-EOF
 /*
- * a comment for other_function
+ * a comments for other_function
  */
 void
 other_function() {
@@ -888,25 +888,25 @@ Init_Foo(void) {
   def test_find_class_comment_define_class_under
     content = <<-EOF
 /*
- * a comment for class Foo
+ * a comments for class Foo
  */
 VALUE foo = rb_define_class_under(rb_cObject, "Foo", rb_cObject);
     EOF
 
     klass = util_get_class content, 'foo'
 
-    assert_equal "a comment for class Foo", klass.comment.text
+    assert_equal "a comments for class Foo", klass.comment.text
   end
 
   def test_find_class_comment_define_class_under_Init
     content = <<-EOF
 /*
- * a comment for class Foo on Init
+ * a comments for class Foo on Init
  */
 void
 Init_Foo(void) {
     /*
-     * a comment for class Foo on rb_define_class
+     * a comments for class Foo on rb_define_class
      */
     VALUE foo = rb_define_class_under(rb_cObject, "Foo", rb_cObject);
 }
@@ -914,16 +914,16 @@ Init_Foo(void) {
 
     klass = util_get_class content, 'foo'
 
-    # the inner comment is used since Object::Foo is not necessarily the same
+    # the inner comments is used since Object::Foo is not necessarily the same
     # thing as "Foo" for Init_
-    assert_equal "a comment for class Foo on rb_define_class",
+    assert_equal "a comments for class Foo on rb_define_class",
                  klass.comment.text
   end
 
   def test_find_const_comment_rb_define
     content = <<-EOF
 /*
- * A comment
+ * A comments
  */
 rb_define_const(cFoo, "CONST", value);
     EOF
@@ -932,7 +932,7 @@ rb_define_const(cFoo, "CONST", value);
 
     comment = parser.find_const_comment 'const', 'CONST'
 
-    assert_equal "/*\n * A comment\n */\n", comment.text
+    assert_equal "/*\n * A comments\n */\n", comment.text
   end
 
   def test_find_const_comment_document_const
@@ -940,7 +940,7 @@ rb_define_const(cFoo, "CONST", value);
 /*
  * Document-const: CONST
  *
- * A comment
+ * A comments
  */
     EOF
 
@@ -948,7 +948,7 @@ rb_define_const(cFoo, "CONST", value);
 
     comment = parser.find_const_comment nil, 'CONST'
 
-    assert_equal "/*\n *\n * A comment\n */", comment.text
+    assert_equal "/*\n *\n * A comments\n */", comment.text
   end
 
   def test_find_const_comment_document_const_full_name
@@ -956,7 +956,7 @@ rb_define_const(cFoo, "CONST", value);
 /*
  * Document-const: Foo::CONST
  *
- * A comment
+ * A comments
  */
     EOF
 
@@ -964,13 +964,13 @@ rb_define_const(cFoo, "CONST", value);
 
     comment = parser.find_const_comment nil, 'CONST', 'Foo'
 
-    assert_equal "/*\n *\n * A comment\n */", comment.text
+    assert_equal "/*\n *\n * A comments\n */", comment.text
   end
 
   def test_find_body
     content = <<-EOF
 /*
- * a comment for other_function
+ * a comments for other_function
  */
 VALUE
 other_function() {
@@ -988,7 +988,7 @@ Init_Foo(void) {
     other_function = klass.method_list.first
 
     assert_equal 'my_method', other_function.name
-    assert_equal "a comment for other_function",
+    assert_equal "a comments for other_function",
                  other_function.comment.text
     assert_equal '()', other_function.params
 
@@ -1040,7 +1040,7 @@ init_gi_repository (void)
   def test_find_body_cast
     content = <<-EOF
 /*
- * a comment for other_function
+ * a comments for other_function
  */
 VALUE
 other_function() {
@@ -1058,7 +1058,7 @@ Init_Foo(void) {
     other_function = klass.method_list.first
 
     assert_equal 'my_method', other_function.name
-    assert_equal "a comment for other_function",
+    assert_equal "a comments for other_function",
                  other_function.comment.text
     assert_equal '()', other_function.params
 
@@ -1074,7 +1074,7 @@ Init_Foo(void) {
 #define other_function rb_other_function
 
 /*
- * a comment for rb_other_function
+ * a comments for rb_other_function
  */
 VALUE
 rb_other_function() {
@@ -1092,7 +1092,7 @@ Init_Foo(void) {
     other_function = klass.method_list.first
 
     assert_equal 'my_method', other_function.name
-    assert_equal 'a comment for rb_other_function', other_function.comment.text
+    assert_equal 'a comments for rb_other_function', other_function.comment.text
     assert_equal '()', other_function.params
     assert_equal 118, other_function.offset
     assert_equal 8, other_function.line
@@ -1105,7 +1105,7 @@ Init_Foo(void) {
   def test_find_body_define_comment
     content = <<-EOF
 /*
- * a comment for other_function
+ * a comments for other_function
  */
 #define other_function rb_other_function
 
@@ -1126,7 +1126,7 @@ Init_Foo(void) {
     other_function = klass.method_list.first
 
     assert_equal 'my_method', other_function.name
-    assert_equal 'a comment for other_function', other_function.comment.text
+    assert_equal 'a comments for other_function', other_function.comment.text
     assert_equal '()', other_function.params
     assert_equal 39, other_function.offset
     assert_equal 4, other_function.line
@@ -1142,7 +1142,7 @@ Init_Foo(void) {
  * Document-method: bar
  * Document-method: baz
  *
- * a comment for bar
+ * a comments for bar
  */
 VALUE
 bar() {
@@ -1164,11 +1164,11 @@ Init_Foo(void) {
 
     bar = methods.first
     assert_equal 'Foo#bar', bar.full_name
-    assert_equal "a comment for bar", bar.comment.text
+    assert_equal "a comments for bar", bar.comment.text
 
     baz = methods.last
     assert_equal 'Foo#baz', baz.full_name
-    assert_equal "a comment for bar", baz.comment.text
+    assert_equal "a comments for bar", baz.comment.text
   end
 
   def test_find_body_document_method_equals
@@ -1176,7 +1176,7 @@ Init_Foo(void) {
 /*
  * Document-method: Zlib::GzipFile#mtime=
  *
- * A comment
+ * A comments
  */
 static VALUE
 rb_gzfile_set_mtime(VALUE obj, VALUE mtime)
@@ -1198,7 +1198,7 @@ Init_zlib() {
 
     bar = methods.first
     assert_equal 'Zlib::GzipWriter#mtime=', bar.full_name
-    assert_equal 'A comment', bar.comment.text
+    assert_equal 'A comments', bar.comment.text
   end
 
   def test_find_body_document_method_same
@@ -1214,13 +1214,13 @@ bar() {
 /*
  * Document-method: Foo::bar
  *
- * a comment for Foo::bar
+ * a comments for Foo::bar
  */
 
 /*
  * Document-method: Foo#bar
  *
- * a comment for Foo#bar
+ * a comments for Foo#bar
  */
 
 void
@@ -1239,17 +1239,17 @@ Init_Foo(void) {
 
     s_bar = methods.first
     assert_equal 'Foo::bar', s_bar.full_name
-    assert_equal "a comment for Foo::bar", s_bar.comment.text
+    assert_equal "a comments for Foo::bar", s_bar.comment.text
 
     bar = methods.last
     assert_equal 'Foo#bar', bar.full_name
-    assert_equal "a comment for Foo#bar", bar.comment.text
+    assert_equal "a comments for Foo#bar", bar.comment.text
   end
 
   def test_find_body_macro
     content = <<-EOF
 /*
- * a comment for other_function
+ * a comments for other_function
  */
 DLL_LOCAL VALUE
 other_function() {
@@ -1267,7 +1267,7 @@ Init_Foo(void) {
     other_function = klass.method_list.first
 
     assert_equal 'my_method', other_function.name
-    assert_equal "a comment for other_function",
+    assert_equal "a comments for other_function",
                  other_function.comment.text
     assert_equal '()', other_function.params
 
@@ -1551,7 +1551,7 @@ rb_io_s_read(argc, argv, io)
 void
 Init_IO(void) {
     /*
-     * a comment for class Foo on rb_define_class
+     * a comments for class Foo on rb_define_class
      */
     VALUE rb_cIO = rb_define_class("IO", rb_cObject);
     rb_define_singleton_method(rb_cIO, "read", rb_io_s_read, -1);
@@ -1582,7 +1582,7 @@ rb_io_s_read(argc, argv, io)
 void
 Init_IO(void) {
     /*
-     * a comment for class Foo on rb_define_class
+     * a comments for class Foo on rb_define_class
      */
     VALUE rb_cIO = rb_define_class("IO", rb_cObject);
     rb_define_singleton_method(rb_cIO, "read", rb_io_s_read, -1);
@@ -1611,7 +1611,7 @@ rb_io_s_read(argc, argv, io)
 void
 Init_IO(void) {
     /*
-     * a comment for class Foo on rb_define_class
+     * a comments for class Foo on rb_define_class
      */
     VALUE rb_cIO = rb_define_class("IO", rb_cObject);
     rb_define_private_method(rb_cIO, "read", rb_io_s_read, -1);
@@ -1639,7 +1639,7 @@ rb_io_s_read(argc, argv, io)
 void
 Init_IO(void) {
     /*
-     * a comment for class Foo on rb_define_class
+     * a comments for class Foo on rb_define_class
      */
     VALUE rb_cIO = rb_define_class("IO", rb_cObject);
     VALUE rb_cIO_s = rb_singleton_class(rb_cIO);
@@ -1669,7 +1669,7 @@ rb_io_s_read(argc, argv, io)
 void
 Init_IO(void) {
     /*
-     * a comment for class Foo on rb_define_class
+     * a comments for class Foo on rb_define_class
      */
     VALUE rb_cIO = rb_define_class("IO", rb_cObject);
     VALUE rb_cIO_s = rb_singleton_class(rb_cIO);

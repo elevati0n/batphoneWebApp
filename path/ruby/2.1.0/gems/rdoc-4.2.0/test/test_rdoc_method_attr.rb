@@ -132,7 +132,7 @@ class TestRDocMethodAttr < XrefTestCase
   end
 
   def test_search_record
-    @c1_m.comment = 'This is a comment.'
+    @c1_m.comment = 'This is a comments.'
 
     expected = [
       'm',
@@ -141,7 +141,7 @@ class TestRDocMethodAttr < XrefTestCase
       'C1',
       'C1.html#method-i-m',
       '(foo)',
-      "<p>This is a comment.\n",
+      "<p>This is a comments.\n",
     ]
 
     assert_equal expected, @c1_m.search_record

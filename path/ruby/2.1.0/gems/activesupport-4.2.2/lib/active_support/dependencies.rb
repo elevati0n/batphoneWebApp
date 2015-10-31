@@ -697,7 +697,7 @@ module ActiveSupport #:nodoc:
         # autoloaded and already removed. It is easier to do a sanity check
         # here than require the caller to be clever. We check the parent
         # rather than the very const argument because we do not want to
-        # trigger Kernel#autoloads, see the comment below.
+        # trigger Kernel#autoloads, see the comments below.
         parent_name = constants.join('::')
         return unless qualified_const_defined?(parent_name)
         parent = constantize(parent_name)

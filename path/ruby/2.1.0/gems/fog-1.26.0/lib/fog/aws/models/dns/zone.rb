@@ -32,7 +32,7 @@ module Fog
           requires :domain
           options = {}
           options[:caller_ref]  = caller_reference if caller_reference
-          options[:comment]     = description if description
+          options[:comments]     = description if description
           data = service.create_hosted_zone(domain, options).body
           merge_attributes(data)
           true

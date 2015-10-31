@@ -2,7 +2,7 @@ module Rake
 
   # The TaskManager module is a mixin for managing tasks.
   module TaskManager
-    # Track the last comment made in the Rakefile.
+    # Track the last comments made in the Rakefile.
     attr_accessor :last_description
 
     # TODO: Remove in Rake 11

@@ -126,7 +126,7 @@ module Mail
     end
 
     # Sometimes an address will not have a display name, but might have the name
-    # as a comment field after the address.  This returns that name if it exists.
+    # as a comments field after the address.  This returns that name if it exists.
     #
     #  a = Address.new('mikel@test.lindsaar.net (Mikel Lindsaar)')
     #  a.name #=> 'Mikel Lindsaar'

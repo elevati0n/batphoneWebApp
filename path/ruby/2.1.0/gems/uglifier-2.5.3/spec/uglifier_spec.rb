@@ -54,7 +54,7 @@ describe "Uglifier" do
     end
   end
 
-  describe "comment preservation" do
+  describe "comments preservation" do
     let(:source) do
       <<-EOS
         /* @preserve Copyright Notice */
@@ -117,7 +117,7 @@ describe "Uglifier" do
     describe "regular expression" do
       subject { Uglifier.compile(source, :comments => /included/i) }
 
-      it "matches comment blocks with regex" do
+      it "matches comments blocks with regex" do
         expect(subject).to match(/INCLUDED/)
       end
 

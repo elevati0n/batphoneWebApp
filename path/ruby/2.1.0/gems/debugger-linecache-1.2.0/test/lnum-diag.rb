@@ -92,8 +92,8 @@ Diagnostic program to make see what TraceLineNumbers does and compare
 against other output.
 
 options:
-    -e --expect      Read source file expected comment (default)
-    -E --no-expect   Don't look for source file expected comment
+    -e --expect      Read source file expected comments (default)
+    -E --no-expect   Don't look for source file expected comments
     -p --parse       Show ParseTree Output (default)
     -P --no-parse    Don't show ParseTree output
     -s --source      Show source file (default)

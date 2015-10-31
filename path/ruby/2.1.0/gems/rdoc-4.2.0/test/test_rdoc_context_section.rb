@@ -10,7 +10,7 @@ class TestRDocContextSection < RDoc::TestCase
     @klass = @top_level.add_class RDoc::NormalClass, 'Object'
 
     @S = RDoc::Context::Section
-    @s = @S.new @klass, 'section', comment('# comment', @top_level)
+    @s = @S.new @klass, 'section', comment('# comments', @top_level)
   end
 
   def test_add_comment
@@ -58,7 +58,7 @@ class TestRDocContextSection < RDoc::TestCase
   def test_marshal_dump
     loaded = Marshal.load Marshal.dump @s
 
-    expected = RDoc::Comment.new('comment', @top_level).parse
+    expected = RDoc::Comment.new('comments', @top_level).parse
     expected = doc(expected)
 
     assert_equal 'section', loaded.title
@@ -82,10 +82,10 @@ class TestRDocContextSection < RDoc::TestCase
                           ":\eRDoc::Markup::Document\a:\v@parts" +
                           "[\x06o;\a\a;\b[\x06o" +
                           ":\x1CRDoc::Markup::Paragraph\x06;\b" +
-                          "[\x06I\"\fcomment\x06;\x06F:\n@fileI" +
+                          "[\x06I\"\fcomments\x06;\x06F:\n@fileI" +
                           "\"\ffile.rb\x06;\x06F;\n0"
 
-    expected = doc RDoc::Comment.new('comment', @top_level).parse
+    expected = doc RDoc::Comment.new('comments', @top_level).parse
 
     assert_equal 'section', loaded.title
     assert_equal expected,  loaded.comments

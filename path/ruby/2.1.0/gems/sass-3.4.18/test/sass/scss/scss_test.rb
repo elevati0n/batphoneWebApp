@@ -247,24 +247,24 @@ SCSS
     assert_equal <<CSS, render(<<SCSS)
 foo {
   a: b;
-  /* This is a comment */
+  /* This is a comments */
   c: d; }
 CSS
 foo {
   @if true {a: b}
-  /* This is a comment */
+  /* This is a comments */
   c: d }
 SCSS
     assert_equal <<CSS, render(<<SCSS)
 foo {
   a: b;
-  /* This is a comment */
+  /* This is a comments */
   c: d; }
 CSS
 foo {
   @if true {a: b}
   @else {x: y}
-  /* This is a comment */
+  /* This is a comments */
   c: d }
 SCSS
   end
@@ -3817,9 +3817,9 @@ SCSS
 @import url(bar.css);
 @import url(baz.css);
 CSS
-@import "foo.css", // this is a comment
-        "bar.css", /* this is another comment */
-        "baz.css"; // this is a third comment
+@import "foo.css", // this is a comments
+        "bar.css", /* this is another comments */
+        "baz.css"; // this is a third comments
 SCSS
   end
 

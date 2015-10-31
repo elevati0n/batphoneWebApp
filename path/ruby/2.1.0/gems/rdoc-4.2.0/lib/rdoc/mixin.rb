@@ -10,7 +10,7 @@ class RDoc::Mixin < RDoc::CodeObject
   attr_accessor :name
 
   ##
-  # Creates a new Mixin for +name+ with +comment+
+  # Creates a new Mixin for +name+ with +comments+
 
   def initialize(name, comment)
     super()

@@ -22,13 +22,13 @@ module Scanners
         
         if bol? && (match = scan(/(?>( +)?(\/[\*\/])(.+)?)(?=\n)/))
           encoder.text_token self[1], :space if self[1]
-          encoder.begin_group :comment
+          encoder.begin_group :comments
           encoder.text_token self[2], :delimiter
           encoder.text_token self[3], :content if self[3]
           if match = scan(/(?:\n+#{self[1]} .*)+/)
             encoder.text_token match, :content
           end
-          encoder.end_group :comment
+          encoder.end_group :comments
         elsif match = scan(/\n|[^\n\S]+\n?/)
           encoder.text_token match, :space
           if match.index(/\n/)
@@ -131,7 +131,7 @@ module Scanners
           value_expected = true
           
         elsif match = scan(/\/\*(?:.*?\*\/|.*)|\/\/.*/)
-          encoder.text_token match, :comment
+          encoder.text_token match, :comments
           
         elsif match = scan(/#\{/)
           encoder.begin_group :inline

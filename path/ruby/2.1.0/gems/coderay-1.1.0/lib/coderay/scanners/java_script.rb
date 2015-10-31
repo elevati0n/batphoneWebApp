@@ -81,7 +81,7 @@ module Scanners
             
           elsif match = scan(%r! // [^\n\\]* (?: \\. [^\n\\]* )* | /\* (?: .*? \*/ | .*() ) !mx)
             value_expected = true
-            encoder.text_token match, :comment
+            encoder.text_token match, :comments
             state = :open_multi_line_comment if self[1]
             
           elsif check(/\.?\d/)
@@ -198,7 +198,7 @@ module Scanners
             match = scan(%r! .+ !mx)
           end
           value_expected = true
-          encoder.text_token match, :comment if match
+          encoder.text_token match, :comments if match
           
         else
           #:nocov:
