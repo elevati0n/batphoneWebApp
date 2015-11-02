@@ -1,14 +1,18 @@
-<ul id="comment-<%= comment.id %>">
+<ol id="comment-<%= comment.id %>">
   <%= link_to gravatar_for(comment.user, size: 35), comment.user %>
 
 
   <span class="user"> <%= link_to comment.user.name, comment.user %></span>
 
 
-  <span class="content"> <%= comment.text %> </span>
+  <span class="content">
+</span>
+
+    <span style=color:white>
+    <%= comment.text %>  </span>
 
 
   <span class="timestamp">
     Posted <%= time_ago_in_words(comment.created_at) %> ago.
   </span>
-</ul>
+</ol>

@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
 
-    #@comments = @microposts.each { |micropost| micropost.comments }
+    @comment = Comment.new
 
     #@comments = @microposts.each { |micropost| micropost.comments.build }
 
@@ -62,6 +62,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.paginate(page: params[:page])
+
   end
 
   private
