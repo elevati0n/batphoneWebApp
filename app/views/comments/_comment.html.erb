@@ -9,7 +9,14 @@
 </span>
 
     <span style=color:white>
-    <%= comment.text %>  </span>
+    <%= comment.text %>
+      <% if current_user?(comment.user) %>
+
+      <%= link_to "delete", comment, method: :delete,
+                  data: { confirm: "You sure?" } %>
+
+      <% end %>
+    </span>
 
 
   <span class="timestamp">
