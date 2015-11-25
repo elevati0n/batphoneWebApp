@@ -5,7 +5,7 @@ class MicropostsController < ApplicationController
   def create
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
-      flash[:success] = "Micropost created!"
+      flash[:success] = "Meshage saved!"
       redirect_to root_url
     else
 	  @feed_items = []
@@ -35,7 +35,8 @@ class MicropostsController < ApplicationController
   private
 
     def micropost_params
-      params.require(:micropost).permit(:content, :picture, :subject)
+      params.require(:micropost).permit(:content, :picture, :subject,
+                                        :network_id, :device_id, :private)
     end
 
   def correct_user

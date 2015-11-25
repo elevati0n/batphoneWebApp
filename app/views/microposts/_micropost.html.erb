@@ -1,9 +1,23 @@
 <li id="<%= micropost.id %>">
-  <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
-  <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
 
 
-  <%= link_to  micropost.subject, micropost%>
+  Network:
+  <%= link_to link_for network.name network_path %> <br>
+
+  Device:
+  <%= link_to link_for device.name device_path %> <br>
+
+  User :
+  <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %> <br>
+
+
+
+
+  <span class="user"><%= link_to micropost.user.name, micropost.user %></span> <br/>
+
+
+  Subject :
+  <%= link_to  micropost.subject, micropost%> <br>
   <h3>  <underline>
     <%= micropost.subject if !micropost.subject.nil? %> </underline> </h3>
   <span class="content"><h4> <%= micropost.content %> </h4> </span>
