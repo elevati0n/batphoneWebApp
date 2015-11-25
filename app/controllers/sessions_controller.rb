@@ -15,9 +15,17 @@ class SessionsController < ApplicationController
 	    render 'new'
     end
 end
-
+   
   def destroy
     log_out if logged_in?
     redirect_to root_url
   end  
+  
+#  def self.sweep(time = 1.hour)
+#  if time.is_a?(String)
+#  time = time.split.inject { |count, unit| count.to_i.send(unit) }
+#  end
+#  delete_all "updated_at < '#{time.ago.to_s(:db)}'"
+#  end
+#  end  
 end

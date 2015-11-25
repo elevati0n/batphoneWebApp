@@ -23,7 +23,7 @@ Rails.application.routes.draw do
  
   delete 'logout'  => 'sessions#destroy'
 
-  get 'addnetwork' => 'networks#new'
+  get 'addnetwork' => 'networks#index'
 
   resources :devices 
 
