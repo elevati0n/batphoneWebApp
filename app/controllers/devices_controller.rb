@@ -21,7 +21,7 @@ class DevicesController < ApplicationController
   end
 
   def show
-    @devices = Device.all
+    @device = Device.find(params[:id])
   end
 
   def index

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151111065404) do
+ActiveRecord::Schema.define(version: 20151125214943) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "text"
@@ -57,8 +57,13 @@ ActiveRecord::Schema.define(version: 20151111065404) do
     t.datetime "updated_at", null: false
     t.string   "picture"
     t.string   "subject"
+    t.integer  "device_id"
+    t.integer  "network_id"
+    t.boolean  "private"
   end
 
+  add_index "microposts", ["device_id"], name: "index_microposts_on_device_id"
+  add_index "microposts", ["network_id"], name: "index_microposts_on_network_id"
   add_index "microposts", ["user_id"], name: "index_microposts_on_user_id"
 
   create_table "networks", force: :cascade do |t|

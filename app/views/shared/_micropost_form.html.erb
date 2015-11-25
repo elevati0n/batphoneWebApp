@@ -23,7 +23,11 @@
 
     <div class="field"></div>
     <h4>Select Network</h4>
-    <%= f.select :network, [['Public','Public'],['BatCave','BatCave'],['Wayne Enterprises','Wayne Enterprises']] %>
+    <%= f.select :network_id, [['Public', 0],['BatCave', 1],['Wayne Enterprises',2]] %>
+
+
+
+    <%#= f.select :network, [['Public','Public'],['BatCave','BatCave'],['Wayne Enterprises','Wayne Enterprises']] %>
 
 
 
@@ -31,13 +35,13 @@
 
     <div class="field"></div>
     <h4>Device</h4>
-    <%= f.select :device, [['Server','Server'],['MasterPi','MasterPi'],['Microphone Pi','Microphone Pi'],
-                           ['RouterNode','RouterNode'],
-                           ['RouterNode2','RouterNode2'],
-                           ['RouterNode3','RouterNode3'],
-                           ['RouterNode4','RouterNode4'],
-                           ['RouterNode5','RouterNode5'],
-                           ['Microphone Pi2','Microphone Pi2']] %>
+    <%= f.select :device_id, [['Server',0],['MasterPi', 1],['Microphone Pi',2],
+                           ['RouterNode',3],
+                           ['RouterNode2',4],
+                           ['RouterNode3',5],
+                           ['RouterNode4',6],
+                           ['RouterNode5',7],
+                           ['Microphone Pi2',8]] %>
 
     <div class="field">
 

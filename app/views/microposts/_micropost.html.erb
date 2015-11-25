@@ -1,12 +1,16 @@
 <li id="<%= micropost.id %>">
 
 
-  Network:
-  <%= link_to link_for network.name network_path %> <br>
 
-  Device:
-  <%= link_to link_for device.name device_path %> <br>
+  <h4>
+  <% @Network = Network.find(micropost.network_id) %>
+      <strong>  Network: </strong> <%= %>
+  <%= link_to @Network.name, @Network %> <br>
 
+  <% @Device = Device.find(micropost.device_id) %>
+  <strong> Device: </strong> <%= @Device.name %>
+  <%= link_to @Device.name, @Device %> <br>
+    </h4>
   User :
   <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %> <br>
 
