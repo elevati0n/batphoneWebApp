@@ -1,0 +1,7 @@
+<li>
+  <%= link_to network.name, network %> |
+  <%= button_to "Add New Device", {:controller => :devices, :action => :new, :network_id => network.id},
+                                   :method => 'get' %>
+  <%= link_to "delete", network, method: :delete,
+              data: { confirm: "You sure?" } %>
+</li>

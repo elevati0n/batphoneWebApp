@@ -1,0 +1,18 @@
+<% provide(:title, 'All Comments') %>
+<h1>All Comments</h1>
+
+
+
+<%#= will_paginate %>
+
+<ul class="users">
+  <% @comments.each do |comment| %>
+      <%= render @comments %>
+  <% end %>
+</ul>
+
+<%#= will_paginate %>
+
+
+
+<%#= link_to "Add New Device", url_for  , class: "btn btn-lg btn-primary" %>

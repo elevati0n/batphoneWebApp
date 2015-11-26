@@ -1,0 +1,50 @@
+<li id="<%= micropost.id %>">
+
+
+
+  <h4>
+  <% @Network = Network.find(micropost.network_id) %>
+      <strong>  Network: </strong> <%= %>
+  <%= link_to @Network.name, @Network %> <br>
+
+  <% @Device = Device.find(micropost.device_id) %>
+  <strong> Device: </strong> <%= @Device.name %>
+  <%= link_to @Device.name, @Device %> <br>
+    </h4>
+  User :
+  <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %> <br>
+
+
+
+
+  <span class="user"><%= link_to micropost.user.name, micropost.user %></span> <br/>
+
+
+  Subject :
+  <%= link_to  micropost.subject, micropost%> <br>
+  <h3>  <underline>
+    <%= micropost.subject if !micropost.subject.nil? %> </underline> </h3>
+  <span class="content"><h4> <%= micropost.content %> </h4> </span>
+  <%= image_tag micropost.picture.url if micropost.picture? %>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+    <% if current_user?(micropost.user) %>
+      <%= link_to "delete", micropost, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+
+
+        <% @current_post = micropost.id%>
+
+        <% @comments = micropost.comments %>
+
+        <%= render @comments %>
+
+
+        <br>
+        <%= render 'shared/comment_form' %>
+
+
+
+    <% end %>
+  </span>
+</li>

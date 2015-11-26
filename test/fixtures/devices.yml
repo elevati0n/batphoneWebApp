@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  IP_address: MyString
+  MAC: MyString
+  AP_SSID: MyString
+  Gateway_mode: MyString
+  Description: MyText
+  Location: MyText
+  Notes: MyText
+
+two:
+  name: MyString
+  IP_address: MyString
+  MAC: MyString
+  AP_SSID: MyString
+  Gateway_mode: MyString
+  Description: MyText
+  Location: MyText
+  Notes: MyText

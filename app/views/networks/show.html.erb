@@ -1,0 +1,26 @@
+
+
+<% provide(:title, @network.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        name :  <%= @network.name %> <br>
+        public key : <br>
+        <code ><%= @network.publickey %>
+        </code>
+      </h1>
+    </section>
+  </aside>
+</div>
+
+
+<div class="col-md-8">
+  <% if @network.devices.any? %>
+      <h2> Number of Devices : <%= @network.devices.count %></h2>
+
+      <%= render @devices %>
+
+      <%#= will_paginate @devices %>
+  <% end %>
+</div>

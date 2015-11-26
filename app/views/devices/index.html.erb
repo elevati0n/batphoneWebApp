@@ -1,0 +1,18 @@
+<% provide(:title, 'All Devices') %>
+<h1>All Devices</h1>
+
+
+
+<%#= will_paginate %>
+
+<ul class="users">
+  <% @devices.each do |device| %>
+      <%= render @devices %>
+  <% end %>
+</ul>
+
+<%#= will_paginate %>
+
+
+
+<%#= link_to "Add New Device", url_for  , class: "btn btn-lg btn-primary" %>

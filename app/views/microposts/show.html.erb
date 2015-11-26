@@ -1,0 +1,26 @@
+
+
+<% provide(:title, @micropost.subject) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h4>
+        micropost created by :  <%= @micropost.user.name %> <br>
+      </h4>
+      <h3> <%= @micropost.content %>
+      </h3>
+
+
+    </section>
+  </aside>
+</div>
+
+
+
+  <% if @micropost.comments.any? %>
+      <h4> Number of comments : <%= @micropost.comments.count %></h4>
+
+      <%= render @comments %>
+
+      <%#= will_paginate @devices %>
+  <% end %>
