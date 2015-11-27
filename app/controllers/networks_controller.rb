@@ -22,6 +22,9 @@ class NetworksController < ApplicationController
   def index
     @networks = Network.paginate(page: params[:page])
     @network_array = @networks.all.map { |network| [network.name, network.id] }
+
+
+
   end
 
   def destroy

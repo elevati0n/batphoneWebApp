@@ -7,13 +7,15 @@
     <%= submit_tag("Search") %>
 <% end %>
 
-<%= will_paginate %>
+<%#= will_paginate %>
 
-<ul class="networks">
-  <% @networks.each do |network| %>
-      <%= render @networks %>
-  <% end %>
-</ul>
+<%= render @networks %>
+
+<!--<ul class="networks">-->
+  <!--<%# @networks.each do |network| %>-->
+      <!--<%#= render @networks %>-->
+  <!--<%# end %>-->
+<!--</ul>-->
 
 <%#= will_paginate %>
 

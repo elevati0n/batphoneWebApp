@@ -1,17 +1,17 @@
-<ul id="comment-<%= comment.id %>">
+<ul>< id="comment-<%= comment.id %>">
 
-  <div>
+  <div> <br>
 
   <%= link_to gravatar_for(comment.user, size: 35), comment.user %>
 
 
-  <span class="user"> <%= link_to comment.user.name, comment.user %></span>
+   <%= link_to comment.user.name, comment.user %></span>
 
 
 
-    <span style=color:black>
+
     : <%= comment.text %>
-    </span>
+
 
 
   <span class="timestamp">
@@ -24,7 +24,7 @@
       <% end %>
   </span>
  </div>
-  <br>
+
 
 
 </ul>

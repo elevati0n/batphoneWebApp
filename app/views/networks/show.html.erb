@@ -19,13 +19,15 @@
   </aside>
 </div>
 
+<div id="devices">
 
-<div class="col-md-8">
+<!--<div class="col-md-8">-->
   <% if @network.devices.any? %>
       <h2> Number of Devices : <%= @network.devices.count %></h2>
+      <br> <hr>
+      </div>
 
       <%= render @devices %>
 
       <%#= will_paginate @devices %>
   <% end %>
-</div>

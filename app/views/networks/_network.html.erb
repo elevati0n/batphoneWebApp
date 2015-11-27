@@ -1,7 +1,25 @@
-<li>
-  <%= link_to network.name, network %> |
-  <%= button_to "Add New Device", {:controller => :devices, :action => :new, :network_id => network.id},
-                                   :method => 'get' %>
-  <%= link_to "delete", network, method: :delete,
-              data: { confirm: "You sure?" } %>
-</li>
+<ul id="network <%= network.id %>">
+
+    <h4>
+      <%= link_to network.name, network %> | total devices : <%=  link_to "total devices : " +
+            network.devices.count.to_s, network_path(network, anchor: "devices")  %>
+
+      <%= button_to "Add New Device", {:controller => :devices, :action => :new, :network_id => network.id},
+                                       :method => 'get' %>
+      <%= link_to "delete", network, method: :delete,
+                  data: { confirm: "You sure?" } %>
+    </h4>
+
+    <h3>
+
+      <div name="devices">
+
+
+
+      <%= render network.devices %>
+
+
+      </div>
+
+    </h3>
+    </ul>

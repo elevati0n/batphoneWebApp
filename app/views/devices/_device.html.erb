@@ -1,11 +1,11 @@
 
-<link rel="stylesheet" href="http://batphone.co/wiki/load.php?debug=false&amp;
+<link rel="stylesheet" href="http://wiki.batphone.co/load.php?debug=false&amp;
 lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.
 sectionAnchor%7Cmediawiki.ui.button%7Cskins.bootstrapmediawiki&amp;only=styles&amp;skin=bootstrapmediawiki&amp;*" />
 
 <span>
-  <h3> Device Name :  <%= device.name %>   |   Network :
-    <%= device.network.id %> <%= device.network.name %> <small></small></h3>
+  <h3> Device :  <%= link_to device.name, device %>   |   Network :
+    <%= device.network.id %> <%= link_to device.network.name, device.network %> <small></small></h3>
 
 <span class="timestamp">
     Posted <%= time_ago_in_words(device.created_at) %> ago.
@@ -46,4 +46,3 @@ sectionAnchor%7Cmediawiki.ui.button%7Cskins.bootstrapmediawiki&amp;only=styles&a
 <br>
   </span>
 
-</div>

@@ -1,8 +1,14 @@
 <ul id="<%= micropost.id %>">
 
+<h3>
+  Subject :
+  <%= link_to  micropost.subject, micropost%>
 
+</h3> <h4>
+  From :
 
-  <h4>
+  <span class="user"><%= link_to micropost.user.name, micropost.user %></span> <br>
+
   <% @network = micropost.network %>
       <strong>  Network: </strong>
   <%= link_to @network.name, @network %>
@@ -19,25 +25,22 @@
 
   <strong> Device: </strong> <%#= @Device.name %>
   <%= link_to micropost.device.name, micropost.device %> <br>
-    </h4>
+</h4>
 
-
+<hr>
   <h3>
   <%= link_to gravatar_for(micropost.user, size: 75), micropost.user %>
 
     <span class="content">
-  From :
-
-  <span class="user"><%= link_to micropost.user.name, micropost.user %></span> <br>
 
 
 
 
 
-  Subject :
-      <%= link_to  micropost.subject, micropost%> <br>  <br>
 
- <br>
+
+
+
 
     <%#= micropost.subject if !micropost.subject.nil? %>
 
@@ -56,7 +59,7 @@
                   data: { confirm: "You sure?" } %>
   </span>
 
-
+        <hr>
 
         <h4>
         <%= render micropost.comments %>
@@ -69,7 +72,7 @@
         <% @comment = micropost.comments.new(user_id: current_user) %>
 
 
-        
+          <hr>
         <%= render 'shared/comment_form' %>
 
         </h4>
@@ -77,3 +80,4 @@
     <% end %>
 
 </ul>
+<hr>
