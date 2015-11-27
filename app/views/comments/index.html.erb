@@ -6,9 +6,12 @@
 <%#= will_paginate %>
 
 <ul class="users">
+
+  <%#= render @comments %>
   <% @comments.each do |comment| %>
-      <%= render @comments %>
+      <%= render comment %>
   <% end %>
+
 </ul>
 
 <%#= will_paginate %>
