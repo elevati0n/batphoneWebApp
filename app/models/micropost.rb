@@ -4,6 +4,10 @@ class Micropost < ActiveRecord::Base
   belongs_to :device
   has_many :comments, dependent: :destroy
 
+  validates :network_id, presence: true
+
+  validates :device_id, presence: true
+
 
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 140 }

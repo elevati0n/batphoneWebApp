@@ -4,6 +4,11 @@ class MicropostsController < ApplicationController
 
   def create
     @micropost = current_user.microposts.build(micropost_params)
+
+    @networks = Network.all
+    #@network_array = @networks.all.map { |network| [network.name, network.id] }
+
+    @devices = Device.all
     if @micropost.save
       flash[:success] = "Meshage saved!"
       redirect_to root_url

@@ -15,15 +15,66 @@
 
     <div class="field">
 
-      <center>Private? </center>
-      <%=  check_box_tag 'private', 'private' %>
+      Private?
+      <%=  check_box :private, "false" %>
+
+
+
+
+
+
+    </div>
+
+
+    <div>
+
+      <%= check_box_tag(:pet_dog) %>
+      <%= label_tag(:pet_dog, "I own a dog") %>
+      <%= check_box_tag(:pet_cat) %>
+      <%= label_tag(:pet_cat, "I own a cat") %>
 
 
     </div>
 
     <div class="field"></div>
     <h4>Select Network</h4>
-    <%= f.select :network_id, [['Public', 0],['BatCave', 1],['Wayne Enterprises',2]] %>
+
+    # select on a form builder
+    <%#= f.select(:network, :id, [['Public', 0],['BatCave', 1],['Wayne Enterprises',2]], 1)  %>
+
+
+    <%#= f.select :network_id do %>
+      <%#= @network_array.each do |network| %>
+        <%#= content_tag(:option, network.first) %>
+
+        <%#    end %>
+    <%#  end %>
+
+
+    <%= f.collection_select(:network_id, @networks, :id, :name) %>
+
+
+    volume control
+    <%= number_field_tag 'volume', nil, max: 11 %>
+
+
+    <%#= form_tag('/posts') do -%>
+        <div><%#= submit_tag 'Save' %></div>
+    <%# end -%>
+
+
+
+
+    <%#= collection_select @network, :name, @network_array || [], :last, :first %>
+
+
+
+    <%#= f.collection_select :network, @network_array[0], :chomp, :chomp, {include_blank: true} %>
+
+
+
+
+    <%#= f.select :network_id,  %>
 
 
 
@@ -35,7 +86,12 @@
 
     <div class="field"></div>
     <h4>Device</h4>
-    <%= f.select :device_id, [['Server',0],['MasterPi', 1],['Microphone Pi',2],
+
+
+    <%= f.collection_select(:device_id, @devices, :id, :name) %>
+
+
+    <%#= f.select :device_id, [['Server',0],['MasterPi', 1],['Microphone Pi',2],
                            ['RouterNode',3],
                            ['RouterNode2',4],
                            ['RouterNode3',5],

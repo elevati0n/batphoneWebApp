@@ -1,6 +1,12 @@
 <% provide(:title, 'All Networks') %>
 <h1>All Networks</h1>
 
+<%= form_tag("/search", method: "get") do %>
+    <%= label_tag(:q, "Search for:") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Search") %>
+<% end %>
+
 <%= will_paginate %>
 
 <ul class="networks">
