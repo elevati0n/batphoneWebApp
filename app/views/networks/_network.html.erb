@@ -1,11 +1,16 @@
 <ul id="network <%= network.id %>">
 
-    <h2>
+    <h4>
           <%= link_to network.name, network %> <br>
-          public key : <br>
-          <code ><%= network.publickey %>
-          </code>
-    </h2>
+          public key : </h4><br>
+
+        <div id ="code" align-center>
+
+           <pre> <h8> <p>
+          <code > <%= network.publickey %></h8>
+          </code> </pre> </p>
+        </div>
+
 
   <br> <hr>
 
