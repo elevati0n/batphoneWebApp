@@ -1,14 +1,16 @@
 class CommentsController < ApplicationController
-  before_action :logged_in_user, only: [:create, :destroy]
+  #before_action :logged_in_user, only: [:create, :destroy]
   #before_action :correct_user,   only: :destroy
 
   def new
-    @comment =  Comment.new # @micropost.comments.build(user_id: @micropost.user.id)
+    #@comment =  @micropost.comments.build(user_id: current_user.id)
   end
 
   def show
+    redirect_to home_path
 
-
+    #@comment = Comment.find(params[:id])
+    #@comments = Comment.all
 
   end
 
@@ -20,11 +22,17 @@ class CommentsController < ApplicationController
   end
 
   def index
-    @comments = Comment.all
+    redirect_to home_path
+    #@comments = Comment.find(user_id: current_user.id)
   end
 
   def create
-    @comment = Comment.new(comment_params)
+
+    #@micropost = Micropost.find(comment_params[:micropost_id])
+    #@comment =  @micropost.comments.build(user_id: current_user.id)
+    @comment =  Comment.new(comment_params)
+
+
     if @comment.save
       flash[:success] = "comments added!"
       redirect_to root_url
@@ -39,7 +47,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:user_id, :micropost_id, :text) #).require(:micropost_id).require( permit(:text, :email, :password, :password_confirmation)
+    params.require(:comment).permit(:user_id, :micropost_id, :network_id, :text) #).require(:micropost_id).require( permit(:text, :email, :password, :password_confirmation)
   end
 
 

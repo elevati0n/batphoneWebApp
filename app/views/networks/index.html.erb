@@ -1,20 +1,110 @@
 <% provide(:title, 'All Networks') %>
-<h1>All Networks</h1>
 
-<%= form_tag("/search", method: "get") do %>
-    <%= label_tag(:q, "Search for:") %>
-    <%= text_field_tag(:q) %>
-    <%= submit_tag("Search") %>
-<% end %>
+<div class="col-lg col-sm-5">
+<div class="row">
+  <div class ="form-group">
 
-<%= will_paginate %>
+<li class="dropdown-header"> SEARCH FOR TEXT </li>
+
+<div class="col-lg-6">
+  <div class="input-group">
+
+    <input type="text" class="form-control" placeholder="Search for...">
+      <span class="input-group-btn">
+
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
+    </div>
+  </div>
+
+
+
+    <!--<div class="col-lg-6">-->
+    <!--<div class="input-group">-->
+    <!--</div>&lt;!&ndash; /.row &ndash;&gt;-->
+  <!--</div>-->
+
+
+<!--<div class="col-sm-offset-0 col-sm-0">-->
+
+<!--</div>-->
+
+
+
+
+
+
+     <!-- /input-group -->
+  <!--</div>&lt;!&ndash; /.col-lg-6 &ndash;&gt;-->
+
+  </div>
+
+
+</div>
+
+
+  </div>
+<div class="col-lg col-sm-offset-10">
+  <!--<div class="input-group">-->
+  <li class="dropdown-header"> REGISTER NETWORK </li>
+  <%= link_to "Add New Network", addnetwork_path, class: "btn btn-primary btn-default" %>
+  </div>
+
+
+
+<!--<%#= form_tag("/search", method: "get", class: "alight-left") do %>-->
+    <!--<%#= label_tag(:q, "Search for:") %>-->
+
+
+
+
+    <%#= text_field_tag(:q) %> <br>
+
+
+    <!--<%#= button_to("Search", @networks_path, class: "form-control" ) %>-->
+
+
+
+
+
+      <!--</div>-->
+
+        <!--<div>-->
+
+      <!--</div>-->
+<!--<%# end %>-->
+<!--</h4>-->
+
+<h1><bold> Explore Networks </bold></h1>
+
+ <%=  "Total Registered Networks : " +  @networks.count.to_s  %>
 
 <ul class="networks">
-  <% @networks.each do |network| %>
-      <%= render @networks %>
-  <% end %>
+<% @networks.each do |network| %>
+<%#= "Network Name: " + link_to(network.name, path_to_asset(Network.find(network.id))) %>
+ Network Name:  <%= link_to(network.name, network) %>
+
+
+
+      <br>
+<% end %>
 </ul>
+
+
+
+
 
 <%#= will_paginate %>
 
-<%= link_to "Add New Network", addnetwork_path, class: "btn btn-lg btn-primary" %>
+<%= render @networks %>
+
+
+
+<!--<ul class="networks">-->
+  <!--<%# @networks.each do |network| %>-->
+      <!--<%#= render @networks %>-->
+  <!--<%# end %>-->
+<!--</ul>-->
+
+<%#= will_paginate %>
+

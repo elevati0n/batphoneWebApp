@@ -11,8 +11,22 @@ class StaticPagesController < ApplicationController
       @device_array = @devices.all.map { |device| [device.name, device.id] }
 
       @micropost  = current_user.microposts.build
+
+      @microposts = current_user.microposts.all
+
+      @microposts.each do |p|
+        @comments = p.comments
+        #@network = p.network
+        @comment = p.comments.build
+      end
+
+      #@microposts.each do |p|
+      #  @comments = p.comments
+      #  @comment = p.comments.build
+      #end
+
       @feed_items = current_user.feed.paginate(page: params[:page])
-      @comment = @micropost.comments.build
+      #@comment = @micropost.comments.build
 
 
     end

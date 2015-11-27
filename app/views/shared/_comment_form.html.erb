@@ -4,22 +4,29 @@
 
     <br>
     <div class="field">
-      <%= f.text_field :text, placeholder: "enter comments text..." %>
+      <%= f.text_area :text, placeholder: "enter comments text...", size: 20 %>
       <%#= f.text_area :text, size: "1x1" %>
 
     </div>
 
 
-    <%= f.hidden_field :user_id, :value => @user.id %>
 
-    <%= f.hidden_field(:micropost_id, :value => @current_post ) %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+
+    <%#= f.hidden_field :user_id, :value => @Comment.user_id %>
+
+    <%= f.hidden_field(:micropost_id, :value => @comment.micropost_id ) %>
 
     <%= f.submit "Comment", class: "btn btn-primary" %>
 
 
+
+
+
+
     <span class="picture">
 
-      <%= f.file_field :picture %>
+      <%#= f.file_field :picture %>
 
   </span>
 

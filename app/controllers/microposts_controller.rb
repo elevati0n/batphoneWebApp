@@ -33,7 +33,13 @@ class MicropostsController < ApplicationController
 
   def show
     @micropost = Micropost.find(params[:id])
-    @comments = @micropost.comments.all
+    #@comments = @micropost.comments
+    #@network = micropost.network
+
+
+
+    #@Device = Device.find(micropost.device_id)
+
 
   end
 
