@@ -56,11 +56,12 @@
     <%#  end %>
 
 
+    <li class="dropdown-header"> <h3> SELECT NETWORK </h3> </li>
     <%= f.collection_select(:network_id, @networks, :id, :name) %>
 
 
-    volume control
-    <%= number_field_tag 'volume', nil, max: 11 %>
+    <!--volume control-->
+    <%#= number_field_tag 'volume', nil, max: 11 %>
 
 
     <%#= form_tag('/posts') do -%>
@@ -89,11 +90,29 @@
 
 
 
-    <div class="field"></div>
-    <h4>Device</h4>
+    <li class="dropdown-header"> <h3> SELECT DEVICE </h3> </li>
+    <!--<div class="field"></div>-->
+    <!--<h4>Device</h4>-->
+
+
+    <!--<div class="btn-group">-->
+      <!--<button type="button" class="btn btn-danger dropdown-toggle"-->
+              <!--data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+        <!--<span class="caret"></span>-->
+
+
+    <!--<div class="btn">-->
+      <!--<button type="button" class="btn btn-danger">Action</button>-->
+      <!--<button type="button" class="btn btn-default btn-small" data-toggle="dropdown" >-->
+        <!--<span class="caret"></span>-->
+        <!--<span class="sr-only">Toggle Dropdown</span>-->
+
 
 
     <%= f.collection_select(:device_id, @devices, :id, :name) %>
+
+          </button>
+        <!--</div>-->
 
 
     <%#= f.select :device_id, [['Server',0],['MasterPi', 1],['Microphone Pi',2],

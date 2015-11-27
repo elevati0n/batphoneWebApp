@@ -1,6 +1,15 @@
 <ul id="network <%= network.id %>">
 
-    <h4>
+    <h2>
+          <%= link_to network.name, network %> <br>
+          public key : <br>
+          <code ><%= network.publickey %>
+          </code>
+    </h2>
+
+  <br> <hr>
+
+    <h3>
       <%= link_to network.name, network %> | total devices : <%=  link_to "total devices : " +
             network.devices.count.to_s, network_path(network, anchor: "devices")  %>
 
@@ -8,18 +17,20 @@
                                        :method => 'get' %>
       <%= link_to "delete", network, method: :delete,
                   data: { confirm: "You sure?" } %>
-    </h4>
+    </h3>
 
-    <h3>
+    <h4>
 
-      <div name="devices">
+      <!--<div id="devices">-->
+
+      <h3>  Registered Devices </h3>
 
 
 
       <%= render network.devices %>
 
 
-      </div>
+      <!--</div>-->
 
-    </h3>
+    </h4>
     </ul>

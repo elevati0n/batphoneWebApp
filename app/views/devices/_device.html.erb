@@ -3,10 +3,15 @@
 lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.
 sectionAnchor%7Cmediawiki.ui.button%7Cskins.bootstrapmediawiki&amp;only=styles&amp;skin=bootstrapmediawiki&amp;*" />
 
-<span>
+<div id = "devices" >
+
+  <br> <hr>
+
   <h3> Device :  <%= link_to device.name, device %>   |   Network :
     <%= device.network.id %> <%= link_to device.network.name, device.network %> <small></small></h3>
 
+</div>
+<span >
 <span class="timestamp">
     Posted <%= time_ago_in_words(device.created_at) %> ago.
   </span>
