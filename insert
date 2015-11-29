@@ -1,0 +1,260 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE "schema_migrations" ("version" varchar NOT NULL);
+INSERT INTO "schema_migrations" VALUES('20151004185532');
+INSERT INTO "schema_migrations" VALUES('20151004192143');
+INSERT INTO "schema_migrations" VALUES('20151004192653');
+INSERT INTO "schema_migrations" VALUES('20151010054157');
+INSERT INTO "schema_migrations" VALUES('20151010054911');
+INSERT INTO "schema_migrations" VALUES('20151018033850');
+INSERT INTO "schema_migrations" VALUES('20151024002919');
+INSERT INTO "schema_migrations" VALUES('20151024014817');
+INSERT INTO "schema_migrations" VALUES('20151024024914');
+INSERT INTO "schema_migrations" VALUES('20151024194404');
+INSERT INTO "schema_migrations" VALUES('20151024221000');
+INSERT INTO "schema_migrations" VALUES('20151031035403');
+INSERT INTO "schema_migrations" VALUES('20151111065404');
+INSERT INTO "schema_migrations" VALUES('20151125214943');
+CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "address" varchar, "profile" varchar, "friends" varchar, "groups" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password_digest" varchar, "remember_digest" varchar);
+INSERT INTO "users" VALUES(1,'sean','sean@sean.com',NULL,NULL,NULL,NULL,'2015-11-27 07:19:26.464608','2015-11-27 07:19:26.464608','$2a$10$8qwQ5t0nd8Y4RugkRiYc8utUUo1nljZUlxhwJ36aYXMpcR/szDyPm',NULL);
+CREATE TABLE "recordings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "originator" varchar, "time" varchar, "date" varchar, "URI" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+CREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "member" varchar, "recording" varchar, "comment" varchar, "batphone" varchar, "profile" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+CREATE TABLE "microposts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "picture" varchar, "subject" varchar, "device_id" integer, "network_id" integer, "private" boolean);
+INSERT INTO "microposts" VALUES(1,'lmao',1,'2015-11-27 08:09:15.830686','2015-11-27 08:09:15.830686',NULL,'ayyy ',3,3,NULL);
+INSERT INTO "microposts" VALUES(2,'LMAO',1,'2015-11-27 09:27:16.005638','2015-11-27 09:27:16.005638',NULL,'AYYY',3,1,'t');
+INSERT INTO "microposts" VALUES(3,'asdfadf',1,'2015-11-27 11:26:38.330167','2015-11-27 11:26:38.330167',NULL,'ayyy ',4,1,'t');
+INSERT INTO "microposts" VALUES(4,'HAYYY U GUIYSSSSSEEEEE',1,'2015-11-27 14:37:57.395956','2015-11-27 14:37:57.395956',NULL,'HAYYYY',3,1,'t');
+INSERT INTO "microposts" VALUES(5,'lmao, it was microposts',1,'2015-11-28 11:13:43.215876','2015-11-28 11:13:43.215876',NULL,'ayyy',2,3,'t');
+INSERT INTO "microposts" VALUES(6,'falsE?',1,'2015-11-28 11:17:27.109447','2015-11-28 11:17:27.109447',NULL,'ajax test',3,3,'t');
+CREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "follower_id" integer, "followed_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+CREATE TABLE "networks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "publickey" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+INSERT INTO "networks" VALUES(1,'Public','none','2015-11-27 07:19:40.896490','2015-11-27 07:19:40.896490');
+INSERT INTO "networks" VALUES(2,'BatCave','none
+','2015-11-27 08:01:58.277398','2015-11-27 08:01:58.277398');
+INSERT INTO "networks" VALUES(3,'Wayne Enterprises','none
+','2015-11-27 08:02:03.100210','2015-11-27 08:02:03.100210');
+INSERT INTO "networks" VALUES(4,'private','none
+','2015-11-27 08:02:07.983430','2015-11-27 08:02:07.983430');
+INSERT INTO "networks" VALUES(5,'sea','-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v1
+
+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
+uvU0KA+U+nMaDcQAI4ucG7w=
+=fUk7
+-----END PGP PUBLIC KEY BLOCK-----','2015-11-27 19:16:22.620467','2015-11-27 19:16:22.620467');
+CREATE TABLE "devices" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "IP_address" varchar, "MAC" varchar, "AP_SSID" varchar, "Gateway_mode" varchar, "description" text, "location" text, "notes" text, "network_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+INSERT INTO "devices" VALUES(1,'Master Pi','122.2323.2323.23','234 324 234 32 3244 ','masterpI','client','raspberry pi model 2b','capstone lab desk','',1,'2015-11-27 07:20:11.668511','2015-11-27 07:20:11.668511');
+INSERT INTO "devices" VALUES(2,'Router','122.2323.2323.23','234 324 234 32 3244 ','router1','client','router','smoewhere else','',1,'2015-11-27 07:20:28.578003','2015-11-27 07:20:28.578003');
+INSERT INTO "devices" VALUES(3,'Router2','122.2323.2323.23','234 324 234 32 3244 ','router2','Server','router','smoewhere else','',1,'2015-11-27 07:20:37.121899','2015-11-27 07:20:37.121899');
+INSERT INTO "devices" VALUES(4,'Router3','122.2323.2323.23','234 324 234 32 3244 ','router2','Server','router','smoewhere else','',1,'2015-11-27 07:20:44.373472','2015-11-27 07:20:44.373472');
+CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "text" text, "user_id" integer, "micropost_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+INSERT INTO "comments" VALUES(17,'ayyy',1,1,'2015-11-27 12:19:56.013316','2015-11-27 12:19:56.013316');
+INSERT INTO "comments" VALUES(18,'ayyy',1,1,'2015-11-27 12:20:18.474425','2015-11-27 12:20:18.474425');
+INSERT INTO "comments" VALUES(19,'ayyy',1,1,'2015-11-27 12:28:18.139529','2015-11-27 12:28:18.139529');
+INSERT INTO "comments" VALUES(20,'what now??',1,1,'2015-11-27 12:28:40.923618','2015-11-27 12:28:40.923618');
+INSERT INTO "comments" VALUES(21,'lol wut',1,1,'2015-11-27 12:29:52.151302','2015-11-27 12:29:52.151302');
+INSERT INTO "comments" VALUES(22,'ayyy',1,NULL,'2015-11-27 12:32:04.212108','2015-11-27 12:32:04.212108');
+INSERT INTO "comments" VALUES(23,'wut?',1,NULL,'2015-11-27 12:36:14.588759','2015-11-27 12:36:14.588759');
+INSERT INTO "comments" VALUES(24,'ayyy',1,3,'2015-11-27 12:38:41.512010','2015-11-27 12:38:41.512010');
+INSERT INTO "comments" VALUES(25,'wat tf',1,2,'2015-11-27 12:38:58.487618','2015-11-27 12:38:58.487618');
+INSERT INTO "comments" VALUES(26,'lolol
+',1,3,'2015-11-27 13:22:11.739978','2015-11-27 13:22:11.739978');
+INSERT INTO "comments" VALUES(27,'hayyyy you guyyyysssss
+',1,3,'2015-11-27 14:37:44.182153','2015-11-27 14:37:44.182153');
+INSERT INTO "comments" VALUES(28,'what?
+',1,4,'2015-11-27 14:38:11.088809','2015-11-27 14:38:11.088809');
+INSERT INTO "comments" VALUES(29,'oh i see',1,4,'2015-11-27 15:03:06.585547','2015-11-27 15:03:06.585547');
+INSERT INTO "comments" VALUES(30,'hmm...',1,4,'2015-11-27 15:19:22.799198','2015-11-27 15:19:22.799198');
+INSERT INTO "comments" VALUES(31,'ajax test',1,4,'2015-11-28 10:51:55.547473','2015-11-28 10:51:55.547473');
+INSERT INTO "comments" VALUES(32,'did that work?',1,4,'2015-11-28 10:52:02.871745','2015-11-28 10:52:02.871745');
+INSERT INTO "comments" VALUES(33,'i dont think so??',1,4,'2015-11-28 10:52:09.565385','2015-11-28 10:52:09.565385');
+DELETE FROM sqlite_sequence;
+INSERT INTO "sqlite_sequence" VALUES('users',1);
+INSERT INTO "sqlite_sequence" VALUES('networks',5);
+INSERT INTO "sqlite_sequence" VALUES('devices',4);
+INSERT INTO "sqlite_sequence" VALUES('microposts',6);
+INSERT INTO "sqlite_sequence" VALUES('comments',33);
+CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version");
+CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email");
+CREATE INDEX "index_microposts_on_user_id" ON "microposts" ("user_id");
+CREATE INDEX "index_devices_on_network_id" ON "devices" ("network_id");
+CREATE INDEX "index_comments_on_user_id" ON "comments" ("user_id");
+CREATE INDEX "index_comments_on_micropost_id" ON "comments" ("micropost_id");
+CREATE INDEX "index_microposts_on_device_id" ON "microposts" ("device_id");
+CREATE INDEX "index_microposts_on_network_id" ON "microposts" ("network_id");
+COMMIT;
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE "schema_migrations" ("version" varchar NOT NULL);
+INSERT INTO "schema_migrations" VALUES('20151004185532');
+INSERT INTO "schema_migrations" VALUES('20151004192143');
+INSERT INTO "schema_migrations" VALUES('20151004192653');
+INSERT INTO "schema_migrations" VALUES('20151010054157');
+INSERT INTO "schema_migrations" VALUES('20151010054911');
+INSERT INTO "schema_migrations" VALUES('20151018033850');
+INSERT INTO "schema_migrations" VALUES('20151024002919');
+INSERT INTO "schema_migrations" VALUES('20151024014817');
+INSERT INTO "schema_migrations" VALUES('20151024024914');
+INSERT INTO "schema_migrations" VALUES('20151024194404');
+INSERT INTO "schema_migrations" VALUES('20151024221000');
+INSERT INTO "schema_migrations" VALUES('20151031035403');
+INSERT INTO "schema_migrations" VALUES('20151111065404');
+INSERT INTO "schema_migrations" VALUES('20151125214943');
+CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "address" varchar, "profile" varchar, "friends" varchar, "groups" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password_digest" varchar, "remember_digest" varchar);
+INSERT INTO "users" VALUES(1,'sean','sean@sean.com',NULL,NULL,NULL,NULL,'2015-11-27 07:19:26.464608','2015-11-27 07:19:26.464608','$2a$10$8qwQ5t0nd8Y4RugkRiYc8utUUo1nljZUlxhwJ36aYXMpcR/szDyPm',NULL);
+CREATE TABLE "recordings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "originator" varchar, "time" varchar, "date" varchar, "URI" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+CREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "member" varchar, "recording" varchar, "comment" varchar, "batphone" varchar, "profile" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+CREATE TABLE "microposts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "picture" varchar, "subject" varchar, "device_id" integer, "network_id" integer, "private" boolean);
+INSERT INTO "microposts" VALUES(1,'lmao',1,'2015-11-27 08:09:15.830686','2015-11-27 08:09:15.830686',NULL,'ayyy ',3,3,NULL);
+INSERT INTO "microposts" VALUES(2,'LMAO',1,'2015-11-27 09:27:16.005638','2015-11-27 09:27:16.005638',NULL,'AYYY',3,1,'t');
+INSERT INTO "microposts" VALUES(3,'asdfadf',1,'2015-11-27 11:26:38.330167','2015-11-27 11:26:38.330167',NULL,'ayyy ',4,1,'t');
+INSERT INTO "microposts" VALUES(4,'HAYYY U GUIYSSSSSEEEEE',1,'2015-11-27 14:37:57.395956','2015-11-27 14:37:57.395956',NULL,'HAYYYY',3,1,'t');
+INSERT INTO "microposts" VALUES(5,'lmao, it was microposts',1,'2015-11-28 11:13:43.215876','2015-11-28 11:13:43.215876',NULL,'ayyy',2,3,'t');
+INSERT INTO "microposts" VALUES(6,'falsE?',1,'2015-11-28 11:17:27.109447','2015-11-28 11:17:27.109447',NULL,'ajax test',3,3,'t');
+CREATE TABLE "relationships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "follower_id" integer, "followed_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+CREATE TABLE "networks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "publickey" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+INSERT INTO "networks" VALUES(1,'Public','none','2015-11-27 07:19:40.896490','2015-11-27 07:19:40.896490');
+INSERT INTO "networks" VALUES(2,'BatCave','none
+','2015-11-27 08:01:58.277398','2015-11-27 08:01:58.277398');
+INSERT INTO "networks" VALUES(3,'Wayne Enterprises','none
+','2015-11-27 08:02:03.100210','2015-11-27 08:02:03.100210');
+INSERT INTO "networks" VALUES(4,'private','none
+','2015-11-27 08:02:07.983430','2015-11-27 08:02:07.983430');
+INSERT INTO "networks" VALUES(5,'sea','-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v1
+
+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
+uvU0KA+U+nMaDcQAI4ucG7w=
+=fUk7
+-----END PGP PUBLIC KEY BLOCK-----','2015-11-27 19:16:22.620467','2015-11-27 19:16:22.620467');
+CREATE TABLE "devices" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "IP_address" varchar, "MAC" varchar, "AP_SSID" varchar, "Gateway_mode" varchar, "description" text, "location" text, "notes" text, "network_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+INSERT INTO "devices" VALUES(1,'Master Pi','122.2323.2323.23','234 324 234 32 3244 ','masterpI','client','raspberry pi model 2b','capstone lab desk','',1,'2015-11-27 07:20:11.668511','2015-11-27 07:20:11.668511');
+INSERT INTO "devices" VALUES(2,'Router','122.2323.2323.23','234 324 234 32 3244 ','router1','client','router','smoewhere else','',1,'2015-11-27 07:20:28.578003','2015-11-27 07:20:28.578003');
+INSERT INTO "devices" VALUES(3,'Router2','122.2323.2323.23','234 324 234 32 3244 ','router2','Server','router','smoewhere else','',1,'2015-11-27 07:20:37.121899','2015-11-27 07:20:37.121899');
+INSERT INTO "devices" VALUES(4,'Router3','122.2323.2323.23','234 324 234 32 3244 ','router2','Server','router','smoewhere else','',1,'2015-11-27 07:20:44.373472','2015-11-27 07:20:44.373472');
+CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "text" text, "user_id" integer, "micropost_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL);
+INSERT INTO "comments" VALUES(17,'ayyy',1,1,'2015-11-27 12:19:56.013316','2015-11-27 12:19:56.013316');
+INSERT INTO "comments" VALUES(18,'ayyy',1,1,'2015-11-27 12:20:18.474425','2015-11-27 12:20:18.474425');
+INSERT INTO "comments" VALUES(19,'ayyy',1,1,'2015-11-27 12:28:18.139529','2015-11-27 12:28:18.139529');
+INSERT INTO "comments" VALUES(20,'what now??',1,1,'2015-11-27 12:28:40.923618','2015-11-27 12:28:40.923618');
+INSERT INTO "comments" VALUES(21,'lol wut',1,1,'2015-11-27 12:29:52.151302','2015-11-27 12:29:52.151302');
+INSERT INTO "comments" VALUES(22,'ayyy',1,NULL,'2015-11-27 12:32:04.212108','2015-11-27 12:32:04.212108');
+INSERT INTO "comments" VALUES(23,'wut?',1,NULL,'2015-11-27 12:36:14.588759','2015-11-27 12:36:14.588759');
+INSERT INTO "comments" VALUES(24,'ayyy',1,3,'2015-11-27 12:38:41.512010','2015-11-27 12:38:41.512010');
+INSERT INTO "comments" VALUES(25,'wat tf',1,2,'2015-11-27 12:38:58.487618','2015-11-27 12:38:58.487618');
+INSERT INTO "comments" VALUES(26,'lolol
+',1,3,'2015-11-27 13:22:11.739978','2015-11-27 13:22:11.739978');
+INSERT INTO "comments" VALUES(27,'hayyyy you guyyyysssss
+',1,3,'2015-11-27 14:37:44.182153','2015-11-27 14:37:44.182153');
+INSERT INTO "comments" VALUES(28,'what?
+',1,4,'2015-11-27 14:38:11.088809','2015-11-27 14:38:11.088809');
+INSERT INTO "comments" VALUES(29,'oh i see',1,4,'2015-11-27 15:03:06.585547','2015-11-27 15:03:06.585547');
+INSERT INTO "comments" VALUES(30,'hmm...',1,4,'2015-11-27 15:19:22.799198','2015-11-27 15:19:22.799198');
+INSERT INTO "comments" VALUES(31,'ajax test',1,4,'2015-11-28 10:51:55.547473','2015-11-28 10:51:55.547473');
+INSERT INTO "comments" VALUES(32,'did that work?',1,4,'2015-11-28 10:52:02.871745','2015-11-28 10:52:02.871745');
+INSERT INTO "comments" VALUES(33,'i dont think so??',1,4,'2015-11-28 10:52:09.565385','2015-11-28 10:52:09.565385');
+DELETE FROM sqlite_sequence;
+INSERT INTO "sqlite_sequence" VALUES('users',1);
+INSERT INTO "sqlite_sequence" VALUES('networks',5);
+INSERT INTO "sqlite_sequence" VALUES('devices',4);
+INSERT INTO "sqlite_sequence" VALUES('microposts',6);
+INSERT INTO "sqlite_sequence" VALUES('comments',33);
+CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version");
+CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email");
+CREATE INDEX "index_microposts_on_user_id" ON "microposts" ("user_id");
+CREATE INDEX "index_devices_on_network_id" ON "devices" ("network_id");
+CREATE INDEX "index_comments_on_user_id" ON "comments" ("user_id");
+CREATE INDEX "index_comments_on_micropost_id" ON "comments" ("micropost_id");
+CREATE INDEX "index_microposts_on_device_id" ON "microposts" ("device_id");
+CREATE INDEX "index_microposts_on_network_id" ON "microposts" ("network_id");
+COMMIT;
