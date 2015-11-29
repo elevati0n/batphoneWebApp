@@ -319,11 +319,8 @@ DEPENDENCIES
   coffee-rails (= 4.1.0)
   faker (= 1.4.2)
   fog (= 1.26.0)
-<<<<<<< HEAD
   gmaps4rails
-=======
   gpgme
->>>>>>> 8d021fde46251b807f26514c444304f0cad63567
   guard-minitest (= 2.3.1)
   jbuilder (= 2.2.3)
   jquery-rails (= 4.0.3)
