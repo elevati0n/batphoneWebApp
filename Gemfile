@@ -18,7 +18,6 @@ gem 'jbuilder',                '2.2.3'
 gem 'sdoc',                    '0.4.0', group: :doc
 gem 'gmaps4rails'
 gem 'savon', '~> 2.0'
-gem 'gpgme'
 gem 'seed_dump'
 
 group :development, :test do
