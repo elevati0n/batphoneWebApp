@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151125214943) do
+ActiveRecord::Schema.define(version: 20151129063907) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "text"
@@ -31,11 +31,12 @@ ActiveRecord::Schema.define(version: 20151125214943) do
     t.string   "AP_SSID"
     t.string   "Gateway_mode"
     t.text     "description"
-    t.text     "location"
     t.text     "notes"
     t.integer  "network_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "latitude"
+    t.string   "longitude"
   end
 
   add_index "devices", ["network_id"], name: "index_devices_on_network_id"

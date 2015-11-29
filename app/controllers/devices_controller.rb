@@ -38,7 +38,7 @@ class DevicesController < ApplicationController
 
   def devices_params
     params.require(:device).permit(:IP_address, :MAC, :AP_SSID, :Gateway_mode, :name,
-                                   :description, :location, :notes, :network_id)
+                                   :description, :longitude, :latitude, :notes, :network_id)
   end
 
 

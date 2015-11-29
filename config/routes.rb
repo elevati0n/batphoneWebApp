@@ -26,6 +26,8 @@ Rails.application.routes.draw do
 
   get 'addnetwork' => 'networks#new'
 
+  get 'maps' => 'maps#show'
+
   resources :devices 
 
   resources :networks do
