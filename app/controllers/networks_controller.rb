@@ -40,5 +40,7 @@ class NetworksController < ApplicationController
   def network_params
     params.require(:network).permit(:name, :publickey)
     end
-  end
+
+end
+
 
