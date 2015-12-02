@@ -20,6 +20,11 @@ gem 'gmaps4rails'
 gem 'savon', '~> 2.0'
 gem 'seed_dump'
 
+gem 'jquery-turbolinks'
+gem 'grape'
+gem 'redis'
+gem 'hiredis'
+
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
