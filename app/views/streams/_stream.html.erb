@@ -1,0 +1,40 @@
+<%#= f.hidden_field(:user_id, :value => current_user.id) %>
+
+<%= stylesheet_link_tag    "application", :media => "all" %>
+<%= javascript_include_tag "application" %>
+<%= csrf_meta_tags %>
+
+<%= javascript_tag do %>
+    $(function() {
+    // clear form input after submit
+    $('form').bind('ajax:beforeSend', function() {
+    $('input#text').val('');
+    });
+
+    function message(m) {
+    $('<li>').text(m).appendTo('.messages ul');
+  }
+
+  var socket = new WebSocket('ws://<%= device.ip_address %>:<%= stream.port %> /messages');
+  socket.onopen    = function()  {message('Connection opened');}
+  socket.onclose   = function()  {message('Connection closed');}
+  socket.onmessage = function(m) {
+  message(m.data);
+  }
+  });
+
+
+<% end %>
+
+<%= render stream.user_id %>
+
+<%= puts stream.port %>
+
+
+<%= render stream.device %>
+
+
+<%= render stream.network %>
+
+<%= yield %>
+

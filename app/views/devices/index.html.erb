@@ -6,9 +6,9 @@
 <%#= will_paginate %>
 
 <ul class="users">
-  <%# @devices.each do |device| %>
-      <%= render @devices %>
-  <%# end %>
+  <% @devices.each do |device| %>
+      <%= render device %>
+  <% end %>
 </ul>
 
 <%#= will_paginate %>

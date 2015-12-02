@@ -22,7 +22,11 @@ end
    @devices = @network.devices.all
    @mic_ids = @network.micropost_ids
    if logged_in?
-   @feed = Micropost.where("user_id IN (?) OR user_id = ? OR network_id =?", @mic_ids, current_user.id, @network.id)
+   @feed = Micropost.where(
+
+
+       " user_id = ? OR network_id =?
+     OR private =?", current_user.id, current_user.networks.find_by_id(params[:id]), true)
    end
        #current_user.feed.paginate(page: params[:page])
    #@hash = Gmaps4rails.build_markers(@network.devices)
@@ -30,6 +34,7 @@ end
 
   def create
      @network = Network.new(network_params)
+     @network.build(:admin_id => current_user.id )
      if @network.save
        flash[:success] = "Network added!"
        redirect_to @network

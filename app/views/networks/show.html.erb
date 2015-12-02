@@ -1,8 +1,8 @@
 <% provide(:title, @network.name) %>
 
-  <% if !@network.device_id.nil? %>
+  <% if @network.devices.any? %>
 
-  <% render map %>
+  <%= render 'shared/map' %>
 
   <% end %>
 
