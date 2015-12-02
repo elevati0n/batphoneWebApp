@@ -22,11 +22,11 @@ end
    @devices = @network.devices.all
    @mic_ids = @network.micropost_ids
    if logged_in?
-   @feed = Micropost.where(
+   @feed = Micropost.where.current_user.id.or.current_user.network.find_by_id(params[:id]).or.network.private.true
 
 
-       " user_id = ? OR network_id =?
-     OR private =?", current_user.id, current_user.networks.find_by_id(params[:id]), true)
+
+
    end
        #current_user.feed.paginate(page: params[:page])
    #@hash = Gmaps4rails.build_markers(@network.devices)
