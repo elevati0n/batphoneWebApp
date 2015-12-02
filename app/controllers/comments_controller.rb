@@ -23,7 +23,6 @@ class CommentsController < ApplicationController
 
   def index
     redirect_to home_path
-
     #@comments = Comment.find(user_id: current_user.id)
   end
 
@@ -36,7 +35,7 @@ class CommentsController < ApplicationController
 
     if @comment.save
       flash[:success] = "comments added!"
-      redirect_to request.referrer || root_url
+      redirect_to root_url
     else
       @feed_items = []
       render 'static_pages/home'
@@ -48,7 +47,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:user_id, :micropost_id, :network_id, :text)
+    params.require(:comment).permit(:user_id, :micropost_id, :network_id, :text) #).require(:micropost_id).require( permit(:text, :email, :password, :password_confirmation)
   end
 
 

@@ -1,27 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'streams/new'
-
-  get 'streams/create'
-
-  get 'streams/update'
-
-  get 'streams/edit'
-
-  get 'streams/destroy'
-
-  resources :recordings
-
-  resources :streams
-
-  #get 'recordings/new'
-
-  #get 'recordings/edit'
-
-  #get 'recordings/show'
-
-  #get 'recordings/index'
-
   #get 'networks/new'
 
   get 'sessions/new'
@@ -56,12 +34,6 @@ Rails.application.routes.draw do
   resources :networks do
     resources :devices
   end
-
-  resources :users do
-    resources :networks
-  end
-
-
 
 
 

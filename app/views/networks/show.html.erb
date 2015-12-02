@@ -7,9 +7,9 @@ Auto-merging app/views/maps/show.html.erb<% provide(:title, @network.name) %>
   <div id="custom_style" style='width: 1200px; height: 600px;'></div>
 
 <h1><bold><%= @network.name %> </bold></h1>
-
+  
 <div style='width: 1200px;'>
-  <div id= <%=@network.id%>  "custom_style" style='width: 1200px; height: 600px;'></div>
+  <div id="custom_style" style='width: 1200px; height: 600px;'></div>
 </div>
 
 <script type="text/javascript">
@@ -31,6 +31,7 @@ var mapStyle = [{"featureType":"all","elementType":"labels.text.fill","stylers":
 [{"color":"#ffffff"}]},{"featureType":"transit","elementType":"labels.text.stroke","stylers":
 [{"color":"#5a748d"}]},{"featureType":"transit","elementType":"labels.icon","stylers":
 [{"color":"#5a748d"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#021019"}]}];
+<<<<<<< HEAD
 
 var handler = Gmaps.build('Google');
 handler.buildMap({ internal: { id: 'custom_style'},
@@ -80,35 +81,40 @@ handler.fitMapToBounds();
             [{"color":"#ffffff"}]},{"featureType":"transit","elementType":"labels.text.stroke","stylers":
             [{"color":"#5a748d"}]},{"featureType":"transit","elementType":"labels.icon","stylers":
             [{"color":"#5a748d"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#021019"}]}];
+=======
+>>>>>>> parent of 6a4e10b... major changes, network feed, recordings, streams, etc
 
-    var handler = Gmaps.build('Google');
-    handler.buildMap({ internal: { id: <%=@network.id%>},
-                provider: {
-                    zoom:      15,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    styles:    mapStyle
-                }
-            },
-            function(){
-                <%# @network = Network.find(params[:id]) %>
-                <%# @devices = @network.devices.all %>
-                <% @hash = Gmaps4rails.build_markers(@network.devices) do |device, marker| %>
-                <% marker.lat device.latitude %>
-                <% marker.lng device.longitude %>
-                <% marker.picture({"url" => "https://lh3.googleusercontent.com/YKh2bl1P53SCWfZplfmP5rpKDQIAiJAQCqLnFSXFUy8eMV5UOZW8YJiy7HHShH-qoMH7PwKSwo8=s50-h50-e365","width" =>  50,"height" => 50}) %>
-                <% marker.json({:id => device.id }) %>
-                <% marker.infowindow render device %>
-                <% end %>
-                var markers = handler.addMarkers(<%=raw @hash.to_json %>);
-                handler.bounds.extendWith(markers);
-                handler.fitMapToBounds();
-            }
-    );
+var handler = Gmaps.build('Google');
+handler.buildMap({ internal: { id: 'custom_style'},
+provider: {
+      zoom:      15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      styles:    mapStyle
+    }
+},
+function(){
+<% @network = Network.find(params[:id]) %>
+<% @devices = @network.devices.all %>
+<% @hash = Gmaps4rails.build_markers(@network.devices) do |device, marker| %>
+<% marker.lat device.latitude %>
+<% marker.lng device.longitude %>
+<% marker.picture({"url" => "https://lh3.googleusercontent.com/YKh2bl1P53SCWfZplfmP5rpKDQIAiJAQCqLnFSXFUy8eMV5UOZW8YJiy7HHShH-qoMH7PwKSwo8=s50-h50-e365","width" =>  50,"height" => 50}) %>
+<% marker.json({:id => device.id }) %>
+<% marker.infowindow render device %>
+<% end %>
+var markers = handler.addMarkers(<%=raw @hash.to_json %>);
+handler.bounds.extendWith(markers);
+handler.fitMapToBounds();
+}
+);
 </script>
 
+<<<<<<< HEAD
 >>>>>>> 6a4e10b39d2c77373e69db011fbfe8f3c4c45ed0
 <%= render @network %>
 
+=======
+>>>>>>> parent of 6a4e10b... major changes, network feed, recordings, streams, etc
 <div id="devices">
 
 <!--<div class="col-md-8">-->

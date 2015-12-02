@@ -20,12 +20,6 @@ end
   def show
    @network = Network.find(params[:id])
    @devices = @network.devices.all
-   @mic_ids = @network.micropost_ids
-   if logged_in?
-   @feed = Micropost.where("user_id IN (?) OR user_id = ? OR network_id =?", @mic_ids, current_user.id, @network.id)
-   end
-       #current_user.feed.paginate(page: params[:page])
-   #@hash = Gmaps4rails.build_markers(@network.devices)
   end
 
   def create
@@ -41,8 +35,10 @@ end
 
   def index
     @networks = Network.paginate(page: params[:page])
-    @devices = Device.all
     @network_array = @networks.all.map { |network| [network.name, network.id] }
+
+
+
   end
 
   def destroy
@@ -56,8 +52,8 @@ end
   private
 
   def network_params
-    params.require(:network).permit(:name, :publickey, :admin_id)
-  end
+    params.require(:network).permit(:name, :publickey)
+    end
 
 end
 

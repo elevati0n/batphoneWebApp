@@ -1,14 +1,8 @@
 <ul id="network <%= network.id %>">
 
-
-
-
-  <% if logged_in? %>
-  <%= render @feed %>
-      <% end %>
-    <h2>
+    <h4>
           <%= link_to network.name, network %> <br>
-          public key : </h2><br>
+          public key : </h4><br>
 
         <div id ="code" align-center>
 
@@ -35,6 +29,8 @@
       <!--<div id="devices">-->
 
       <h3>  Registered Devices </h3>
+
+
 
       <%= render network.devices %>
 
