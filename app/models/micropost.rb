@@ -3,6 +3,9 @@ class Micropost < ActiveRecord::Base
   belongs_to :network
   belongs_to :device
   has_many :comments, dependent: :destroy
+  has_many :recordings
+  has_one :stream
+  before_create { self.id = rand(1000..9999)}
 
   validates :network_id, presence: true
 
