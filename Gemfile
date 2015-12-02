@@ -23,7 +23,7 @@ gem 'jquery-turbolinks'
 gem 'grape'
 gem 'redis'
 gem 'hiredis'
-gem 'rack-stream', :path => File.expand_path('../../..', __FILE__)
+#gem 'rack-stream', :path => File.expand_path('../../..', __FILE__)
 gem 'thin'
 
 group :development, :test do

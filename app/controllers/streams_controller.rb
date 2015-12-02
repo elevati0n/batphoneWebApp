@@ -1,5 +1,5 @@
 class StreamsController < ApplicationController
-  include Rack::Stream::DSL
+#  include Rack::Stream::DSL
 
 
   def new
