@@ -85,7 +85,19 @@
 <%#= "Network Name: " + link_to(network.name, path_to_asset(Network.find(network.id))) %>
  Network Name:  <%= link_to(network.name, network) %>
 
+      <% if logged_in? %>
 
+
+      <% @devices = network.devices.all %>
+      <% @mic_ids = network.micropost_ids %>
+      <% @feed = Micropost.where("user_id IN (?) OR user_id = ? OR network_id =?",
+                                  @mic_ids, current_user.id, network.id)%>
+
+      <%= render network %>
+
+
+
+          <% end %>
 
       <br>
 <% end %>
@@ -97,7 +109,7 @@
 
 <%#= will_paginate %>
 
-<%= render @networks %>
+
 
 
 
