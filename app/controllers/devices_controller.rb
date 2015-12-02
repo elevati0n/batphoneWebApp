@@ -25,7 +25,19 @@ class DevicesController < ApplicationController
   end
 
   def index
-    @devices = Device.all
+    if !(params[:network_id] == nil)
+      @devices = Network.find(params[:network_id]).devices
+      if @devices.count == 0
+        flash[:danger] = "No Devices found, please add your devices"
+        redirect_to new_network_device_path
+      end
+    else
+      @devices = Device.all
+    end
+  end
+
+  def edit
+    @device = Device.find(params[:id])
   end
 
 

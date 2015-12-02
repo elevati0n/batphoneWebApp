@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151129063907) do
+ActiveRecord::Schema.define(version: 20151202045558) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "text"
@@ -37,9 +37,11 @@ ActiveRecord::Schema.define(version: 20151129063907) do
     t.datetime "updated_at",   null: false
     t.string   "latitude"
     t.string   "longitude"
+    t.integer  "stream_id"
   end
 
   add_index "devices", ["network_id"], name: "index_devices_on_network_id"
+  add_index "devices", ["stream_id"], name: "index_devices_on_stream_id"
 
   create_table "groups", force: :cascade do |t|
     t.string   "member"
@@ -54,17 +56,21 @@ ActiveRecord::Schema.define(version: 20151129063907) do
   create_table "microposts", force: :cascade do |t|
     t.text     "content"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "picture"
     t.string   "subject"
     t.integer  "device_id"
     t.integer  "network_id"
     t.boolean  "private"
+    t.integer  "recording_id"
+    t.integer  "stream_id"
   end
 
   add_index "microposts", ["device_id"], name: "index_microposts_on_device_id"
   add_index "microposts", ["network_id"], name: "index_microposts_on_network_id"
+  add_index "microposts", ["recording_id"], name: "index_microposts_on_recording_id"
+  add_index "microposts", ["stream_id"], name: "index_microposts_on_stream_id"
   add_index "microposts", ["user_id"], name: "index_microposts_on_user_id"
 
   create_table "networks", force: :cascade do |t|
@@ -72,7 +78,14 @@ ActiveRecord::Schema.define(version: 20151129063907) do
     t.text     "publickey"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "admin_id"
+    t.integer  "stream_id"
   end
+
+  add_index "networks", ["admin_id"], name: "index_networks_on_admin_id"
+  add_index "networks", ["stream_id"], name: "index_networks_on_stream_id"
+  add_index "networks", ["user_id"], name: "index_networks_on_user_id"
 
   create_table "recordings", force: :cascade do |t|
     t.string   "originator"
@@ -81,7 +94,12 @@ ActiveRecord::Schema.define(version: 20151129063907) do
     t.string   "URI"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "device_id"
+    t.integer  "network_id"
   end
+
+  add_index "recordings", ["device_id"], name: "index_recordings_on_device_id"
+  add_index "recordings", ["network_id"], name: "index_recordings_on_network_id"
 
   create_table "relationships", force: :cascade do |t|
     t.integer  "follower_id"
@@ -89,6 +107,19 @@ ActiveRecord::Schema.define(version: 20151129063907) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "streams", force: :cascade do |t|
+    t.integer  "port"
+    t.integer  "device_id"
+    t.integer  "user_id"
+    t.integer  "network_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "streams", ["device_id"], name: "index_streams_on_device_id"
+  add_index "streams", ["network_id"], name: "index_streams_on_network_id"
+  add_index "streams", ["user_id"], name: "index_streams_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -101,8 +132,12 @@ ActiveRecord::Schema.define(version: 20151129063907) do
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
     t.string   "remember_digest"
+    t.integer  "network_id"
+    t.integer  "stream_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["network_id"], name: "index_users_on_network_id"
+  add_index "users", ["stream_id"], name: "index_users_on_stream_id"
 
 end

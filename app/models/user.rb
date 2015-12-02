@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessor :remember_token
    before_save { self.email = email.downcase }
+   before_create { self.id = rand(1000..9999)}
    validates :name, presence: true, length: {maximum: 20}
    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
    validates :email, presence: true, length: {maximum: 255},
@@ -23,6 +24,10 @@ class User < ActiveRecord::Base
 
    has_many :followers, through: :passive_relationships, source: :follower
 
+   has_many :networks
+
+  has_many :streams
+
   # Returns the hash digest of the given string.
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -40,7 +45,9 @@ class User < ActiveRecord::Base
     self.remember_token = User.new_token
     update_attribute(:remember_digest, User.digest(remember_token))
   end
-
+   def database_changed?
+    attributes != reload.attributes
+  end
 
 
   # Returns true if the given token matches the digest.

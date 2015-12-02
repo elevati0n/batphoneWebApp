@@ -24,7 +24,8 @@ class UsersController < ApplicationController
  def create
     @user = User.new(user_params)    # Not the final implementation!
     if @user.save
-	flash[:success] = "Welcome to the Bat-Phone Web App!"
+      log_in @user
+	    flash[:success] = "Welcome to the Bat-Phone Web App!"
       redirect_to @user
     else
       render 'new'

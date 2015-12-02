@@ -1,4 +1,18 @@
 class NetworksController < ApplicationController
+ 
+def say
+@network = Network.find(params[:id]) 
+ @devices = @network.devices.all 
+ @hash = Gmaps4rails.build_markers(@network.devices) do |device, marker| 
+ marker.lat device.latitude 
+ marker.lng device.longitude 
+ marker.picture({"url" => "https://lh3.googleusercontent.com/YKh2bl1P53SCWfZplfmP5rpKDQIAiJAQCqLnFSXFUy8eMV5UOZW8YJiy7HHShH-qoMH7PwKSwo8=s50-h50-e365","width" =>  50,"height" => 50}) 
+ marker.json({:id => device.id }) 
+ marker.infowindow render device 
+end
+end
+
+
   def new
     @network = Network.new
   end
@@ -6,6 +20,12 @@ class NetworksController < ApplicationController
   def show
    @network = Network.find(params[:id])
    @devices = @network.devices.all
+   @mic_ids = @network.micropost_ids
+   if logged_in?
+   @feed = Micropost.where("user_id IN (?) OR user_id = ? OR network_id =?", @mic_ids, current_user.id, @network.id)
+   end
+       #current_user.feed.paginate(page: params[:page])
+   #@hash = Gmaps4rails.build_markers(@network.devices)
   end
 
   def create
@@ -21,10 +41,8 @@ class NetworksController < ApplicationController
 
   def index
     @networks = Network.paginate(page: params[:page])
+    @devices = Device.all
     @network_array = @networks.all.map { |network| [network.name, network.id] }
-
-
-
   end
 
   def destroy
@@ -38,7 +56,9 @@ class NetworksController < ApplicationController
   private
 
   def network_params
-    params.require(:network).permit(:name, :publickey)
-    end
+    params.require(:network).permit(:name, :publickey, :admin_id)
   end
+
+end
+
 

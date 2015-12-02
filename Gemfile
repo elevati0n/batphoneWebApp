@@ -19,6 +19,7 @@ gem 'sdoc',                    '0.4.0', group: :doc
 gem 'gmaps4rails'
 gem 'savon', '~> 2.0'
 gem 'seed_dump'
+gem 'jquery-turbolinks'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
