@@ -1,26 +1,61 @@
-<ul id="network <%= network.id %>">
-
-
-
+<h3 id="network <%= network.id %>">
 
   <% if logged_in? %>
+        <h1>
+      <%= link_to network.name, network %> <br>
+        </h1>
+      <%# if !@network.device_id.nil? %>
+
+          <%# render map %>
+
+      <%# end %>
+
+      <% if network.devices.any? %>
+
+          <li class="dropdown-header"> <h4> NO DEVICES FOUND, ADD A DEVICE?
+
+          <%= button_to "Add New Device", {:controller => :devices, :action => :new, :network_id => network.id},
+                        :method => 'get' %>
+
+          </h4> </li>
+      <% end %>
+
+
+
+      <%= button_to "Edit Network?", edit_network_path(network.id), :method => :get %>
+
   <%= render @feed %>
       <% end %>
-    <h2>
-          <%= link_to network.name, network %> <br>
-          public key : </h2><br>
 
-        <div id ="code" align-center>
+  <h2>
 
-           <pre> <h8> <p>
-          <code > <%= network.publickey %></h8>
-          </code> </pre> </p>
-        </div>
 
+    ssh key : </h2><br>
+
+
+  <div style="width:545px;overflow:auto;margin:auto">
+    <pre>  <%= network.ssh_key %> </pre>
+  </div>
 
   <br> <hr>
 
-    <h3>
+
+
+
+
+
+  <h2>
+
+
+          public key : </h2><br>
+
+
+          <div style="width:545px;overflow:auto;margin:auto">
+           <pre>  <%= network.publickey %> </pre>
+            </div>
+
+  <br> <hr>
+
       <%= link_to network.name, network %> | total devices : <%=  link_to "total devices : " +
             network.devices.count.to_s, network_path(network, anchor: "devices")  %>
 
@@ -28,7 +63,6 @@
                                        :method => 'get' %>
       <%= link_to "delete", network, method: :delete,
                   data: { confirm: "You sure?" } %>
-    </h3>
 
     <h4>
 
@@ -42,4 +76,4 @@
       <!--</div>-->
 
     </h4>
-    </ul>
+</h3>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151202045558) do
+ActiveRecord::Schema.define(version: 20151202124240) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "text"
@@ -81,9 +81,16 @@ ActiveRecord::Schema.define(version: 20151202045558) do
     t.integer  "user_id"
     t.integer  "admin_id"
     t.integer  "stream_id"
+    t.text     "ssh_key"
+    t.boolean  "private"
+    t.integer  "key_type"
+    t.integer  "network_id"
+    t.integer  "device_id"
   end
 
   add_index "networks", ["admin_id"], name: "index_networks_on_admin_id"
+  add_index "networks", ["device_id"], name: "index_networks_on_device_id"
+  add_index "networks", ["network_id"], name: "index_networks_on_network_id"
   add_index "networks", ["stream_id"], name: "index_networks_on_stream_id"
   add_index "networks", ["user_id"], name: "index_networks_on_user_id"
 

@@ -51,10 +51,16 @@ Rails.application.routes.draw do
 
   get 'maps' => 'maps#show'
 
-  resources :devices 
+  resources :devices
+
+  resources :networks
 
   resources :networks do
     resources :devices
+  end
+
+  resources :networks do
+    resources :users
   end
 
   resources :users do

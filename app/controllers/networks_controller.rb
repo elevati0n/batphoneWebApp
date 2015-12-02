@@ -39,10 +39,26 @@ end
     end
   end
 
+def edit
+  @network = Network.find(params[:id])
+end
+
+def update
+  @network = Network.find(params[:id])
+  if @network.update_attributes(network_params)
+    flash[:success] = "Network updated!"
+    redirect_to @network
+  else
+    render 'edit'
+  end
+end
+
   def index
     @networks = Network.paginate(page: params[:page])
     @devices = Device.all
     @network_array = @networks.all.map { |network| [network.name, network.id] }
+
+
   end
 
   def destroy
@@ -56,7 +72,7 @@ end
   private
 
   def network_params
-    params.require(:network).permit(:name, :publickey, :admin_id)
+    params.require(:network).permit(:name, :publickey, :admin_id, :ssh_key, :private, :key_type)
   end
 
 end
