@@ -157,8 +157,6 @@ GEM
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     gmaps4rails (2.1.2)
-    gpgme (2.0.10)
-      mini_portile (>= 0.5.0)
     grape (0.13.0)
       activesupport
       builder
@@ -351,7 +349,6 @@ DEPENDENCIES
   faker (= 1.4.2)
   fog (= 1.26.0)
   gmaps4rails
-  gpgme
   grape
   guard-minitest (= 2.3.1)
   hiredis

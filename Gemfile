@@ -23,7 +23,6 @@ gem 'jquery-turbolinks'
 gem 'grape'
 gem 'redis'
 gem 'hiredis'
-gem 'gpgme'
 
 
 group :development, :test do
