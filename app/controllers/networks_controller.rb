@@ -22,11 +22,10 @@ end
    @devices = @network.devices.all
    @mic_ids = @network.micropost_ids
    if logged_in?
-   @feed = Micropost.where.current_user.id.or.current_user.network.find_by_id(params[:id]).or.network.private.true
-
-
-
-
+   @feed1 = Micropost.where(user_id: current_user.id)
+   @feed2 = !network.private?
+   @feed3 = current_user.network.find_by_id(params[:id])
+     @feed= @feed1.join(@feed2).join(@feed3)
    end
        #current_user.feed.paginate(page: params[:page])
    #@hash = Gmaps4rails.build_markers(@network.devices)
@@ -62,8 +61,6 @@ end
     @networks = Network.paginate(page: params[:page])
     @devices = Device.all
     @network_array = @networks.all.map { |network| [network.name, network.id] }
-
-
   end
 
   def destroy
@@ -71,6 +68,11 @@ end
     @network.destroy
     flash[:danger] = "network deleted"
     redirect_to request.referrer || root_url
+  end
+
+  def join
+    Network.find(params).add_user.(params)
+
   end
 
 

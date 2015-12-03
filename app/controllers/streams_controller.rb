@@ -6,7 +6,7 @@ class StreamsController < ApplicationController
     @stream = Stream.new
     @networks = Network.all
     @devices = Device.all
-    render :nothing => true
+    #render :nothing => true
   end
 
   def create

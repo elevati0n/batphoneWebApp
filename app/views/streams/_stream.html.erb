@@ -26,6 +26,16 @@
 
 <% end %>
 
+<audio controls>
+
+  <source src="stream.url+stream.port" type="audio/mpeg" />
+
+  <source src="stream.url+stream.port" type="audio/ogg" />
+
+  <em>Sorry, your browser doesn't support HTML5 audio.</em>
+
+</audio>
+
 <%= render stream.user_id %>
 
 <%= puts stream.port %>

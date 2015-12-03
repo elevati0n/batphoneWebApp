@@ -3,6 +3,8 @@ class Network < ActiveRecord::Base
 
   validates :name,  presence: true, length: { maximum: 50 }
 
+  has_and_belongs_to_many :users
+
   validates :publickey, presence:true, :unless => '!private?'
 
   has_many :devices, dependent: :destroy
@@ -14,6 +16,8 @@ class Network < ActiveRecord::Base
   has_many :streams
 
   enum key_type:  [:rsa, :dsa, :ecdsa, :drop_bear]
+
+  belongs_to :admin, class_name: "User"
 
 
 
