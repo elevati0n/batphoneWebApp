@@ -27,6 +27,9 @@ end
    @feed3 = Micropost.where(network: current_user.networks)
    @feed= @feed1.merge(@feed2).merge(@feed3)
 
+
+
+
    end
        #current_user.feed.paginate(page: params[:page])
    #@hash = Gmaps4rails.build_markers(@network.devices)

@@ -18,5 +18,23 @@ class ApplicationController < ActionController::Base
     redirect_to(root_url) unless @user == current_user
   end
 
+  def encrypt(string, public_key_file)
 
-end
+     if public_key_file.nil?
+       public_key_file = 'public.pem';
+     end
+
+  public_key =
+      OpenSSL::PKey::RSA.new(File.read(public_key_file))
+  encrypted_string =
+      Base64.encode64(public_key.public_encrypt(string))
+
+
+
+    return encrypted_string
+
+
+
+  end
+
+ end

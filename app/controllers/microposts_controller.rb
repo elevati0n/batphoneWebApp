@@ -10,9 +10,11 @@ class MicropostsController < ApplicationController
 
     @devices = Device.all
 
-    if micropost_params[:audience == :private] and !micropost.network.publickey.nil?
+#    if @micropost_params[:audience == :private] and !@micropost.network.publickey.nil?
 
+    if @micropost.private
 
+     @micropost.content=encrypt(@micropost.content, nil)
 
     end
 
