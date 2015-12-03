@@ -1,5 +1,4 @@
 class StreamsController < ApplicationController
-#  include Rack::Stream::DSL
 
 
   def new
@@ -12,11 +11,7 @@ class StreamsController < ApplicationController
   def create
     @stream = Stream.new(stream_params)
     if @stream.save
-#      `ssh -n -f -vvv -p 2222 -L 18886:192.168.2.6:22 root@129.10.248.216
- #         "sudo ffplay -nodisp -fflags nobuffer -f mpegts -i tcp://104.131.44.2:18882"`
-      #`ssh -vvv -p 18886 localhost `
       `ssh -n -f -vvv -p 2222 -L 18886:root@192.168.2.6:22 root@129.10.248.216 "sudo ffplay -nodisp -fflags nobuffer -f mpegts -i tcp://104.131.44.2:18882 &"`
-
       redirect_to @stream
     end
 
@@ -49,6 +44,7 @@ class StreamsController < ApplicationController
     `ssh -n -f -vvv -p 2222 -R 18881:root@192.168.2.6:22 root@129.10.248.216 " ffmpeg -i udp://192.168.2.7:1234 -acodec copy -f mpegts udp://192.168.2.8:1234`
     flash[:success] = "Forwarding audio stream from Recording Pi .7 to Recording Pi .8"
 
+<<<<<<< HEAD
     @network = Network.first
     @stream = Stream.new(:network_id => 1, :port => "18886", :device_id => 6)
 
@@ -96,5 +92,4 @@ private
   def stream_params
   params.require(:stream).permit(:port, :device_id, :user_id, :network_id)
   end
-
 
