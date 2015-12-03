@@ -30,6 +30,8 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
+  get 'db_manage' => 'dbmanage#db_manage'
+
   get 'help' => 'static_pages#help'
 
   get 'home' => 'static_pages#home'

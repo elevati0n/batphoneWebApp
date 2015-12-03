@@ -1,7 +1,7 @@
 class NetworksController < ApplicationController
  
 def say
-@network = Network.find(params[:id]) 
+@network = Network.find(params[:id])
  @devices = @network.devices.all 
  @hash = Gmaps4rails.build_markers(@network.devices) do |device, marker| 
  marker.lat device.latitude 
@@ -23,9 +23,10 @@ end
    @mic_ids = @network.micropost_ids
    if logged_in?
    @feed1 = Micropost.where(user_id: current_user.id)
-   @feed2 = !network.private?
-   @feed3 = current_user.network.find_by_id(params[:id])
-     @feed= @feed1.join(@feed2).join(@feed3)
+   @feed2 = Micropost.where(private: false)
+   @feed3 = Micropost.where(network: current_user.networks)
+   @feed= @feed1.merge(@feed2).merge(@feed3)
+
    end
        #current_user.feed.paginate(page: params[:page])
    #@hash = Gmaps4rails.build_markers(@network.devices)
