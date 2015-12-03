@@ -11,11 +11,6 @@ class StreamsController < ApplicationController
 
   def create
     @stream = Stream.new(stream_params)
-    render :json => {
-               :text             => params[:text],
-               :stream_transport => stream_transport
-           }
-
     if @stream.save
       redirect_to @stream
     end

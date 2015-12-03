@@ -15,7 +15,7 @@
     $('<li>').text(m).appendTo('.messages ul');
   }
 
-  var socket = new WebSocket('ws://<%= device.ip_address %>:<%= stream.port %> /messages');
+  var socket = new WebSocket('ws://batphone.co:<%= stream.port %> /messages');
   socket.onopen    = function()  {message('Connection opened');}
   socket.onclose   = function()  {message('Connection closed');}
   socket.onmessage = function(m) {
@@ -28,7 +28,7 @@
 
 <audio controls>
 
-  <source src="stream.url+stream.port" type="audio/mpeg" />
+  <source src="udp://<%=stream.port%>" type="audio/mpeg" />
 
   <source src="stream.url+stream.port" type="audio/ogg" />
 
