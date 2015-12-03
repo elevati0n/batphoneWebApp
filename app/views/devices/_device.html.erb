@@ -16,6 +16,8 @@ sectionAnchor%7Cmediawiki.ui.button%7Cskins.bootstrapmediawiki&amp;only=styles&a
     Posted <%= time_ago_in_words(device.created_at) %> ago.
   </span>
 
+
+
 <div>
   <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><table class="wikitable">
     <tr>
@@ -53,5 +55,7 @@ sectionAnchor%7Cmediawiki.ui.button%7Cskins.bootstrapmediawiki&amp;only=styles&a
       <td>
       </td></tr> </table></div></div>
 <br>
+
+  <%= button_to "Edit Device?", edit_device_path(device.id) %>
   </span>
 

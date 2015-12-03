@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
-  #before_action :logged_in_user, only: [:create, :destroy]
-  #before_action :correct_user,   only: :destroy
+  before_action :logged_in_user, only: [:create, :destroy]
+  before_action :correct_user,   only: :destroy
 
   def new
     #@comment =  @micropost.comments.build(user_id: current_user.id)
@@ -23,6 +23,7 @@ class CommentsController < ApplicationController
 
   def index
     redirect_to home_path
+
     #@comments = Comment.find(user_id: current_user.id)
   end
 
@@ -35,7 +36,7 @@ class CommentsController < ApplicationController
 
     if @comment.save
       flash[:success] = "comments added!"
-      redirect_to root_url
+      redirect_to request.referrer || root_url
     else
       @feed_items = []
       render 'static_pages/home'
@@ -47,7 +48,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:user_id, :micropost_id, :network_id, :text) #).require(:micropost_id).require( permit(:text, :email, :password, :password_confirmation)
+    params.require(:comment).permit(:user_id, :micropost_id, :network_id, :text)
   end
 
 

@@ -9,6 +9,12 @@ class MicropostsController < ApplicationController
     #@network_array = @networks.all.map { |network| [network.name, network.id] }
 
     @devices = Device.all
+
+    if micropost_params[:audience == :private] and !micropost.network.publickey.nil?
+      @micropost.text = GPGME::Key.import(network.publickey)
+
+    end
+
     if @micropost.save
       flash[:success] = "Meshage saved!"
       redirect_to root_url

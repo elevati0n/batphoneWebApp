@@ -1,16 +1,8 @@
 <% provide(:title, 'Add Network') %>
 <h1>Add Network</h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@network) do |f| %>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
+<%= render 'network_form' %>
 
-        <%= f.label :publickey %>
-        <%= f.text_area :publickey %>
+<%#= render 'shared/micropost_form' %>
 
-        <%= f.submit "Add Network", class: "btn btn-primary" %>
-    <% end %>
-  </div>
 </div>

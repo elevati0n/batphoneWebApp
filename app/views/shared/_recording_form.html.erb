@@ -1,0 +1,21 @@
+<%= form_for(@recording, html: { multipart: true }) do |f| %>
+
+    <%#= render 'shared/error_messages', object: f.object %>
+
+    <%= f.text_field :originator, placeholder: "originator...", size: 20 %>
+
+    <%= f.text_field :time, placeholder: "recording time"   %>
+
+    <%= f.text_field :date, placeholder: "recording date"   %>
+
+    <%= f.text_field :URI, placeholder: "recording URI"   %>
+
+    <%= f.collection_select(:device_id, @devices, :id, :name) %>
+
+    <%= f.collection_select(:network_id, @networks, :id, :name) %>
+
+    <%= f.file_field :picture %>
+
+    <%= f.submit "Post", class: "btn btn-primary" %>
+
+<% end%>

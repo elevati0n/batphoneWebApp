@@ -20,10 +20,20 @@ end
   def show
    @network = Network.find(params[:id])
    @devices = @network.devices.all
+   @mic_ids = @network.micropost_ids
+   if logged_in?
+   @feed1 = Micropost.where(user_id: current_user.id)
+   @feed2 = !network.private?
+   @feed3 = current_user.network.find_by_id(params[:id])
+     @feed= @feed1.join(@feed2).join(@feed3)
+   end
+       #current_user.feed.paginate(page: params[:page])
+   #@hash = Gmaps4rails.build_markers(@network.devices)
   end
 
   def create
      @network = Network.new(network_params)
+     @network.build(:admin_id => current_user.id )
      if @network.save
        flash[:success] = "Network added!"
        redirect_to @network
@@ -33,12 +43,24 @@ end
     end
   end
 
+def edit
+  @network = Network.find(params[:id])
+end
+
+def update
+  @network = Network.find(params[:id])
+  if @network.update_attributes(network_params)
+    flash[:success] = "Network updated!"
+    redirect_to @network
+  else
+    render 'edit'
+  end
+end
+
   def index
     @networks = Network.paginate(page: params[:page])
+    @devices = Device.all
     @network_array = @networks.all.map { |network| [network.name, network.id] }
-
-
-
   end
 
   def destroy
@@ -48,12 +70,17 @@ end
     redirect_to request.referrer || root_url
   end
 
+  def join
+    Network.find(params).add_user.(params)
+
+  end
+
 
   private
 
   def network_params
-    params.require(:network).permit(:name, :publickey)
-    end
+    params.require(:network).permit(:name, :publickey, :admin_id, :ssh_key, :private, :key_type)
+  end
 
 end
 

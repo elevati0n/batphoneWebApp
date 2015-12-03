@@ -1,4 +1,4 @@
-<script src="//maps.google.com/maps/api/js?v=3.18&sensor=false&client=&key=&libraries=geometry&language=&hl=&region="></script> 
+<script src="//maps.google.com/maps/api/js?v=3.18&sensor=false&client=&key=&libraries=geometry&language=&hl=&region="></script>
 <script src="//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js"></script>
 
 <% provide(:title, 'Public Network Map') %>
@@ -10,53 +10,53 @@
 </div>
 
 <script type="text/javascript">
-var mapStyle = [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":
-[{"color":"#000000"},{"lightness":13}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":
-[{"color":"#000000"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":
-[{"color":"#144b53"},{"lightness":14},{"weight":1.4}]},{"featureType":"landscape","elementType":"all","stylers":
-[{"color":"#34495e"}]},{"featureType":"poi","elementType":"geometry","stylers":
-[{"color":"#566777"},{"lightness":5}]},{"featureType":"poi.school","elementType":"labels.icon","stylers":
-[{"color":"#98acbf"}]},{"featureType":"poi.sports_complex","elementType":"labels.icon","stylers":
-[{"color":"#7ca2c7"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":
-[{"color":"#4d5a67"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":
-[{"color":"#3d5165"},{"lightness":25}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":
-[{"color":"#2e3944"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":
-[{"color":"#52606f"},{"lightness":16}]},{"featureType":"road.local","elementType":"geometry","stylers":
-[{"color":"#445d75"}]},{"featureType":"transit","elementType":"all","stylers":
-[{"color":"#146474"}]},{"featureType":"transit","elementType":"labels.text.fill","stylers":
-[{"color":"#ffffff"}]},{"featureType":"transit","elementType":"labels.text.stroke","stylers":
-[{"color":"#5a748d"}]},{"featureType":"transit","elementType":"labels.icon","stylers":
-[{"color":"#5a748d"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#021019"}]}];
+    var mapStyle = [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":
+            [{"color":"#000000"},{"lightness":13}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":
+            [{"color":"#000000"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":
+            [{"color":"#144b53"},{"lightness":14},{"weight":1.4}]},{"featureType":"landscape","elementType":"all","stylers":
+            [{"color":"#34495e"}]},{"featureType":"poi","elementType":"geometry","stylers":
+            [{"color":"#566777"},{"lightness":5}]},{"featureType":"poi.school","elementType":"labels.icon","stylers":
+            [{"color":"#98acbf"}]},{"featureType":"poi.sports_complex","elementType":"labels.icon","stylers":
+            [{"color":"#7ca2c7"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":
+            [{"color":"#4d5a67"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":
+            [{"color":"#3d5165"},{"lightness":25}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":
+            [{"color":"#2e3944"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":
+            [{"color":"#52606f"},{"lightness":16}]},{"featureType":"road.local","elementType":"geometry","stylers":
+            [{"color":"#445d75"}]},{"featureType":"transit","elementType":"all","stylers":
+            [{"color":"#146474"}]},{"featureType":"transit","elementType":"labels.text.fill","stylers":
+            [{"color":"#ffffff"}]},{"featureType":"transit","elementType":"labels.text.stroke","stylers":
+            [{"color":"#5a748d"}]},{"featureType":"transit","elementType":"labels.icon","stylers":
+            [{"color":"#5a748d"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#021019"}]}];
 
 
-var handler = Gmaps.build('Google');
-handler.buildMap({ internal: { id: 'custom_style'}, 
-provider: {
-      zoom:      15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      styles:    mapStyle,
-      center:    new google.maps.LatLng(53.385873, -1.471471)
-    }
-},
-function(){ 
- var circles = handler.addCircles(
-    [{ lat: 42.340327, lng: -71.087778, radius: 50},
-    { lat: 42.340177, lng: -71.090069, radius: 300},
-    { lat: 42.338305, lng: -71.087794, radius: 100}],
-    { strokeColor: '#90EE90'}
-  );
- var markers = handler.addMarkers([
-      { lat: 42.340327, lng: -71.087778, 
-	picture: {url: "https://lh3.googleusercontent.com/YKh2bl1P53SCWfZplfmP5rpKDQIAiJAQCqLnFSXFUy8eMV5UOZW8YJiy7HHShH-qoMH7PwKSwo8=s50-h50-e365", width: 50, height: 50}},
-      { lat: 42.340177, lng: -71.090069, 
-	picture: {url: "https://lh3.googleusercontent.com/YKh2bl1P53SCWfZplfmP5rpKDQIAiJAQCqLnFSXFUy8eMV5UOZW8YJiy7HHShH-qoMH7PwKSwo8=s50-h50-e365",width: 50, height: 50}},
-      { lat: 42.338305, lng: -71.087794, 
-	picture: {url: "https://lh3.googleusercontent.com/YKh2bl1P53SCWfZplfmP5rpKDQIAiJAQCqLnFSXFUy8eMV5UOZW8YJiy7HHShH-qoMH7PwKSwo8=s50-h50-e365",width: 50, height: 50}}
-    ]);
-  handler.bounds.extendWith(markers);
-  handler.fitMapToBounds();
- }
-);
+    var handler = Gmaps.build('Google');
+    handler.buildMap({ internal: { id: 'custom_style'},
+                provider: {
+                    zoom:      15,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    styles:    mapStyle,
+                    center:    new google.maps.LatLng(53.385873, -1.471471)
+                }
+            },
+            function(){
+                var circles = handler.addCircles(
+                        [{ lat: 42.340327, lng: -71.087778, radius: 50},
+                            { lat: 42.340177, lng: -71.090069, radius: 300},
+                            { lat: 42.338305, lng: -71.087794, radius: 100}],
+                        { strokeColor: '#90EE90'}
+                );
+                var markers = handler.addMarkers([
+                    { lat: 42.340327, lng: -71.087778,
+                        picture: {url: "https://lh3.googleusercontent.com/YKh2bl1P53SCWfZplfmP5rpKDQIAiJAQCqLnFSXFUy8eMV5UOZW8YJiy7HHShH-qoMH7PwKSwo8=s50-h50-e365", width: 50, height: 50}},
+                    { lat: 42.340177, lng: -71.090069,
+                        picture: {url: "https://lh3.googleusercontent.com/YKh2bl1P53SCWfZplfmP5rpKDQIAiJAQCqLnFSXFUy8eMV5UOZW8YJiy7HHShH-qoMH7PwKSwo8=s50-h50-e365",width: 50, height: 50}},
+                    { lat: 42.338305, lng: -71.087794,
+                        picture: {url: "https://lh3.googleusercontent.com/YKh2bl1P53SCWfZplfmP5rpKDQIAiJAQCqLnFSXFUy8eMV5UOZW8YJiy7HHShH-qoMH7PwKSwo8=s50-h50-e365",width: 50, height: 50}}
+                ]);
+                handler.bounds.extendWith(markers);
+                handler.fitMapToBounds();
+            }
+    );
 
 
 </script>

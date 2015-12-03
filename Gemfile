@@ -20,6 +20,11 @@ gem 'gmaps4rails'
 gem 'savon', '~> 2.0'
 gem 'seed_dump'
 gem 'jquery-turbolinks'
+gem 'grape'
+gem 'redis'
+gem 'hiredis'
+gem 'gpgme'
+
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
@@ -36,6 +41,5 @@ end
 
 group :production do
   gem 'pg',             '0.17.1'
-  gem 'rails_12factor', '0.0.2'
   gem 'puma',           '2.11.1'
 end

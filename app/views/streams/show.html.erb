@@ -1,0 +1,25 @@
+<pre>
+
+     Saved Recordings
+     <%= `ls /var/www/batphoneWebApp/public/uploads/recordings` %>
+
+
+  <%#= puts @fileSpace %>
+</pre>
+
+<div id="container">
+
+
+<%= javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js" %>
+
+<h2>Listen to a MP3 with HTML5 Audio</h2>
+<section id="audio">
+
+
+
+  <%= yield %>
+
+
+<td><%= link_to "HTML5 Audio", url_for(@stream), :class => "html5" %></td>
+
+</section></div>

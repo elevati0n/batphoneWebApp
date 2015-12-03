@@ -1,0 +1,50 @@
+<%#= f.hidden_field(:user_id, :value => current_user.id) %>
+
+<%= stylesheet_link_tag    "application", :media => "all" %>
+<%= javascript_include_tag "application" %>
+<%= csrf_meta_tags %>
+
+<%= javascript_tag do %>
+    $(function() {
+    // clear form input after submit
+    $('form').bind('ajax:beforeSend', function() {
+    $('input#text').val('');
+    });
+
+    function message(m) {
+    $('<li>').text(m).appendTo('.messages ul');
+  }
+
+  var socket = new WebSocket('ws://batphone.co:<%= stream.port %> /messages');
+  socket.onopen    = function()  {message('Connection opened');}
+  socket.onclose   = function()  {message('Connection closed');}
+  socket.onmessage = function(m) {
+  message(m.data);
+  }
+  });
+
+
+<% end %>
+
+<audio controls>
+
+  <source src="udp://<%=stream.port%>" type="audio/mpeg" />
+
+  <source src="stream.url+stream.port" type="audio/ogg" />
+
+  <em>Sorry, your browser doesn't support HTML5 audio.</em>
+
+</audio>
+
+<%= render stream.user_id %>
+
+<%= puts stream.port %>
+
+
+<%= render stream.device %>
+
+
+<%= render stream.network %>
+
+<%= yield %>
+

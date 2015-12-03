@@ -1,0 +1,40 @@
+<%= form_for(@network, html: { multipart: true }) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <%= form_for(@network) do |f| %>
+
+            <%#= f.label :admin_id %>
+            <%= f.hidden_field(:admin_id, :value => current_user.id) %>
+
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+
+            <%= f.label :publickey %>
+
+            <%= f.text_area :publickey %>
+
+            <%= f.label :ssh_key %>
+
+            <%= f.text_area :ssh_key %>
+
+            <%#= f.input :key_type, as: :select, collection: Network.key_types.keys %>
+
+            <%#= f.collection_select(:key_type, Network.key_types.keys, :print, :print) %>
+
+            <%= f.select :key_type, Network.key_types.keys %>
+
+
+            <%= f.submit "Add Network", class: "btn btn-primary" %>
+
+            Would you like this network to be private?
+            (this will restrict post viewers to only people who are in the network.
+            <%= f.check_box :private %>
+
+        <% end %>
+
+      </div>
+<% end %>
+
+</div>
