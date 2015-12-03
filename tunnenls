@@ -1,0 +1,14 @@
+
+
+ssh into mesh net node
+
+
+create local tunnel connecting an outgoing socket to the servers outgoing one
+ssh -L 1337:localhost:1337 batphone.co
+
+netcat -l -u -p 9200 < /tmp/udp2tcp | netcat localhost 1337 > /tmp/udp2tcp
+
+netcat -l -p 1337 < /tmp/tcp2udp | netcat -u localhost 9100 > /tmp/tcp2udp
+
+
+ssh -L 1337:localhost:9101 batphone.co

@@ -1,4 +1,5 @@
-<ul id="<%= micropost.id %>">
+<container id="<%= micropost.id %>">
+
 
 <h3>
   Subject :
@@ -43,10 +44,11 @@
 
 
     <%#= micropost.subject if !micropost.subject.nil? %>
-
+ <pre>
 
   <%= micropost.content %>  </span> </h3>
 
+  </pre>
 
   <%= image_tag micropost.picture.url if micropost.picture? %>
 
@@ -81,5 +83,5 @@
 
     <% end %>
 
-</ul>
+</container>
 <hr>
