@@ -11,7 +11,8 @@ class MicropostsController < ApplicationController
     @devices = Device.all
 
     if micropost_params[:audience == :private] and !micropost.network.publickey.nil?
-      @micropost.text = GPGME::Key.import(network.publickey)
+
+
 
     end
 

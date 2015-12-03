@@ -50,8 +50,5 @@ private
   params.require(:stream).permit(:port, :device_id, :user_id, :network_id)
   end
 
-  def execCommands
-    @fileSpace = IO.popen("date") { |f| puts f.gets }
-  end
 
 end
