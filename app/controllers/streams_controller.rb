@@ -51,7 +51,7 @@ class StreamsController < ApplicationController
   end
 
 
-  def CreateStreamDeviceRecieving
+  def StreamReceiving
     `ssh -n -f -vvv -p 2222 -R 18880:root@192.168.2.6:22 root@129.10.248.216 " ffplay -fflags nobuffer -nodisp -f mpegts -i udp://192.168.2.6:1234`
     flash[:success] = "Recording Pi 8 is now recieving the audio stream"
 
