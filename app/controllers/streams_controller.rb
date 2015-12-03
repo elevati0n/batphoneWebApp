@@ -51,5 +51,4 @@ private
   def stream_params
   params.require(:stream).permit(:port, :device_id, :user_id, :network_id)
   end
-
-
+end
