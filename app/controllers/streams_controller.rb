@@ -43,8 +43,6 @@ class StreamsController < ApplicationController
   def ForwardStreamThroughNode
     `ssh -n -f -vvv -p 2222 -R 18881:root@192.168.2.6:22 root@129.10.248.216 " ffmpeg -i udp://192.168.2.7:1234 -acodec copy -f mpegts udp://192.168.2.8:1234`
     flash[:success] = "Forwarding audio stream from Recording Pi .7 to Recording Pi .8"
-
-<<<<<<< HEAD
     @network = Network.first
     @stream = Stream.new(:network_id => 1, :port => "18886", :device_id => 6)
 
@@ -52,7 +50,7 @@ class StreamsController < ApplicationController
   end
 
 
-  def CreateStreamDeviceRecieving
+  def StreamReceiving
     `ssh -n -f -vvv -p 2222 -R 18880:root@192.168.2.6:22 root@129.10.248.216 " ffplay -fflags nobuffer -nodisp -f mpegts -i udp://192.168.2.6:1234`
     flash[:success] = "Recording Pi 8 is now recieving the audio stream"
 

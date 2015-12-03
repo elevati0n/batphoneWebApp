@@ -80,7 +80,7 @@ Rails.application.routes.draw do
 
   get :ForwardStreamThroughNode, controller:"streams"
 
-  get :CreateStreamDeviceReceiving, controller:"streams"
+  get :StreamReceiving, controller:"streams"
 
 
 
