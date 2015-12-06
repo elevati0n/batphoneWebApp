@@ -1,7 +1,9 @@
-<container id="<%= micropost.id %>">
+ <div class="jumbotron" style="color:black; padding-top: 5px; padding-left:5px; padding-right:5px" >
+    <div class="container">
 
 
 <h3>
+  <%= link_to gravatar_for(micropost.user, size: 100), micropost.user %>
   Subject :
   <%= link_to  micropost.subject, micropost%>
 
@@ -29,26 +31,8 @@
 </h4>
 
 <hr>
-  <h3>
-  <%= link_to gravatar_for(micropost.user, size: 75), micropost.user %>
 
-    <span class="content">
-
-
-
-
-
-
-
-
-
-
-    <%#= micropost.subject if !micropost.subject.nil? %>
- <pre>
-
-  <%= micropost.content %>  </span> </h3>
-
-  </pre>
+<pre> <center> <%= micropost.content %> </center> </pre>
 
   <%= image_tag micropost.picture.url if micropost.picture? %>
 
@@ -83,5 +67,5 @@
 
     <% end %>
 
-</container>
-<hr>
+</div>
+</div>

@@ -1,62 +1,36 @@
+<h3>Compose New Meshage</h3>
+
+<div class="jumbotron" style="color:black; padding-top: 5px; padding-left:5px; padding-right:5px" >
+  <div class="container">
+
+
+
 <%= form_for(@micropost, html: { multipart: true }) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
 
-    <h3>Compose New Meshage</h3>
 
+        <h4>
+       SUBJECT:
+        </h4>
 
-    <h4>Subject</h4>
-    <div class="field">
       <%= f.text_field :subject, placeholder: "Enter Subject" %>
-    </div>
-    <p></p>
-    <div class="field">
+      <br> <H4>
+        MESHAGE TEXT:
+      </H4>
       <%= f.text_area :content, placeholder: "Compose new Meshage..." %>
-    </div>
+      <br>
 
-    <div class="field">
-
-      Private?
+      <li class="checkbox-inline">
+      <%= f.check_box :private%>   Private?     </li>
       <%#= check_box :private, "false" %>
 
 
       <%#= url_field_tag 'url', 'http://rubyonrails.org' %>
-      <%= f.check_box :private%>
 
 
 
 
-
-
-
-    </div>
-
-
-    <div>
-
-      <%#= check_box_tag(:pet_dog) %>
-      <%#= label_tag(:pet_dog, "I own a dog") %>
-      <%#= check_box_tag(:pet_cat) %>
-      <%#= label_tag(:pet_cat, "I own a cat") %>
-
-
-    </div>
-
-    <div class="field"></div>
-    <h4>Select Network</h4>
-
-    # select on a form builder
-    <%#= f.select(:network, :id, [['Public', 0],['BatCave', 1],['Wayne Enterprises',2]], 1)  %>
-
-
-    <%#= f.select :network_id do %>
-      <%#= @network_array.each do |network| %>
-        <%#= content_tag(:option, network.first) %>
-
-        <%#    end %>
-    <%#  end %>
-
-
-    <li class="dropdown-header"> <h3> SELECT NETWORK </h3> </li>
+    <li class="dropdown-header"> <H4> SELECT NETWORK </H4> </li>
     <%= f.collection_select(:network_id, @networks, :id, :name) %>
 
 
@@ -65,7 +39,7 @@
 
 
     <%#= form_tag('/posts') do -%>
-        <div><%#= submit_tag 'Save' %></div>
+
     <%# end -%>
 
 
@@ -90,7 +64,7 @@
 
 
 
-    <li class="dropdown-header"> <h3> SELECT DEVICE </h3> </li>
+    <li class="dropdown-header"> <H4> SELECT DEVICE </H4> </li>
     <!--<div class="field"></div>-->
     <!--<h4>Device</h4>-->
 
@@ -111,7 +85,6 @@
 
     <%= f.collection_select(:device_id, @devices, :id, :name) %>
 
-          </button>
         <!--</div>-->
 
 
@@ -123,11 +96,6 @@
                            ['RouterNode5',7],
                            ['Microphone Pi2',8]] %>
 
-    <div class="field">
-
-
-
-    </div>
 
 
     <%= f.submit "Post", class: "btn btn-primary" %>
@@ -137,3 +105,5 @@
 
 
 <% end %>
+
+</div> </div>
