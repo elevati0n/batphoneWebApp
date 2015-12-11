@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151202151852) do
+ActiveRecord::Schema.define(version: 20151203175730) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "text"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20151202151852) do
 
   create_table "devices", force: :cascade do |t|
     t.string   "name"
+    t.string   "IP_address"
     t.string   "MAC"
     t.string   "AP_SSID"
     t.string   "Gateway_mode"
@@ -37,7 +38,7 @@ ActiveRecord::Schema.define(version: 20151202151852) do
     t.string   "latitude"
     t.string   "longitude"
     t.integer  "stream_id"
-    t.string   "IP_address"
+    t.integer  "strength"
   end
 
   add_index "devices", ["network_id"], name: "index_devices_on_network_id"
@@ -84,13 +85,9 @@ ActiveRecord::Schema.define(version: 20151202151852) do
     t.text     "ssh_key"
     t.boolean  "private"
     t.integer  "key_type"
-    t.integer  "network_id"
-    t.integer  "device_id"
   end
 
   add_index "networks", ["admin_id"], name: "index_networks_on_admin_id"
-  add_index "networks", ["device_id"], name: "index_networks_on_device_id"
-  add_index "networks", ["network_id"], name: "index_networks_on_network_id"
   add_index "networks", ["stream_id"], name: "index_networks_on_stream_id"
   add_index "networks", ["user_id"], name: "index_networks_on_user_id"
 
@@ -120,11 +117,13 @@ ActiveRecord::Schema.define(version: 20151202151852) do
     t.integer  "device_id"
     t.integer  "user_id"
     t.integer  "network_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "microposts_id"
   end
 
   add_index "streams", ["device_id"], name: "index_streams_on_device_id"
+  add_index "streams", ["microposts_id"], name: "index_streams_on_microposts_id"
   add_index "streams", ["network_id"], name: "index_streams_on_network_id"
   add_index "streams", ["user_id"], name: "index_streams_on_user_id"
 
